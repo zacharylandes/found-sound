@@ -14,9 +14,20 @@ footer{
   height: auto;
   text-align: center;
 }
+center img{
+  height: 320px;
+}
+.nav{
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+}
 .logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 30px;
+  font-family: 'Fugaz One', cursive;
+  color: white;
+  font-size: 40px;
 }
 
 .logo a:hover{
@@ -29,9 +40,9 @@ div.container {
   height:auto;
   padding: 5px;
 }
-
+//
 a {
-  color: black;
+  color: white;
 }
 .center-block {
   display: block;
