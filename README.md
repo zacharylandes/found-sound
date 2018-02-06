@@ -21,3 +21,6 @@ Load the database dump:
 After the import you should see a return value of 1011 when running `Item.count` in the console.
 
 All users have a password of `password` if you want to login and explore.
+
+## Schema
+![Schema](https://raw.githubusercontent.com/maxscores/le_pivot/master/db/schema.png)
