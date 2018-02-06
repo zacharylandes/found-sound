@@ -1,4 +1,5 @@
 # The Pivot - Base Project
+[![Build Status](https://travis-ci.org/Maxscores/le_pivot.svg?branch=master)](https://travis-ci.org/Maxscores/le_pivot)
 
 [![Coverage Status](https://coveralls.io/repos/github/Maxscores/le_pivot/badge.svg?branch=master)](https://coveralls.io/github/Maxscores/le_pivot?branch=master)
 
