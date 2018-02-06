@@ -4,11 +4,10 @@ RSpec.describe Cart do
   let(:item_1) { create(:item) }
   let(:item_2) { create(:item) }
 
-  subject { Cart.new({
-      "#{item_1.id}" => 2,
-      "#{item_2.id}" => 3
-    })
-  }
+  subject { CartDecorator.new(Cart.new({"#{item_1.id}" => 2,
+                  "#{item_2.id}" => 3
+                  })) }
+
 
   describe "#total_count" do
     it "calculates the total number of items it holds" do
@@ -53,13 +52,6 @@ RSpec.describe Cart do
     it "reports how many of a particular item" do
       expect(subject.count_of(item_1.id)).to eq(2)
       expect(subject.count_of(item_2.id)).to eq(3)
-    end
-  end
-
-  describe "#cart_items" do
-    it "returns a hash of item objects and quantity" do
-      expect(subject.cart_items[item_1]).to eq(2)
-      expect(subject.cart_items[item_2]).to eq(3)
     end
   end
 

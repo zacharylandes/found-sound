@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
 
   def set_cart
-    @cart ||= Cart.new(session[:cart])
+    @cart ||= CartDecorator.new(Cart.new(session[:cart]))
   end
 
   def set_categories
