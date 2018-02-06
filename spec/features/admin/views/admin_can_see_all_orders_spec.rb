@@ -7,16 +7,23 @@ RSpec.feature "Admin Orders" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
   end
 
+
+
   context "As an admin and two orders in the database" do
     let!(:order_1) { create(:order, status: "ordered") }
     let!(:order_2) { create(:order) }
 
-    it "I can see the total number of orders for each status" do
+    xit "I can see the total number of orders for each status" do
+    end
+
+    it "I can see all orders with associated attributes" do
       visit admin_dashboard_index_path
 
       expect(page).to have_content(order_1.id)
       expect(page).to have_content(order_1.date)
       expect(page).to have_content(order_1.status.capitalize)
+      expect(page).to have_content(order_1.total_price)
+      expect(page).to have_content(order_2.total_price)
     end
 
     it "I can see orders filtered by status" do
