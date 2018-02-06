@@ -1,5 +1,7 @@
 # The Pivot - Base Project
 
+[![Coverage Status](https://coveralls.io/repos/github/Maxscores/le_pivot/badge.svg?branch=master)](https://coveralls.io/github/Maxscores/le_pivot?branch=master)
+
 The following Rails app is used as the base project for [The Pivot](http://backend.turing.io/module3/projects/the_pivot).
 
 ## Setup
