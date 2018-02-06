@@ -14,6 +14,7 @@ FactoryBot.define do
           quantity = item_with_quantity.values.first
           create(:order_item, order: order, item: item, quantity: quantity)
         end
+        order.calculate_total
       end
     end
 
