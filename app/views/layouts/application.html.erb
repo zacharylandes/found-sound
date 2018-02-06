@@ -19,8 +19,8 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render "shared/nav" %>
+    <%= render "shared/nav" %>
+    <div class="main-content">
       <% if flash.count > 0  %>
         <div class="center-block" style= "width: 15rem;">
           <div class="alert alert-primary alert-dismissable" role="alert">
@@ -31,15 +31,13 @@
           <% flash.each do |name, msg| %>
             <%= content_tag :div, raw(msg), class: name %>
           <% end %>
-          </div>
         </div>
+      </div>
         <%= yield %>
+      </div>
     <footer id="footer">
       <a href="https://www.github.com/zacharylandes" target = "_blank"><i class="fab fa-github fa-2x"></i></a>
       <a href="https://www.linkedin.com/in/zacharylandes/"  target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-    </a>
-
    </footer>
-    </div>
   </body>
 </html>

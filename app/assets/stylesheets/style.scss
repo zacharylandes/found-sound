@@ -7,6 +7,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.main-content{
+  display: flex;
+  justify-content: center;
+  width: 800px;
+}
 
 p {
   padding: 0;
@@ -53,7 +58,6 @@ background-color: white;
 #header {
   height: 75px;
   border-bottom: 2px solid white;
-  position: fixed;
   background-color: black;
   left: 0;
   top: 0;
