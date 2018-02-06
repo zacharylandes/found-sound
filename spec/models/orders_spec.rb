@@ -39,7 +39,7 @@ RSpec.describe Order do
       item_2 = create(:item, title: "Seal", price: 1.00)
       item_not_included = create(:item, title: "Banana Stand", price: 100.00)
 
-      order.add({item_1 => 1, item_2 => 1})
+      order.add(CartDecorator.new(Cart.new({"#{item_1.id}"=> 1, "#{item_2.id}" =>1})))
 
       expect(order.total_price).to eq(11.0)
     end
@@ -49,11 +49,11 @@ RSpec.describe Order do
       order = user.orders.create!(status: "ordered")
       category = create(:category)
       item = create(:item)
-      item_hash = {item => 1}
+
 
       expect(order.items).to eq([])
 
-      order.add(item_hash)
+      order.add(CartDecorator.new(Cart.new({"#{item.id}" => 1})))
 
       expect(order.items.first).to eq(item)
     end

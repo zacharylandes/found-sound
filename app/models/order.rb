@@ -13,11 +13,11 @@ class Order < ApplicationRecord
     self.save
   end
 
-  def add(item_hash)
-    item_hash.each do |item, quantity|
+  def add(cart)
+    cart.cart_items.each do |item|
       items << item
       order_item = OrderItem.find_by(order: self, item_id: item.id)
-      order_item.update(quantity: quantity)
+      order_item.update(quantity: cart.quantity_of(item.id))
     end
     calculate_total
   end
