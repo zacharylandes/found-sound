@@ -33,6 +33,7 @@ group :development, :test do
   gem 'launchy'
   gem 'faker'
   gem 'simplecov'
+  gem 'coveralls', require: false
 end
 
 group :development do
