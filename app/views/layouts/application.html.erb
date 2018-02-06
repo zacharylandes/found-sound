@@ -1,33 +1,68 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Little Shop Of Funsies</title>
+    <title>Found Sound</title>
+      <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link rel="icon" type="image/png" href="../../assets/images/favicon-32x32.png" sizes="32x32" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Molengo&amp;subset=latin-ext" rel="stylesheet">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-<link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+    <style media="screen">
+    </style>
   </head>
-
-  <body>
-    <header>
-
-    </header>
-    <div class="container">
-      <%= render "shared/nav" %>
-      <% if flash.count > 0  %>
-        <div class="center-block" style= "width: 15rem;">
-          <div class="alert alert-primary alert-dismissable" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          <% end  %>
-          <% flash.each do |name, msg| %>
-            <%= content_tag :div, raw(msg), class: name %>
-          <% end %>
-          </div>
-        </div>
+  <body >
+  <header id="header">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    <div class="container-fluid">
+      <div id="logo" class="pull-left">
+        <h1><a class="title">Found Sound</a></h1>
+      </div>
+      <div class = "record"><%= image_tag('record.png')%></div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class ="home" ><a><i class="fas fa-home fa-2x"></i></a></li>
+            <% if current_user %>
+              <li>Signed in as <strong><%= current_user.name %></strong></li>
+              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+            <% else %>
+              <li><%= link_to "Sign in " %></li>
+            <% end %>
+          <li class="menu-has-children"><a href="">Contact</a>
+            <ul>
+              <li><a href="https://www.github.com/zacharylandes" target="_blank">Github</a></li>
+              <li><a href="https://www.linkedin.com/in/zacharylandes/"  target="_blank">Linked In</a></li>
+              <li><a href="mailto:zach.g.landes@gmail.com"  target="_blank">Gmail</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+    <div class='index-section'>
         <%= yield %>
     </div>
+    </section>
+    <footer id="footer">
+      <a href="https://www.github.com/zacharylandes" target = "_blank"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://www.linkedin.com/in/zacharylandes/"  target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="mailto:zach.g.landes@gmail.com"  target="_blank"><i class="far fa-envelope fa-2x"></i></a>
+      <a href="https://www.zacharylandes.github.io" class = "port"><i class="fas fa-briefcase fa-2x"></i>
+</a>
+
+   </footer>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 </html>
