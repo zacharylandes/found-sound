@@ -31,10 +31,12 @@ class Cart
   end
 
   def cart_items
-    contents.inject({}) do |result, (item_id, quantity)|
+    x = contents.inject({}) do |result, (item_id, quantity)|
       result[Item.find(item_id)] = quantity
       result
     end
+
+      binding.pry
   end
 
   def delete_item(id)
