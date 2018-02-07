@@ -9,6 +9,7 @@ RSpec.feature "Adding items to the cart" do
 
   context "When a visitor adds items to their cart" do
     it "a message is displayed" do
+    # it "a message is displayed", js: true do
       expect(page).to have_link("Add to cart")
 
       click_on "Add to cart"
