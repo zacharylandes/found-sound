@@ -10,11 +10,11 @@ class StoresController < ApplicationController
 
   def create
     store = Store.new(store_params)
-    if store.save!
+    if store.save
       redirect_to dashboard_index_path
     else
       flash[:notice] = "Invalid Credentials"
-      render :new
+      redirect_to new_store_path
     end
   end
 
