@@ -4,8 +4,6 @@ rvm:
 before_script:
   - bundle exec rake db:create --all
   - bundle exec rake db:migrate
-  - rake create_store:create_store
-  - rake add_store_id_to_items:add_store_id_to_items
 script:
   - bundle exec rspec
 services:
