@@ -39,8 +39,10 @@ Rails.application.routes.draw do
   end
 
 
+
+
+  resources :stores, only:[:index,:new, :create]
   get '/:store', to: 'stores#show', as: "store"
 
-  resources :stores, only:[:index,:new, :create, :show]
 
 end
