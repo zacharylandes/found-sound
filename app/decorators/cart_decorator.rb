@@ -8,4 +8,12 @@ class CartDecorator < SimpleDelegator
     contents[item_id.to_s]
   end
 
+  def subtotal(item)
+    item.price * quantity_of(item.id)
+  end
+
+  def total
+    cart_items.map {|item| subtotal(item)}.sum
+  end
+
 end

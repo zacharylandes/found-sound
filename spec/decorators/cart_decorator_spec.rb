@@ -18,4 +18,13 @@ describe CartDecorator do
     expect(decorated_cart.quantity_of(item_1.id)).to eq 2
     expect(decorated_cart.quantity_of(item_2.id)).to eq 3
   end
+
+  it "#subtotal gives the subtotal for one item in cart" do
+    expect(decorated_cart.subtotal(item_1)).to eq 20.0
+    expect(decorated_cart.subtotal(item_2)).to eq 30.0
+  end
+
+  it "#total gives the total for the cart" do
+    expect(decorated_cart.total).to eq 50.0
+  end
 end
