@@ -21,8 +21,19 @@ describe ' a logged in user' do
 
       expect(current_path).to eq(stores_path)
       expect(page).to have_content("Vandelay-Industries")
-      expect(page).to have_content("pending")
+      expect(page).to have_content("Pending")
+    end
+    it 'can click the store button from the my stores tab to create a store' do
+      user = create(:user)
 
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit dashboard_index_path
+
+      click_on 'My Stores'
+      click_on 'Create New Store'
+
+      expect(current_path).to eq(new_store_path)
     end
   end
 end

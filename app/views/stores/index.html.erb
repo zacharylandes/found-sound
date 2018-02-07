@@ -1,5 +1,25 @@
-<% @stores.each do |store| %>
-  <%= store.name  %>
-  <%= store.address  %>
-  <%= store.status  %>
-<% end %>
+
+
+<div class="container">
+  <center>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Store</th>
+          <th>Address</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @stores.each do |store| %>
+          <tr >
+            <th scope="row"> <%= link_to store.name, store_path(store) %></th>
+            <td><%= store.address %></td>
+            <td><%= store.status.capitalize %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to "Create New Store", new_store_path, class: "btn btn-success btn-md" %>
+  </center>
+</div>
