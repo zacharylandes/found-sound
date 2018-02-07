@@ -1,0 +1,65 @@
+.header {
+  height: 75px;
+  border-bottom: 2px solid white;
+  background-color: black;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+  .container-fluid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    #logo {
+      float: left;
+      margin-top: 20px;
+      width:400px;
+      padding-left: 60px;
+      h1 {
+        font-size: 34px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        letter-spacing: 3px;
+        a:visited, a {
+        	color: $barely-blue;
+        	text-decoration: none;
+        }
+        a:focus, a:hover {
+          color: #fff;
+          padding-left: 10px;
+          border-left: 4px solid $light-blue;
+          text-decoration: none;
+        }
+      }
+    }
+    .nav-menu-container {
+      margin-top: 20px;
+      vertical-align: baseline;
+      .nav-menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+          float: left;
+          color: $barely-blue;
+        }
+        .nav-link:hover, .nav-link:focus {
+          color: #fff;
+          border-bottom: 4px solid $light-blue;
+        }
+        a:visited, a {
+        	color: $barely-blue;
+        	text-decoration: none;
+        }
+      }
+    }
+  }
+  img {
+    margin-top: 0;
+    width: 60px;
+  }
+}
