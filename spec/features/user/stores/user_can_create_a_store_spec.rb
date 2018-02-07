@@ -23,6 +23,21 @@ describe ' a logged in user' do
       expect(page).to have_content("Vandelay-Industries")
       expect(page).to have_content("Pending")
     end
+    it 'cannot create a store duplicate attributes' do
+      user = create(:user)
+      create(:store, name:"Vandelay-Industries", address: "store")
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit 'stores/new'
+      fill_in 'store[name]', with: "Vandelay-Industries"
+      fill_in 'store[address]', with: "store"
+
+      click_on "Submit"
+
+      expect(page).to have_content("Invalid Credentials")
+
+    end
     it 'can click the store button from the my stores tab to create a store' do
       user = create(:user)
 
@@ -35,5 +50,6 @@ describe ' a logged in user' do
 
       expect(current_path).to eq(new_store_path)
     end
+
   end
 end

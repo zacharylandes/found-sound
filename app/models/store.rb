@@ -1,7 +1,8 @@
 class Store < ApplicationRecord
   has_many :items
   belongs_to :user, :optional => true
-  validates_presence_of :name, :address, :status
+  validates :name, uniqueness: true
+  validates_presence_of :status, :name, :address
   before_save :set_slug
 
   def set_slug
