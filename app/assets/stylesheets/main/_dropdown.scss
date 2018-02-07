@@ -1,0 +1,13 @@
+.dropdown-menu {
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  padding: 10px;
+  .dropdown-item, .dropdown-item:visited {
+    color: #CAE1F1;
+    text-decoration: none;
+  }
+  .dropdown-item:hover, .dropdown-item:focus{
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.9)
+  }
+}
