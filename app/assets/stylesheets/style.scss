@@ -2,7 +2,6 @@ $light-blue: #3AD2EA;
 $sans:  "Open Sans", sans-serif;
 
 body {
-  color: black;
   font-family: $sans;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,6 +9,7 @@ body {
 .main-content{
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 800px;
   color:black;
 }
