@@ -65,9 +65,9 @@ ActiveRecord::Schema.define(version: 20180207200835) do
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.string "status"
 
     t.string "slug"
+    t.string "status", default: "pending"
 
     t.bigint "user_id"
     t.index ["user_id"], name: "index_stores_on_user_id"

@@ -13,7 +13,7 @@
       <tbody>
         <% @stores.each do |store| %>
           <tr >
-            <th scope="row"> <%= link_to store.name, store_path(store) %></th>
+            <th scope="row"> <%= link_to store.name, store_path(store.slug) %></th>
             <td><%= store.address %></td>
             <td><%= store.status.capitalize %></td>
           </tr>
