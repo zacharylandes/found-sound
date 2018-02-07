@@ -2,7 +2,7 @@ $light-blue: #3AD2EA;
 $sans:  "Open Sans", sans-serif;
 
 body {
-  color: white;
+  color: black;
   font-family: $sans;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: center;
   width: 800px;
+  color:black;
 }
 
 p {
@@ -37,7 +38,7 @@ header a:visited, header a {
 }
 
 a {
-  color: white;
+  color: black;
   transition: 0.5s;
 }
 
@@ -254,5 +255,5 @@ footer a:hover {
 
 a:visited{
 
-color: white
+color: black;
 }
