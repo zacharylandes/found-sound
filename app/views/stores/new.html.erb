@@ -1,7 +1,20 @@
-Welcome <%= current_user.first_name %>
-
-<%= form_for @store do |f| %>
-  <%= f.text_field :name, placeholder: "Enter Name"%>
-  <%= f.text_field :address, placeholder: "Enter Address" %>
-  <%=f.submit "Submit"%>
-<% end %>
+<div class = "container">
+  <div class="row">
+    <div class="col-3">
+      <h2>Create Your Store</h2>
+      <table class="table login-form">
+        <%= form_for @store do |f| %>
+          <tr>
+            <td class="table-light">  <%= f.text_field :name, placeholder: "Enter Name"%></td>
+          </tr>
+          <tr>
+            <td class="table-light">  <%= f.text_field :address, placeholder: "Enter Address" %></td>
+          </tr>
+          <tr class="action">
+            <td class="table-light"><%= f.submit "Submit", class: "btn btn-success btn-md" %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
