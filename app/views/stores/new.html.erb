@@ -1,0 +1,7 @@
+Welcome <%= current_user.first_name %>
+
+<%= form_for @store do |f| %>
+  <%= f.text_field :name, placeholder: "Enter Name"%>
+  <%= f.text_field :address, placeholder: "Enter Address" %>
+  <%=f.submit "Submit"%>
+<% end %>
