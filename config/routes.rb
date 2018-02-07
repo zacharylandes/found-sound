@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   get '/cart', :to => 'carts#index', :as => 'cart'
 
-  resources :items, only: [:index, :show]
+  resources :items, only: [:show]
 
   resources :carts, only: [:index, :create, :destroy]
 
