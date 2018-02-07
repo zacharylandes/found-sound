@@ -17,7 +17,6 @@
       width:400px;
       padding-left: 60px;
       h1 {
-        color: #CAE1F1;
         font-size: 34px;
         margin: 0;
         padding: 0;
@@ -26,7 +25,7 @@
         font-weight: 700;
         letter-spacing: 3px;
         a:visited, a {
-        	color: #CAE1F1;
+        	color: $barely-blue;
         	text-decoration: none;
         }
         a:focus, a:hover {
@@ -46,14 +45,14 @@
         padding: 0;
         li {
           float: left;
-          color: #CAE1F1;
+          color: $barely-blue;
         }
         .nav-link:hover, .nav-link:focus {
           color: #fff;
           border-bottom: 4px solid $light-blue;
         }
         a:visited, a {
-        	color: #CAE1F1;
+        	color: $barely-blue;
         	text-decoration: none;
         }
       }
