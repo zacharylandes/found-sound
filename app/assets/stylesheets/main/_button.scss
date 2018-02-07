@@ -1,0 +1,52 @@
+
+.btn {
+  position: relative;
+  border: 0 !important;
+  cursor: pointer;
+  font-weight: bold !important;
+  border-radius: 10px;
+  background-clip: padding-box;
+  transition: all 50ms ease;
+  border: 0;
+  text-shadow: 0px 1px 0px #999999;
+  background-color: #cccccc;
+  // box-shadow: 0px 6px 0px #999999;
+  // commented out the line above to remove shadow from retired items
+}
+
+.btn-success {
+  border: 0;
+  text-shadow: 0px 1px 0px #449d44;
+  background-color: #5cb85c;
+  box-shadow: 0px 6px 0px #449d44;
+}
+.btn-success:hover {
+  border: 0;
+  background-color: #6ec06e !important;
+  box-shadow: 0px 4px 0px #449d44;
+}
+.btn-success:active {
+  box-shadow: inset 0px 3px 0px #449d44;
+}
+
+.btn-info {
+  border: 0;
+  border-radius: 10%;
+  text-shadow: 0px 1px 0px #31b0d5;
+  background-color: #5bc0de;
+  -webkit-box-shadow: 0px 6px 0px #31b0d5;
+  -moz-box-shadow: 0px 6px 0px #31b0d5;
+  box-shadow: 0px 6px 0px #31b0d5;
+}
+.btn-info:hover {
+  border: 0;
+  background-color: #70c8e2 !important;
+  -webkit-box-shadow: 0px 4px 0px #31b0d5;
+  -moz-box-shadow: 0px 4px 0px #31b0d5;
+  box-shadow: 0px 4px 0px #31b0d5;
+}
+.btn-info:active {
+  -webkit-box-shadow: inset 0px 3px 0px #31b0d5;
+  -moz-box-shadow: inset 0px 3px 0px #31b0d5;
+  box-shadow: inset 0px 3px 0px #31b0d5;
+}
