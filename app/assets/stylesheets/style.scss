@@ -6,6 +6,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+a {
+  transition: 0.5s;
+}
+
 .main-content{
   display: flex;
   justify-content: center;
@@ -13,6 +18,8 @@ body {
   width: 800px;
   color:black;
 }
+
+
 
 p {
   padding: 0;
@@ -23,30 +30,7 @@ p {
   font-family: 'Righteous', cursive;
 }
 
-header a:visited, header a {
-	color: #CAE1F1;
-	text-decoration: none;
-}
 
-.home{
-  margin-top:-10px;
-  width: 40px;
-}
-
-.home li:hover{
-  color: $light-blue;
-}
-
-a {
-  color: black;
-  transition: 0.5s;
-}
-
-a:hover, a:active, a:focus {
-  color: $light-blue;
-  outline: none;
-  text-decoration: none;
-}
 
 #index-section{
 background-color: white;
@@ -78,9 +62,4 @@ footer a {
 
 footer a:hover {
   color:$light-blue;
-}
-
-a:visited{
-
-color: black;
 }

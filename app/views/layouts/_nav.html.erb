@@ -1,4 +1,4 @@
-<header id="header">
+<header class="header">
   <div class="container-fluid">
     <div id="logo" class="pull-left">
       <h1><%= link_to "Found Sound", root_path, class: "title" %></h1>
@@ -24,7 +24,7 @@
           <li class="nav-item">
             <%= link_to 'Items', items_path, class: "nav-link active" %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item ">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
             <div class="dropdown-menu">
               <% @categories.each do |category| %>

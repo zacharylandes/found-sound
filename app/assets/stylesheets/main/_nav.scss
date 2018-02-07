@@ -1,4 +1,4 @@
-#header {
+.header {
   height: 75px;
   border-bottom: 2px solid white;
   background-color: black;
@@ -17,6 +17,7 @@
       width:400px;
       padding-left: 60px;
       h1 {
+        color: #CAE1F1;
         font-size: 34px;
         margin: 0;
         padding: 0;
@@ -24,10 +25,15 @@
         font-family: "Montserrat", sans-serif;
         font-weight: 700;
         letter-spacing: 3px;
-        a:hover {
+        a:visited, a {
+        	color: #CAE1F1;
+        	text-decoration: none;
+        }
+        a:focus, a:hover {
           color: #fff;
           padding-left: 10px;
           border-left: 4px solid $light-blue;
+          text-decoration: none;
         }
       }
     }
@@ -40,10 +46,15 @@
         padding: 0;
         li {
           float: left;
+          color: #CAE1F1;
         }
-        .nav-link:hover {
+        .nav-link:hover, .nav-link:focus {
           color: #fff;
           border-bottom: 4px solid $light-blue;
+        }
+        a:visited, a {
+        	color: #CAE1F1;
+        	text-decoration: none;
         }
       }
     }
