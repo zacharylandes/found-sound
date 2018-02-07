@@ -23,5 +23,11 @@ RSpec.describe Store do
       item = build(:item)
       expect(item).to respond_to(:store)
     end
+    it "should belong to a user" do
+      store = build(:store)
+      user = build(:user)
+      expect(user).to respond_to(:stores)
+      expect(store).to respond_to(:user)
+    end
   end
 end

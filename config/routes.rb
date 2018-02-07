@@ -38,5 +38,9 @@ Rails.application.routes.draw do
     get '/:category', to: 'categories#show', param: :slug, as: "category"
   end
 
+
   get '/:store', to: 'stores#show', as: "store"
+
+  resources :stores, only:[:index,:new, :create, :show]
+
 end
