@@ -16,12 +16,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_admin?
-      current_user.update(user_params)
-      redirect_to admin_dashboard_index_path
-    elsif current_user != nil
-      current_user.update(user_params)
-      redirect_to dashboard_index_path
+    if current_user.update_attributes(user_params)
+      flash.notice = "Successfully updated your account information."
+      redirect_to admin_dashboard_index_path if current_admin?
+      redirect_to edit_user_path
     else
       render file: "/public/404"
     end
@@ -35,6 +33,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
+    params[:user].delete(:password) if params[:user][:password].blank?
     params.require(:user).permit(:first_name, :last_name, :email, :password, :address)
   end
 
