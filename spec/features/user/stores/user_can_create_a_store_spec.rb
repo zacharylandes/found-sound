@@ -36,8 +36,8 @@ describe ' a logged in user' do
       click_on "Submit"
 
       expect(page).to have_content("Invalid Credentials")
-
     end
+
     it 'can click the store button from the my stores tab to create a store' do
       user = create(:user)
 
