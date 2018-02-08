@@ -5,9 +5,9 @@ RSpec.feature "User can place an order" do
 
     user = User.create(first_name: "Tester", last_name: "McTesty", email: "testerson@testmail.com", password: "testing", address: "dummy address")
 
-    create_items
+    item1, item2, item3 = create_list(:item, 3)
 
-    visit items_path
+    visit store_path(item1.store.slug)
 
     click_on "Add to cart"
 
@@ -25,7 +25,7 @@ RSpec.feature "User can place an order" do
     end
 
     click_on "Cart"
-    
+
     expect(page).to have_content("Checkout")
 
     click_on "Checkout"
