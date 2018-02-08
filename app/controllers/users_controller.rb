@@ -18,8 +18,11 @@ class UsersController < ApplicationController
   def update
     if current_user.update_attributes(user_params)
       flash.notice = "Successfully updated your account information."
-      redirect_to admin_dashboard_index_path if current_admin?
-      redirect_to edit_user_path
+      if current_admin?
+        redirect_to admin_dashboard_index_path
+      else
+        redirect_to edit_user_path
+      end
     else
       render file: "/public/404"
     end
