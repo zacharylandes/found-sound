@@ -1,22 +1,14 @@
 class Admin::StoresController < ApplicationController
 before_action :require_admin
+
   def index
-    @active_stores = Store.active_stores
-  end
-
-  def pending_stores
-    @pending_stores = Store.pending_stores
-    render :pending
-  end
-
-  def suspended_stores
-    @suspended_stores = Store.suspended_stores
-    render :suspended
+    @stores = StatusPresenter.new(params['tab']).stores
+    @tab= StatusPresenter.new(params['tab']).tab
   end
 
   def update
     Store.find(params[:id]).update(status:"active")
-    redirect_to admin_stores_path
+    redirect_to admin_stores_path(tab:"Active")
   end
 
 private
