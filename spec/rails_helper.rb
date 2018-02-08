@@ -15,7 +15,6 @@ require 'support/factory_girl'
 require 'support/simple_cov'
 require 'feature_helper'
 require 'santas_little_helper'
-require 'slow_helper'
 
 ActiveRecord::Migration.maintain_test_schema!
 
