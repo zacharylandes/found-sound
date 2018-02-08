@@ -4,7 +4,8 @@ RSpec.describe "As a visitor" do
   describe "when I visit my cart" do
     it "I can sign up or log in" do
       item = create(:item, title: "Banana Stand")
-      visit store_path(item.store)
+      visit store_path(item.store.slug)
+
       click_on "Add to cart"
       visit '/carts'
       expect(page).to have_content("Create new account")
