@@ -1,4 +1,4 @@
-<div class = "container">
+<div class="container">
     <%= image_tag 'login.png' %>
   <div class="row">
     <div class="col-3">
@@ -12,7 +12,9 @@
         </tr>
         <tr class="action">
           <td class="table-light"><%= f.submit name="Login", class: "btn btn-success btn-md" %></td>
-          <td class="table-light"><small>Don't have an account with us? <%= link_to "Create an account", new_user_path, class: "btn btn-success btn-md" %>.</small></td>
+        </tr>
+        <tr>
+          <td class="table-light"><small>Don't have an account with us? <%= link_to "Create an account", new_user_path, class: "btn btn-success btn-md" %></small></td>
         </tr>
       <% end %>
     </table>
