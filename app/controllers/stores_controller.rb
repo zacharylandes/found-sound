@@ -10,7 +10,6 @@ class StoresController < ApplicationController
 
   def create
     store = Store.new(store_params)
-    store.users << current_user
     if store.save
       redirect_to dashboard_index_path
     else
@@ -19,14 +18,15 @@ class StoresController < ApplicationController
     end
   end
 
-  def show
+   def show
     @store = Store.find_by(slug: params[:store])
   end
 
 private
 
   def store_params
-    params.require(:store).permit(:name, :address, :status)
+    params[:store][:user_id] = current_user.id
+    params.require(:store).permit(:name, :address, :user_id, :status)
   end
 
 end
