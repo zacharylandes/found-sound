@@ -3,8 +3,9 @@ class User < ApplicationRecord
   has_many :orders
   has_many :stores
 
-  validates :first_name, :last_name, :password, presence: true
+  validates :first_name, :last_name,  presence: true
   validates :email, presence: true, uniqueness: true
+  validates :password, presence:true, allow_nil: true
 
   enum role: ["default", "admin"]
 
