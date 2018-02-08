@@ -30,6 +30,13 @@ describe "validations" do
     end
   end
 
+  context "Relationships" do
+    it "has many stores" do
+      user_1 = create(:user, email: "gob@example.com")
+      expect(user_1).to respond_to(:stores)
+    end
+  end
+
   context "it can have one of two roles" do
     it "has a role" do
       user = build(:user)
