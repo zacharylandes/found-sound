@@ -4,7 +4,7 @@ RSpec.feature "Removing an item from my cart" do
   let!(:item) { create(:item, price: 19.99) }
 
   before do
-    visit items_path
+    visit store_path(item.store.slug)
   end
 
   describe "When a visitor is viewing their cart" do
