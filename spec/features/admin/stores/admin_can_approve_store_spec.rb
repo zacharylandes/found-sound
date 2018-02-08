@@ -36,4 +36,18 @@ RSpec.feature "Admin Stores" do
     expect(page).to have_content("Suspended")
 
   end
+  it "As an admin I can click on active stores" do
+
+    visit admin_dashboard_index_path
+
+    click_on "Stores"
+
+    click_on "Active"
+
+    expect(current_path).to eq(admin_stores_path)
+    expect(page).to have_content("Active")
+    expect(page).not_to have_content("#{Store.second.name}")
+    expect(page).not_to have_content("#{Store.last.name}")
+
+  end
 end
