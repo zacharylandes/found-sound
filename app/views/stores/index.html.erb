@@ -5,6 +5,8 @@
           <th>Store</th>
           <th>Address</th>
           <th>Status</th>
+          <th>~~ Role ~~</th>
+          <th>~~ Actions ~~</th>
         </tr>
       </thead>
       <tbody>
@@ -13,6 +15,12 @@
             <th scope="row"> <%= link_to store.name, store_path(store.slug) %></th>
             <td><%= store.address %></td>
             <td><%= store.status.capitalize %></td>
+            <td><%= store.user_type(current_user) %></td>
+            <td>
+              <% if store.user_type(current_user) == "store_admin"%>
+                <%= link_to "Manage Store", "/#{store.slug}/manage", class: "btn btn-success btn-sm" %>
+              <% end  %>
+            </td>
           </tr>
         <% end %>
       </tbody>
