@@ -9,18 +9,16 @@
     <% @popular_items.each do |item| %>
       <div class="center-block">
         <div class="card border-white" style="width: 15rem;">
-          <%= image_tag item.image, class: "card-img-top" %>
+          <%= cl_image_tag item.image, class: "card-img-top" %>
           <div class="card-body">
             <center><p><%= link_to item.title, item_path(item) %></p></center>
               <p>Description: <%= item.description %></p>
               <p>Price: $<%= item.price %></p>
               <% unless item.retired? %>
-                <%= link_to "Add to cart", carts_path(item_id: item.id), method: :post, class: "btn btn-info btn-sm" %></center>
-          <% else %>
-            <div class="btn btn-primary btn-sm disabled">
-              Retired
-            </div>
-          <% end %>
+                <%= link_to "Add to cart", carts_path(item_id: item.id), method: :post, class: "btn btn-primary btn-sm" %></center>
+              <% else %>
+                <h5><span class="badge badge-secondary">Retired</span></h5>
+              <% end %>
           </div>
         </div>
       </div>
