@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
     resources :items, only: [:index, :edit, :new, :create, :update]
     resources :analytics, only: [:index]
+    resources :stores, only: [:index, :update]
   end
 
 
@@ -43,7 +44,5 @@ Rails.application.routes.draw do
 
 
   resources :stores, only:[:index,:new, :create]
-  get '/:store', to: 'stores#show', as: "store"
-
-
+    get '/:store', to: 'stores#show', as: "store"
 end

@@ -11,8 +11,8 @@
       <% @store.active_items.each do |item| %>
         <div class="center-block">
           <div class="card border-white" style="width: 15rem;">
-            <%= image_tag item.image.url, size: "250" %>
             <div class="card-body">
+              <% unless item.image.nil? %><%= cl_image_tag item.image%><br/><% end %>
               <center><p><strong><%= link_to item.title, item_path(item) %></strong></p>
                 <p>Description: <%= item.description %></p>
                 <p>Price: <%= number_to_currency(item.price) %></p>

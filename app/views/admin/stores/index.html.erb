@@ -1,0 +1,11 @@
+
+<div class="container">
+  <h3>All Stores</h3>
+  <nav class="nav nav-tabs" id="myTab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true"><%= @tab[0]  %></a>
+    <%= link_to @tab[1], admin_stores_path(tab: @tab[1]), class: "nav-item nav-link" %>
+    <%= link_to @tab[2], admin_stores_path(tab: @tab[2]), class: "nav-item nav-link" %>
+  </div>
+  </nav>
+    <%= render partial: "store_list" %>
+</div>

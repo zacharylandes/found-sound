@@ -1,7 +1,8 @@
 class Admin::DashboardsController < ApplicationController
 before_action :require_admin
   def index
-      @admin = User.find(current_user.id)
+    @stores = Store.order(:status)
+    @admin = User.find(current_user.id)
   end
 
 private

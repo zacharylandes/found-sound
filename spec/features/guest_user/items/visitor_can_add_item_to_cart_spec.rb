@@ -41,7 +41,7 @@ RSpec.feature "Adding items to the cart" do
       click_on "Cart"
 
       expect(current_path).to eq(carts_path)
-      expect(page).to have_css("img[src=\"#{item.image}\"]")
+
       expect(page).to have_content(item.title)
       expect(page).to have_content("2")
       within '.total' do
