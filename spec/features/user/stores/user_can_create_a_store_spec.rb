@@ -11,7 +11,8 @@ describe ' a logged in user' do
       fill_in 'store[name]', with: "Vandelay-Industries"
       fill_in 'store[address]', with: "454 Russell st winters ca 95694"
 
-      click_on "Submit"
+      click_on "Create Store"
+
 
       expect(current_path).to eq(dashboard_index_path)
       expect(Store.count).to eq(1)
@@ -33,7 +34,7 @@ describe ' a logged in user' do
       fill_in 'store[name]', with: "Vandelay-Industries"
       fill_in 'store[address]', with: "store"
 
-      click_on "Submit"
+      click_on "Create Store"
 
       expect(page).to have_content("Invalid Credentials")
 
