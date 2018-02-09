@@ -53,6 +53,4 @@ Rails.application.routes.draw do
 
   get '/:store/employees', to: "stores/employees#update", as: "employees"
   get '/:store', to: 'stores#show', as: "store"
-
-
 end
