@@ -38,6 +38,7 @@ group :development, :test do
   gem 'faker'
   gem 'simplecov'
   gem 'coveralls', require: false
+  gem 'travis'
 end
 
 group :development do
