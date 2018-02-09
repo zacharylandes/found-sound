@@ -78,7 +78,14 @@ class Permission
   private
     attr_reader :user, :controller, :action
 
-    def base_permissions
-    end
+    # def base_permissions
+    #   return true if controller == "main" && action == "index"
+    #   return true if controller == "sessions" && action.in?(%w(new create destroy))
+    #   return true if controller == "users" && action.in?(%w(new create))
+    #   return true if controller == "carts" && action.in?(%w(index create destroy update))
+    #   return true if controller == "categories/categories" && action.in?(%w(show))
+    #   return true if controller == "stores" && action.in?(%w(index show))
+    #   return true if controller == "items" && action.in?(%w(show))
+    # end
 
 end
