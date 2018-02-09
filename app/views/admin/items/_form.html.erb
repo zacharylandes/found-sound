@@ -16,16 +16,16 @@
   </div>
 
   <div class="field">
-		<%= form.label :image %> <br />
+		<%= form.label :image %> <br/>
     <%= form.file_field :image %>
   </div>
-
+  <br>
   <div class="category_select_box">
     <%= form.select(:category_id, @categories.map { |category| [category.title, category.id] }) %>
   </div>
-
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Upload Item", class: "btn btn-success"%>
   </div>
+  <br>
 <% end %>
