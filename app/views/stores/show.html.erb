@@ -19,9 +19,7 @@
                 <% unless item.retired? %>
                   <%= link_to "Add to cart", carts_path(item_id: item.id), method: :post, class: "btn btn-primary btn-sm" %></center>
                 <% else %>
-                <div class="btn btn-primary btn-sm disabled">
-                  Retired
-                </div>
+                  <h5><span class="badge badge-secondary">Retired</span></h5>
                 <% end %>
             </div>
           </div>
