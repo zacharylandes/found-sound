@@ -11,7 +11,6 @@ class Admin::ItemsController < ApplicationController
   def create
     @categories = Category.all
     @item = Item.new(item_params)
-    # binding.pry
     if @item.save
       redirect_to admin_items_path
     else
