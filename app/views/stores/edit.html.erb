@@ -1,0 +1,25 @@
+<div class = "container">
+  <div class="row">
+    <div class="col-3">
+      <h2>Edit Your Store</h2>
+        <%= render partial: "form" %>
+
+        <table class="table login-form">
+        </table>
+
+
+        <% @store.users.each do |user| %>
+          <%= user.first_name %>
+          <!-- <%= user.user_stores.find_by(store_id: @store.id).user_type %> -->
+          <%= user.role_at_current_store(@store) %>
+          <% if user.role_at_current_store(@store) == "store_admin" %>
+            <%= link_to "Change to Store Manager", employees_path(change: "store_manager"), class: "btn btn-success btn-sm" %>
+          <% end %>
+          <% if user.role_at_current_store(@store) == "store_manager" %>
+            <%= link_to "Change to Store Admin", employees_path(change: "store_admin"), class: "btn btn-success btn-sm" %>
+          <% end %>
+        <% end  %>
+
+    </div>
+  </div>
+</div>

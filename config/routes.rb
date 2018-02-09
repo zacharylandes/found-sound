@@ -40,9 +40,9 @@ Rails.application.routes.draw do
   end
 
 
-
-
-  resources :stores, only:[:index,:new, :create]
+  resources :stores, only:[:index, :new, :create]
+  get '/:store/manage', to: "stores#edit"
+  get '/:store/employees', to: "stores/employees#update", as: "employees"
   get '/:store', to: 'stores#show', as: "store"
 
 

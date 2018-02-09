@@ -18,9 +18,16 @@ class StoresController < ApplicationController
     end
   end
 
-   def show
-    @store = Store.find_by(slug: params[:store])
+  def edit
+    @store = current_user.stores.find_by(slug: params[:store])
   end
+
+  def update
+  end
+
+ def show
+  @store = Store.find_by(slug: params[:store])
+ end
 
 private
 
