@@ -14,7 +14,7 @@ RSpec.describe 'an admin can visit admin dashboard' do
       fill_in "item[description]", with: "two is better"
       fill_in "item[price]", with: "39.99"
       page.attach_file("item[image]", testing_image)
-      click_on "Update"
+      click_on "Upload Item"
 
       expect(page).to have_content("White Cat Twosie")
       expect(page).to have_content("39.99")
