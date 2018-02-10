@@ -113,8 +113,6 @@ class User < ApplicationRecord
     end
   end
 
-
-
   def registered_user?
     if role == "default"
       true
