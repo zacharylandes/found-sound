@@ -29,13 +29,17 @@ class Cart
   def count_of(id)
     contents[id.to_s].to_i
   end
-  
+
   def delete_item(id)
     contents.delete(id.to_s)
   end
 
   def destroy
-    @contents.clear
+    contents.clear
+  end
+
+  def empty?
+    contents.empty?
   end
 
 end
