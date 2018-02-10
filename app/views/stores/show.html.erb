@@ -1,32 +1,27 @@
-
-<div class="container">
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Found Sound - <%= @store.name.capitalize %></title>
+</head>
+<body>
   <h1 class="shop-name"><%= @store.name.capitalize %></h1>
-      <% if has_store_role?  %>
-        <% if !params[:tab] || params[:tab] == "items" %>
-          <nav class="nav nav-tabs" id="myTab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Items</a>
-            <%= link_to "Orders", store_path(store: @store.slug, tab: "order"), class: "nav-item nav-link" %>
-          </nav>
-
-          <div class="container">
-            <div class="tab-content" id="nav-tabContent">
-              <%= render partial: "item_list"%>
+    <div class="row">
+      <% @store.active_items.each do |item| %>
+        <div class="center-block">
+          <div class="card border-white" style="width: 15rem;">
+            <div class="card-body">
+              <% unless item.image.nil? %><%= cl_image_tag item.image%><br/><% end %>
+              <center><p><strong><%= link_to item.title, item_path(item) %></strong></p>
+                <p>Description: <%= item.description %></p>
+                <p>Price: <%= number_to_currency(item.price) %></p>
+                <% unless item.retired? %>
+                  <%= link_to "Add to cart", cart_path(item_id: item.id), method: :post, class: "btn btn-primary btn-sm" %></center>
+                <% else %>
+                  <h5><span class="badge badge-secondary">Retired</span></h5>
+                <% end %>
             </div>
           </div>
-
-        <% elsif params[:tab]== "order"%>
-          <nav class="nav nav-tabs" id="myTab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Orders</a>
-            <%= link_to "Items", store_path(store: @store.slug, tab: "items"), class: "nav-item nav-link" %>
-          </nav>
-      <div class="container">
-        <div class="tab-content" id="nav-tabContent">
-          <%= render partial: "order_list"%>
-        <% end %>
-
-      </div>
-    </div>
-      <% else %>
-        <%= render partial: "visitor"%>
+        </div>
       <% end %>
-</div>
+    </div>
+</body>
