@@ -51,10 +51,6 @@ describe Item do
       item = build(:item)
       expect(item).to respond_to(:category)
     end
-    it "belongs to a store" do
-      item = build(:item)
-      expect(item).to respond_to(:store)
-    end
 
     it "has many orders" do
       item = build(:item)

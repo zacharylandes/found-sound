@@ -6,10 +6,9 @@ RSpec.feature "Admin Stores" do
     create(:store,name:"store_1", status: "active")
     create(:store, name:"store_2", status: "pending")
     create(:store, name: "store_3", status: "suspended")
-
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
-  end
 
+  end
 
   it "As an admin I can approve a pending store  " do
 
