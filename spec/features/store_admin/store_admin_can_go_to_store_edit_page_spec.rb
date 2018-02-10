@@ -43,7 +43,7 @@ end
          end
         it "can update permissions for store managers" do
           visit "/found-sound/manage"
-            
+
           click_on  "Change to Store Manager"
 
           expect(current_path).to eq( "/found-sound/manage")
