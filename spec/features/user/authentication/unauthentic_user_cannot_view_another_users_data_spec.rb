@@ -7,13 +7,11 @@ RSpec.feature "Unauthenticated users security" do
 
   context "As an unauthenticated user" do
     it "I cannot view another user’s private data" do
-      visit dashboard_index_path
+      expect{ visit dashboard_index_path}.to raise_error(ActionController::RoutingError)
 
-      expect(current_path).to eq(login_path)
-
-      visit order_path(order)
-
-      expect(current_path).to eq(login_path)
+      expect {
+        visit order_path(order)
+      }.to raise_exception(ActionController::RoutingError)
     end
 
     it "I should be redirected to login/create account when I try to check out" do
