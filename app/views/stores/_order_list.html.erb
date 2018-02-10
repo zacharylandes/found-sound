@@ -4,6 +4,7 @@
           <th>User</th>
           <th>Price</th>
           <th>Status</th>
+          <th>Update Order</th>
 
         </tr>
          <% @store.items.each do |item| %>
@@ -11,8 +12,11 @@
            <tr>
             <td> <%= order.id %></td>
             <td>  <%= User.find(order.user_id).first_name %></td>
-            <td> 0 <%= order.total_price %></td>
-            <td>  <%= order.status %></td>
+            <td> <%= order.total_price %></td>
+              <%= form_for order, url: order_path(order), method: :put do |f| %>
+                <td><%= f.select :status, ["paid", "cancelled", "completed", "ordered"], placeholder: order.status %></td>
+                <td><%= f.submit "Change Status" %></td>
+            <% end %>
           </tr>
             <% end %>
           <% end %>
