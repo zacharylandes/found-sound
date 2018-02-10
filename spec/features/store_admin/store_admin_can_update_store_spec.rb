@@ -12,14 +12,14 @@ describe "As a store admin " do
       visit dashboard_index_path
 
       click_on "My Stores"
-      save_and_open_page
       click_on "Manage Store"
       expect(current_path).to eq ("/#{store.slug}/manage")
 
-      fill_in "store[name]", :with => "A Great Store"
+      fill_in "name", :with => "A Great Store"
+      fill_in "address", :with => "A Great Store"
 
       click_on "Submit"
-      
+
 
 
     end
