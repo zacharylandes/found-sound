@@ -1,6 +1,4 @@
-class Admin::DashboardController < ApplicationController
-  before_action :require_admin
-
+class Admin::DashboardController < Admin::BaseController
   def index
     if params[:status]
       @orders = Order.filter_by_status(params[:status])
