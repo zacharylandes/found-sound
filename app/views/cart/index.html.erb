@@ -65,7 +65,7 @@
       <p><b>Total: <%= number_to_currency(@cart.total) %></b></p>
     </div>
     <div class="checkout">
-      <% if current_user %>
+      <% if current_user && !@cart.empty?%>
         <%= button_to "Checkout", orders_path, method: :post%>
       <% else %>
         <%= link_to "Login", login_path %> <br />
