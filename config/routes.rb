@@ -42,6 +42,8 @@ Rails.application.routes.draw do
 
   resources :stores, only:[:index, :new, :create]
   get '/:store/manage', to: "stores#edit"
+  put '/:store/manage', to: "stores#update", as: "edit_store"
+
   get '/:store/employees', to: "stores/employees#update", as: "employees"
   get '/:store', to: 'stores#show', as: "store"
 

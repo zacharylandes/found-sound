@@ -20,11 +20,13 @@ class StoresController < ApplicationController
   end
 
   def edit
-    @store = current_user.stores.find_by(slug: params[:store])
-#Spike branch to test our permissions
+    @store = current_user.stores.find_by(params[:id])
   end
 
   def update
+  @store = Store.find_by(params[:id])
+  @store.update!(update_params)
+  redirect_to "/#{@store.slug}/manage"
   end
 
  def show
@@ -34,7 +36,13 @@ class StoresController < ApplicationController
 private
 
   def store_params
-    params.require(:store).permit(:name, :address, :status)
+    params.require(:store).permit(:name, :address, :slug)
   end
+
+  def update_params
+    params.permit(:name, :address, :slug)
+  end
+
+
 
 end
