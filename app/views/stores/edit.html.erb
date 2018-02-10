@@ -23,10 +23,10 @@
           <%= user.first_name %>
           <%= user.role_at_current_store(@store) %>
           <% if user.role_at_current_store(@store) == "store_admin" %>
-            <%= link_to "Change to Store Manager", employees_path(user: user.id, change: "store_manager"), class: "btn btn-success btn-sm" %>
+            <%= link_to "Change to Store Manager", employees_path(user: user.id, change: "store_manager", store_id: @store), class: "btn btn-success btn-sm" %>
           <% end %>
           <% if user.role_at_current_store(@store) == "store_manager" %>
-            <%= link_to "Change to Store Admin", employees_path(user: user.id, change: "store_admin"), class: "btn btn-success btn-sm" %>
+            <%= link_to "Change to Store Admin", employees_path(user: user.id, change: "store_admin", store_id: @store), class: "btn btn-success btn-sm" %>
           <% end %>
         <% end  %>
       </table>

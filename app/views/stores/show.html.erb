@@ -1,17 +1,24 @@
 
-  <h1 class="shop-name"><%= @store.name.capitalize %></h1>
 <div class="container">
+  <h1 class="shop-name"><%= @store.name.capitalize %></h1>
   <nav class="nav nav-tabs" id="myTab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">@</a>
-    <%= link_to "Orders", store_path(store: @store.slug, tab: @tab[0]), class: "nav-item nav-link" %>
+  <% if params[:tab]== "order"%>
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Orders</a>
+    <%= link_to "Items", store_path(store: @store.slug, tab: "items"), class: "nav-item nav-link" %>
   </nav>
 </div>
-  <div class="container">
+<div class="container">
   <div class="tab-content" id="nav-tabContent">
-      <% if params[:tab]== "order"%>
-        <%= render partial: "order_list"%>
-      <% else %>
-        <%= render partial: "item_list"%>
-        <% end %>
-     </div>
+    <%= render partial: "order_list"%>
+    <% else %>
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Items</a>
+    <%= link_to "Orders", store_path(store: @store.slug, tab: "order"), class: "nav-item nav-link" %>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="tab-content" id="nav-tabContent">
+    <%= render partial: "item_list"%>
+    <% end %>
   </div>
+</div>
