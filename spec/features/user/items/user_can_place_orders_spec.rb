@@ -26,7 +26,7 @@ RSpec.feature "User can place an order" do
 
     click_on "Cart"
 
-    expect(page).to have_content("Checkout")
+    expect(page).to have_button("Checkout")
 
     click_on "Checkout"
 
