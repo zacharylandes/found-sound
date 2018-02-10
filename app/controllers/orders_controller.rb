@@ -21,8 +21,7 @@ class OrdersController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-
-  def new
+  def create
     order = Order.create(status: "ordered", user_id: current_user.id)
     order.add(@cart)
     @cart.destroy
