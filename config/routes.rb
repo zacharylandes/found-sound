@@ -22,20 +22,19 @@ Rails.application.routes.draw do
   resources :users , only: [:new, :create, :update]
   get '/account/edit', to: "users#edit", as: "edit_user"
 
-  resources :orders, only: [:index, :new, :show, :update]
+  resources :orders, only: [:index, :create, :show, :update]
 
   resources :dashboard, only: [:index]
 
-  get '/cart', :to => 'carts#index', :as => 'cart'
-
   resources :items, only: [:show]
 
-  resources :carts, only: [:index, :create, :destroy]
+  # resources :cart, only: [:index, :create, :update, :destroy]
+  get '/cart', to: 'cart#index', as: 'cart'
+  post '/cart', to: 'cart#create'
+  patch '/cart', to: 'cart#update'
+  put '/cart', to: 'cart#update'
+  delete '/cart', to: 'cart#destroy'
 
-  patch '/cart', :to => 'carts#update'
-
-  delete '/cart', :to => 'carts#destroy'
-  # resources :carts, only: [:index, :create, :destroy]
   namespace :categories do
     get '/:category', to: 'categories#show', param: :slug, as: "category"
   end
