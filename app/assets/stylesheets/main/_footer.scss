@@ -1,25 +1,27 @@
-.footer {
+footer {
   border-top: 2px solid white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
   background: #000;
-  height: 100px;
-  font-size: 14px;
-  width: 100%;
   color: $barely-blue;
-  .developer-card {
+  .footer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    .profile-links {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    font-size: 14px;
+    width: 100%;
+    .developer-card {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      height: 30px;
+      text-align: center;
+      .profile-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+      }
     }
   }
   a, a:visited {
