@@ -6,7 +6,6 @@ describe 'as a visitor I do not have access to store permissions' do
     let(:store) { create(:store, name:"found-sound")}
     let(:item) { create(:item, store_id: store)}
 
-    #
     it 'cannot view platform admin dashboard' do
 
       expect{ visit admin_dashboard_index_path }.to raise_error(ActionController::RoutingError)

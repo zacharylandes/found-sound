@@ -8,7 +8,7 @@ describe ' a logged in user' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit 'stores/new'
-      
+
       fill_in 'store[name]', with: "Vandelay-Industries"
       fill_in 'store[address]', with: "454 Russell st winters ca 95694"
 
