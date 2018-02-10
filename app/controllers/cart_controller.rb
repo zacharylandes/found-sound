@@ -1,7 +1,11 @@
-class CartsController < ApplicationController
+class CartController < ApplicationController
   include ActionView::Helpers::TextHelper
 
   def index
+    if @cart.empty?
+      flash.notice = "Your cart is empty"
+      redirect_to root_path
+    end
   end
 
   def create
