@@ -12,6 +12,7 @@ class StoresController < ApplicationController
   def create
     store = Store.new(store_params)
     store.users << current_user
+
     if store.save
       store.user_stores.find_by(user_id: current_user.id).update(user_type:"store_admin")
       redirect_to dashboard_index_path

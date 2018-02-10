@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
     return false if current_user.nil?
     return true if current_user.store_admin? || current_user.store_manager? || current_user.role == 1
   end
-
   def visitor?
     return true if current_user.nil?
   end
@@ -29,6 +28,8 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+
 
     def authorize!
       not_found unless current_permission.authorized?

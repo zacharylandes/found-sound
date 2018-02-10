@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :password, presence:true, allow_nil: true
 
   enum role: ["default", "admin"]
-  
+
   scope :all_except, ->(user) { where.not(id: user) }
 
   scope :all_except, ->(user) { where.not(id: user) }
@@ -112,6 +112,8 @@ class User < ApplicationRecord
       false
     end
   end
+
+
 
   def registered_user?
     if role == "default"
