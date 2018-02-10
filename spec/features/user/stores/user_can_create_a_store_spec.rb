@@ -18,13 +18,17 @@ describe ' a logged in user' do
       expect(Store.count).to eq(1)
       expect(page).to have_content("My Stores")
 
+
       click_on "My Stores"
 
       expect(current_path).to eq(stores_path)
       expect(page).to have_content("Vandelay-Industries")
       expect(page).to have_content("Pending")
+
     end
+
     it 'cannot create a store duplicate attributes' do
+
       user = create(:user)
       create(:store, name:"Vandelay-Industries", address: "store")
 
@@ -39,6 +43,7 @@ describe ' a logged in user' do
       expect(page).to have_content("Invalid Credentials")
 
     end
+
     it 'can click the store button from the my stores tab to create a store' do
       user = create(:user)
 
@@ -46,7 +51,6 @@ describe ' a logged in user' do
 
       visit dashboard_index_path
 
-      click_on 'My Stores'
       click_on 'Create New Store'
 
       expect(current_path).to eq(new_store_path)

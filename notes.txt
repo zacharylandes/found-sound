@@ -1,39 +1,44 @@
-Prefix Verb   URI Pattern                                       Controller#Action                 SCOPE
-                 root GET    /                                  main#index                        all
-                      GET    /auth/:provider/callback(.:format) sessions#create                   
+               Prefix Verb   URI Pattern                        Controller#Action
+                 root GET    /                                  main#index
+                      GET    /auth/:provider/callback(.:format) sessions#create
          auth_failure GET    /auth/failure(.:format)            redirect(301, /)
-              signout GET    /signout(.:format)                 sessions#destroy                  REG, SA, SM, PA
-                login GET    /login(.:format)                   sessions#new                      all
-                      POST   /login(.:format)                   sessions#create                   all
-               logout DELETE /logout(.:format)                  sessions#destroy                  REG, SA, SM, PA
-admin_dashboard_index GET    /admin/dashboard(.:format)         admin/dashboard#index             PA
-      admin_analytics GET    /admin/analytics(.:format)         admin/analytics#index             PA
-          admin_items GET    /:store/items(.:format)            store/items#index                 PA, SA, SM
-                      POST   /:store/items(.:format)            store/items#create                PA, SA, SM
-       new_store_item GET    /:store/items/new(.:format)        store/items#new                   PA, SA, SM
-      edit_store_item GET    /:store/items/:id/edit(.:format)   store/items#edit                  PA, SA, SM
-           store_item PATCH  /:store/items/:id(.:format)        store/items#update                PA, SA, SM
-                      PUT    /:store/items/:id(.:format)        store/items#update                PA, SA, SM
-                users POST   /users(.:format)                   users#create                      all
-             new_user GET    /users/new(.:format)               users#new                         all
-                 user PATCH  /users/:id(.:format)               users#update                      PA, SA, SM, REG
-                      PUT    /users/:id(.:format)               users#update                      PA, SA, SM, REG
-            edit_user GET    /account/edit(.:format)            users#edit                        PA, SA, SM, REG
-               orders GET    /orders(.:format)                  orders#index                      PA, SA, SM, REG
-            new_order GET    /orders/new(.:format)              orders#create                     PA, SA, SM, REG
-                order GET    /orders/:id(.:format)              orders#show                       PA, SA, SM, REG
-                      PATCH  /orders/:id(.:format)              orders#update                     PA, SA, SM, REG
-                      PUT    /orders/:id(.:format)              orders#update                     PA, SA, SM, REG
-      dashboard_index GET    /dashboard(.:format)               dashboard#index                   PA, SA, SM, REG
-                 cart GET    /cart(.:format)                    carts#index                       all
-                 item GET    /items/:id(.:format)               items#show                        all
-                carts GET    /carts(.:format)                   carts#index                       all
-                      POST   /carts(.:format)                   carts#create                      all
-                      DELETE /carts/:id(.:format)               carts#destroy                     all
-                      PATCH  /cart(.:format)                    carts#update                      all
-                      DELETE /cart(.:format)                    carts#destroy                     all
-  categories_category GET    /categories/:category(.:format)    categories/categories#show {:param=>:slug}    all
-               stores GET    /stores(.:format)                  stores#index                      all
-                      POST   /stores(.:format)                  stores#create                     PA, SA, REG, SM
-            new_store GET    /stores/new(.:format)              stores#new                        PA, SA, REG, SM
-                store GET    /:store(.:format)                  stores#show                       all
+              signout GET    /signout(.:format)                 sessions#destroy
+                login GET    /login(.:format)                   sessions#new
+                      POST   /login(.:format)                   sessions#create
+               logout DELETE /logout(.:format)                  sessions#destroy
+admin_dashboard_index GET    /admin/dashboard(.:format)         admin/dashboard#index
+          admin_items GET    /admin/items(.:format)             admin/items#index
+                      POST   /admin/items(.:format)             admin/items#create
+       new_admin_item GET    /admin/items/new(.:format)         admin/items#new
+      edit_admin_item GET    /admin/items/:id/edit(.:format)    admin/items#edit
+           admin_item PATCH  /admin/items/:id(.:format)         admin/items#update
+                      PUT    /admin/items/:id(.:format)         admin/items#update
+      admin_analytics GET    /admin/analytics(.:format)         admin/analytics#index
+         admin_stores GET    /admin/stores(.:format)            admin/stores#index
+          admin_store PATCH  /admin/stores/:id(.:format)        admin/stores#update
+                      PUT    /admin/stores/:id(.:format)        admin/stores#update
+                users POST   /users(.:format)                   users#create
+             new_user GET    /users/new(.:format)               users#new
+                 user PATCH  /users/:id(.:format)               users#update
+                      PUT    /users/:id(.:format)               users#update
+            edit_user GET    /account/edit(.:format)            users#edit
+               orders GET    /orders(.:format)                  orders#index
+                      POST   /orders(.:format)                  orders#create
+                order GET    /orders/:id(.:format)              orders#show
+                      PATCH  /orders/:id(.:format)              orders#update
+                      PUT    /orders/:id(.:format)              orders#update
+      dashboard_index GET    /dashboard(.:format)               dashboard#index
+                 item GET    /items/:id(.:format)               items#show
+                 cart GET    /cart(.:format)                    cart#index
+                      POST   /cart(.:format)                    cart#create
+                      PATCH  /cart(.:format)                    cart#update
+                      PUT    /cart(.:format)                    cart#update
+                      DELETE /cart(.:format)                    cart#destroy
+  categories_category GET    /categories/:category(.:format)    categories/categories#show {:param=>:slug}
+               stores GET    /stores(.:format)                  stores#index
+                      POST   /stores(.:format)                  stores#create
+            new_store GET    /stores/new(.:format)              stores#new
+                      GET    /:store/manage(.:format)           stores#edit
+           edit_store PUT    /:store/manage(.:format)           stores#update
+            employees GET    /:store/employees(.:format)        stores/employees#update
+                store GET    /:store(.:format)                  stores#show

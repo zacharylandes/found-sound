@@ -7,14 +7,18 @@
         <li class="nav-item">
           <a class="nav-link" href="/orders">My Orders</a>
         </li>
+        <% if has_store_role? %>
         <li class="nav-item">
           <a class="nav-link" href="/stores">My Stores</a>
         </li>
+        <% end %>
       </ul>
     </div>
     <div class="card-body">
       <h4 class="card-title">Welcome back, <%= @user.first_name %>!</h4>
       <p class="card-text">You've been a member since <%= @user.date_joined %>. Yay!<br />
       The e-mail address we have on file is <%= @user.email %>.</p>
+
     </div>
+    <%= link_to 'Create New Store', new_store_path %>
   </div>
