@@ -41,6 +41,11 @@ Rails.application.routes.draw do
 
   get "/settings/developer", to: 'developer#show', as: 'developer'
   post "/settings/developer", to: 'developer#create'
+  namespace :api do
+    namespace :v1 do
+      get '/search', to: 'search#index'
+    end
+  end
 
   resources :stores, only:[:index,:new, :create]
     get '/:store', to: 'stores#show', as: "store"
