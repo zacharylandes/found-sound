@@ -11,7 +11,6 @@ RSpec.feature "Adding items to the cart" do
     it "a message is displayed" do
     # it "a message is displayed", js: true do
       expect(page).to have_link("Add to cart")
-
       click_on "Add to cart"
 
       expect(page).to have_content("You now have 1 Black Cat Onesie")

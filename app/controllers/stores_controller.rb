@@ -5,13 +5,16 @@ class StoresController < ApplicationController
   end
 
   def new
+
     @store = Store.new
   end
 
   def create
     store = Store.new(store_params)
     store.users << current_user
+
     if store.save
+      store.user_stores.find_by(user_id: current_user.id).update(user_type:"store_admin")
       redirect_to dashboard_index_path
     else
       flash[:notice] = "Invalid Credentials"
@@ -20,11 +23,11 @@ class StoresController < ApplicationController
   end
 
   def edit
-    @store = current_user.stores.find_by(params[:id])
+    @store = current_user.stores.find_by(slug: params[:store])
   end
 
   def update
-    @store = Store.find_by(params[:id])
+    @store = Store.find(params[:store])
     @store.update!(update_params)
     redirect_to "/#{@store.slug}/manage"
   end
