@@ -40,6 +40,10 @@ class User < ApplicationRecord
     !developer.nil?
   end
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Add has_one developer to user
   def platform_admin?
     if role == "admin"
       true
@@ -76,4 +80,12 @@ class User < ApplicationRecord
     user_stores.find_by(store_id: store).user_type
   end
 
+
+  def key
+    developer.key
+  end
+
+  def is_developer?
+    !developer.nil?
+  end
 end
