@@ -24,13 +24,13 @@ class StoresController < ApplicationController
   end
 
   def update
-  @store = Store.find_by(params[:id])
-  @store.update!(update_params)
-  redirect_to "/#{@store.slug}/manage"
+    @store = Store.find_by(params[:id])
+    @store.update!(update_params)
+    redirect_to "/#{@store.slug}/manage"
   end
 
  def show
-  @store = Store.find_by(slug: params[:store])
+    @store = Store.find_by(slug: params[:store])
  end
 
 private

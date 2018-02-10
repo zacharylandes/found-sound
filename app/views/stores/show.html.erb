@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <title>Found Sound - <%= @store.name.capitalize %></title>
-</head>
-<body>
-  <h1 class="shop-name"><%= @store.name.capitalize %></h1>
-    <div class="row">
-      <% @store.active_items.each do |item| %>
-        <div class="center-block">
-          <div class="card border-white" style="width: 15rem;">
-            <div class="card-body">
-              <% unless item.image.nil? %><%= cl_image_tag item.image%><br/><% end %>
-              <center><p><strong><%= link_to item.title, item_path(item) %></strong></p>
-                <p>Description: <%= item.description %></p>
-                <p>Price: <%= number_to_currency(item.price) %></p>
-                <% unless item.retired? %>
-                  <%= link_to "Add to cart", cart_path(item_id: item.id), method: :post, class: "btn btn-primary btn-sm" %></center>
-                <% else %>
-                  <h5><span class="badge badge-secondary">Retired</span></h5>
-                <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
 
-</body>
+  <h1 class="shop-name"><%= @store.name.capitalize %></h1>
+<div class="container">
+  <nav class="nav nav-tabs" id="myTab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">@</a>
+    <%= link_to "Orders", store_path(store: @store.slug, tab: @tab[0]), class: "nav-item nav-link" %>
+  </nav>
+</div>
+  <div class="container">
+  <div class="tab-content" id="nav-tabContent">
+      <% if params[:tab]== "order"%>
+        <%= render partial: "order_list"%>
+      <% else %>
+        <%= render partial: "item_list"%>
+        <% end %>
+     </div>
+  </div>
