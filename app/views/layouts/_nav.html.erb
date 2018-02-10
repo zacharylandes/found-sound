@@ -30,7 +30,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <%= link_to "Cart [#{@cart.total_count}]", carts_path, class: "nav-link active" %>
+            <%= link_to "Cart [#{@cart.total_count}]", cart_path, class: "nav-link active" %>
           </li>
           <% if current_user %>
           <li class="nav-item">
