@@ -53,4 +53,9 @@ Rails.application.routes.draw do
 
   get '/:store/employees', to: "stores/employees#update", as: "employees"
   get '/:store', to: 'stores#show', as: "store"
+
+
+  get "/settings/developer", to: 'developer#show', as: 'developer'
+  post "/settings/developer", to: 'developer#create'
+
 end
