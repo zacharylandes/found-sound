@@ -1,0 +1,11 @@
+<div class="card-body">
+  <h4>Developer Settings</h4>
+  <p class="card-text">
+    <% if current_user.is_developer? %>
+      <span class="key">Your Key: <%= current_user.key %></span>
+    <% else %>
+      Need a key? <br>
+      <%= button_to "Register", developer_path, method: :post, class: "btn btn-success btn-md" %>
+    <% end %>
+  </p>
+</div>
