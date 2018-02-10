@@ -21,6 +21,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'chart-js-rails'
 gem 'cloudinary'
 gem 'figaro'
+gem 'will_paginate', '~> 3.1.0'
 gem 'carrierwave'
 
 group :development, :test do
