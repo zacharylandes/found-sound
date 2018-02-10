@@ -9,8 +9,14 @@ body {
   background-size: cover;
 }
 
+
 a {
   transition: 0.5s;
+}
+
+.store-edit{
+  display: flex;
+  flex-direction: row;
 }
 .store-status {
   margin: 30px;
