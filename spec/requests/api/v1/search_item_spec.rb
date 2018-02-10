@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 describe "As a user with an API key" do
   describe "when I send a get request to the search api endpoint" do
     it "returns a json response with items with matching name and description" do
@@ -16,7 +15,8 @@ describe "As a user with an API key" do
         description: "Versitile bag great for commuting. Even makes as an excellent diaper bag. #dadcore #momcore",
         price: "125.00")
 
-      developer = create(:developer)
+      user = create(:user)
+      developer = create(:developer, user: user)
       search_type = "items"
       search_string = "diapers"
 
@@ -56,7 +56,9 @@ describe "As a user with an API key" do
     end
 
     it "returns invalid request when a type is not sent" do
-      developer = create(:developer)
+      user = create(:user)
+      developer = create(:developer, user: user)
+
       search_string = "diapers"
 
       get "/api/v1/search?q=#{search_string}&api_key=#{developer.key}"
@@ -67,7 +69,9 @@ describe "As a user with an API key" do
     end
 
     it "returns invalid request when a query is not sent" do
-      developer = create(:developer)
+      user = create(:user)
+      developer = create(:developer, user: user)
+
       search_type = "items"
 
       get "/api/v1/search?type=#{search_type}&api_key=#{developer.key}"

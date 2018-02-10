@@ -64,7 +64,11 @@ class Permission
       return true if controller == "orders" && action.in?(%w(index show create))
       return true if controller == "dashboard" && action.in?(%w(index))
     end
-    else
+      #these are the base permissions
+      #below is permission for api endpoint
+      return true if controller == "api/v1/search" && action.in?(%w(index))
+      return true if controller == "developer" && action.in?(%w(show create))
+
       return true if controller == "main" && action == "index"
       return true if controller == "sessions" && action.in?(%w(new create))
       return true if controller == "users" && action.in?(%w(new create))
