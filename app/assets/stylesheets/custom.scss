@@ -26,7 +26,8 @@ footer{
 
 div.container {
   width:800px;
-  height:auto;
+  height: 700px;
+  overflow-y: scroll;
   padding: 5px;
   color:black;
 }
