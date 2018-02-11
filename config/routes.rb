@@ -49,8 +49,11 @@ Rails.application.routes.draw do
   end
 
   resources :stores, only:[:index, :new, :create]
-  get 'stores/:store/items/:id/edit', to: "items#edit", as: "edit_store_item"
-  patch 'stores/:store/items/:id/edit', to: "items#update", as: "store_item"
+  get '/:store/items/new', to: "items#new", as: "new_store_item"
+  post '/:store/items', to: "items#create", as: "store_items"
+  get '/:store/items/:id/edit', to: "items#edit", as: "edit_store_item"
+  patch '/:store/items/:id/edit', to: "items#update", as: "store_item"
+
 
   get '/:store/manage', to: "stores#edit"
   put '/:store/manage', to: "stores#update", as: "edit_store"

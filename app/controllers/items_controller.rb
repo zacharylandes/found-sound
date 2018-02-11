@@ -4,6 +4,25 @@ class ItemsController < ApplicationController
 		@item = Item.find(params[:id])
 	end
 
+	def new
+		if at_this_store?
+			@store = Store.find_by(slug: params[:store])
+			@item = @store.items.new
+		else
+			not_found
+		end
+	end
+
+	def create
+		@store = Store.find(params[:store])
+		@item = @store.items.new(item_params)
+		if @item.save
+			redirect_to store_path(@store.slug)
+		else
+			render :new
+		end
+	end
+
 	def edit
 		if at_this_store?
 			@store = Store.find_by(slug: params[:store])
