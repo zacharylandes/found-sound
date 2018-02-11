@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   def has_store_role?
-
     return false if current_user.nil?
     return true if (current_user.store_admin? && at_this_store?) || (current_user.store_manager? && at_this_store?) || current_user.role == 1
   end
@@ -39,8 +38,6 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
-
 
 
     def authorize!
