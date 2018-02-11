@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 describe 'as a visitor I do not have access to store permissions' do
-    let(:user) { create(:user)}
-
-    let(:store) { create(:store, name:"found-sound")}
+    let!(:user) { create(:user)}
+    let!(:store) { create(:store, name:"found-sound", slug:"found-sound")}
     let(:item) { create(:item, store_id: store)}
 
     it 'cannot view platform admin dashboard' do
@@ -35,6 +34,10 @@ describe 'as a visitor I do not have access to store permissions' do
     end
 
     it 'cannot see all orders 'do
+
+        visit "/found-sound?tab=order"
+
+      expect(current_path).to eq(store_path(store.slug))
 
       expect{ visit orders_path}.to raise_error(ActionController::RoutingError)
     end

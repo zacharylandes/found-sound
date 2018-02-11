@@ -15,10 +15,11 @@
                 <th scope="row"> <%= link_to store.name, store_path(store.slug) %></th>
                 <td><%= store.address %></td>
                 <td><%= store.status.capitalize %></td>
-                <% if params['tab']=="Pending"%>
+                <% if params['tab']=="Pending" || params['tab']=="Suspended"%>
                 <td><%= link_to "Approve", admin_store_path(store), method: :put, class: "btn btn-warning btn-sm" %></td>
                 <% end %>
             <% end %>
+          </tr>
            </tbody>
        </table>
      </div>
