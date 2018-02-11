@@ -80,19 +80,19 @@ class Permission
       return true if controller == "orders" && action.in?(%w(index create show update))
     end
 
-    def registered_user_permissions
-      return true if controller == "main" && action == "index"
-      return true if controller == "sessions" && action.in?(%w(new create destroy))
-      return true if controller == "users" && action.in?(%w(new create edit update))
-      return true if controller == "carts" && action.in?(%w(index create edit destroy update))
-      return true if controller == "categories/categories" && action.in?(%w(show))
-      return true if controller == "stores" && action.in?(%w(index show create new))
-      return true if controller == "items" && action.in?(%w(show))
-      return true if controller == "sessions" && action.in?(%w(new create destroy))
-      return true if controller == "users" && action.in?(%w(update new create destroy))
-      return true if controller == "orders" && action.in?(%w(index show create))
-      return true if controller == "dashboard" && action.in?(%w(index))
-    end
+    # def registered_user_permissions
+    #   return true if controller == "main" && action == "index"
+    #   return true if controller == "sessions" && action.in?(%w(new create destroy))
+    #   return true if controller == "users" && action.in?(%w(new create edit update))
+    #   return true if controller == "carts" && action.in?(%w(index create edit destroy update))
+    #   return true if controller == "categories/categories" && action.in?(%w(show))
+    #   return true if controller == "stores" && action.in?(%w(index show create new))
+    #   return true if controller == "items" && action.in?(%w(show))
+    #   return true if controller == "sessions" && action.in?(%w(new create destroy))
+    #   return true if controller == "users" && action.in?(%w(update new create destroy))
+    #   return true if controller == "orders" && action.in?(%w(index show create))
+    #   return true if controller == "dashboard" && action.in?(%w(index))
+    # end
 
     def base_permissions
       return true if controller == "api/v1/search" && action.in?(%w(index))

@@ -75,49 +75,4 @@ class User < ApplicationRecord
     user_stores.find_by(store_id: store).user_type
   end
 
-
-  def key
-    developer.key
-  end
-
-  def is_developer?
-    !developer.nil?
-  end
-
-  def platform_admin?
-    if role == "admin"
-      true
-    else
-      false
-    end
-  end
-
-  def store_admin?
-    if user_stores.pluck(:user_type).include?("store_admin")
-      true
-    else
-      false
-    end
-  end
-
-  def store_manager?
-    if user_stores.pluck(:user_type).include?("store_manager")
-      true
-    else
-      false
-    end
-  end
-
-  def registered_user?
-    if role == "default"
-      true
-    else
-      false
-    end
-  end
-
-  def role_at_current_store(store)
-    user_stores.find_by(store_id: store).user_type
-  end
-
 end
