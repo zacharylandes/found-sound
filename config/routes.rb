@@ -48,13 +48,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :stores, only:[:index, :new, :create]
+  resources :stores, only:[:index, :new, :create] do
+    resources :items, only: [:edit, :update]
+  end
+  
   get '/:store/manage', to: "stores#edit"
   put '/:store/manage', to: "stores#update", as: "edit_store"
 
   get '/:store/employees', to: "stores/employees#update", as: "employees"
   get '/:store', to: 'stores#show', as: "store"
-
 
   get "/settings/developer", to: 'developer#show', as: 'developer'
   post "/settings/developer", to: 'developer#create'

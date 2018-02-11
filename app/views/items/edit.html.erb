@@ -1,0 +1,17 @@
+<h3>Edit Item</h3>
+<table class="table login-form">
+  <%= form_for [@store, @item] do |f| %>
+    <tr>
+      <td class="table-light">  <%= f.text_field :title, placeholder: @item.title %></td>
+    </tr>
+    <tr>
+      <td class="table-light">  <%= f.text_area :description, placeholder: @item.description %></td>
+    </tr>
+    <tr>
+      <td class="table-light">  <%= f.number_field :price, placeholder: @item.price %></td>
+    </tr>
+    <tr class="action">
+      <td class="table-light"><%= f.submit "Submit", class: "btn btn-success btn-md" %></td>
+    </tr>
+  <% end %>
+</table>

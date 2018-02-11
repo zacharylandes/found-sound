@@ -14,25 +14,22 @@
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Items</a>
             <%= link_to "Orders", store_path(store: @store.slug, tab: "order"), class: "nav-item nav-link" %>
           </nav>
-
           <div class="container">
             <div class="tab-content" id="nav-tabContent">
               <%= render partial: "item_list"%>
             </div>
           </div>
-
         <% elsif params[:tab]== "order"%>
           <nav class="nav nav-tabs" id="myTab" role="tablist">
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Orders</a>
             <%= link_to "Items", store_path(store: @store.slug, tab: "items"), class: "nav-item nav-link" %>
           </nav>
-      <div class="container">
-        <div class="tab-content" id="nav-tabContent">
-          <%= render partial: "order_list"%>
+          <div class="container">
+              <div class="tab-content" id="nav-tabContent">
+                <%= render partial: "order_list"%>
+              </div>
+            </div>
         <% end %>
-
-        </div>
-      </div>
       <% else %>
         <%= render partial: "visitor"%>
       <% end %>
