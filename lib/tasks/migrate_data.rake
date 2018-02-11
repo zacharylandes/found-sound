@@ -20,4 +20,12 @@ namespace :migrate_data do
       puts "#{item.title} Updated"
     end
   end
+
+  desc "add order total price to all orders"
+  task calculate_order_total: :environment do
+    Order.where(total_price: nil).each do |order|
+      order.calculate_total
+    end
+  end
+
 end
