@@ -5,13 +5,17 @@ class ItemsController < ApplicationController
 	end
 
 	def edit
-		@store = Store.find(params[:store_id])
-		@item = Item.find(params[:id])
+		if at_this_store?
+			@store = Store.find_by(slug: params[:store])
+			@item = Item.find(params[:id])
+		else
+			not_found
+		end
 	end
 
 	def update
 		@item = Item.find(params[:id])
-		store = Store.find(params[:store_id])
+		store = Store.find(params[:store])
 		if @item.update(item_params)
 			redirect_to store_path(store.slug)
 		else

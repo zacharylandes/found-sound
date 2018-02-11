@@ -11,7 +11,7 @@
       <td><strong><%= link_to item.title, item_path(item) %></strong></td>
       <td>Description: <%= item.description %></td>
       <td>Price: <%= number_to_currency(item.price) %></td>
-      <td> <%= link_to "Edit Item", edit_store_item_path(@store, item) %></td>
+      <td> <%= link_to "Edit Item", "stores/#{@store.slug}/items/#{item.id}/edit" %></td>
     </tr>
    <% end %>
 

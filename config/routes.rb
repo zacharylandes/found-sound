@@ -48,10 +48,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :stores, only:[:index, :new, :create] do
-    resources :items, only: [:edit, :update]
-  end
-  
+  resources :stores, only:[:index, :new, :create]
+  get 'stores/:store/items/:id/edit', to: "items#edit", as: "edit_store_item"
+  patch 'stores/:store/items/:id/edit', to: "items#update", as: "store_item"
+
   get '/:store/manage', to: "stores#edit"
   put '/:store/manage', to: "stores#update", as: "edit_store"
 
