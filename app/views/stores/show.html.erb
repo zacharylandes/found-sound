@@ -2,6 +2,13 @@
 <div class="container">
   <h1 class="shop-name"><%= @store.name.capitalize %></h1>
       <% if has_store_role?  %>
+        <% if @store.twitter_token && @store.twitter_secret%>
+          <%= form_tag new_tweet_path(store: @store.id), method: :post do%>
+            <%= text_area_tag :tweet, "", maxlength: 280 %>
+            <br>
+            <%= submit_tag "Tweet" %>
+          <% end %>
+        <% end %>
         <% if !params[:tab] || params[:tab] == "items" %>
           <nav class="nav nav-tabs" id="myTab" role="tablist">
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Items</a>
@@ -24,8 +31,8 @@
           <%= render partial: "order_list"%>
         <% end %>
 
+        </div>
       </div>
-    </div>
       <% else %>
         <%= render partial: "visitor"%>
       <% end %>
