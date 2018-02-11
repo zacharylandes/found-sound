@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210175645) do
+ActiveRecord::Schema.define(version: 20180211201244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20180210175645) do
     t.string "address"
     t.string "status", default: "pending"
     t.string "slug"
+    t.string "twitter_token"
+    t.string "twitter_secret"
   end
 
   create_table "user_stores", force: :cascade do |t|
