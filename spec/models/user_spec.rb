@@ -67,6 +67,7 @@ describe "validations" do
       user.items << items.first
 
       expect(user.recent_items.count).to eq(4)
+      expect(user.recent_items).to include(Item)
     end
   end
 end
