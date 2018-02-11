@@ -46,6 +46,19 @@ class ItemsController < ApplicationController
 	private
 
 		def item_params
-			params.require(:item).permit(:title, :description, :price, :condition)
+			auth = {
+				cloud_name: ENV['cloud_name'],
+				api_key:    ENV['cloudinary_api_key'],
+				api_secret: ENV['cloudinary_secret']
+			}
+			if params[:item][:image].nil?
+				params[:item][:image] = 'http://res.cloudinary.com/dhzyzerqn/image/upload/v1518130218/book_cover.png'
+			else
+				response = Cloudinary::Uploader.upload(params[:item][:image].tempfile.path, auth)
+				params[:item][:image] = response['url']
+			end
+			params.require(:item).permit(:title, :description, :price, :condition, :image)
+			# params.require(:item).permit(:title, :description, :price, :image, :category_id)
+
 		end
 end
