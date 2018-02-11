@@ -14,6 +14,7 @@ describe "As a store admin" do
 
       expect(current_path).to eq new_store_item_path(store.slug)
 
+      fill_in "item[category]", with: "NEW CATEGORY"
       fill_in "item[title]", with: "NEW ITEM"
       fill_in "item[description]", with: "NEW DESCRIPTION"
       fill_in "item[price]", with: 30.00
