@@ -48,7 +48,7 @@ class Permission
       return true if controller == "carts" && action.in?(%w(index create destroy update))
       return true if controller == "categories/categories" && action.in?(%w(show))
       return true if controller == "orders" && action.in?(%w(index show create update))
-      return true if controller == "items" && action.in?(%w(index show))
+      return true if controller == "items" && action.in?(%w(index show edit update))
       return true if controller == "auth" && action.in?(%w(twitter))
       return true if controller == "twitter" && action.in?(%w(edit update create destroy))
     end
@@ -65,7 +65,7 @@ class Permission
       return true if controller == "carts" && action.in?(%w(index create destroy update))
       return true if controller == "categories/categories" && action.in?(%w(show))
       return true if controller == "orders" && action.in?(%w(index show create update))
-      return true if controller == "items" && action.in?(%w(index show))
+      return true if controller == "items" && action.in?(%w(index show edit update))
       return true if controller == "auth" && action.in?(%w(twitter))
       return true if controller == "twitter" && action.in?(%w(edit update create destroy))
     end

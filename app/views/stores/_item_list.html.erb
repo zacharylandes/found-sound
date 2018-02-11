@@ -1,14 +1,18 @@
- 	     <table class="table table-hover">
-        <tr>
-          <th>Items</th>
-          <th>Description</th>
-          <th>Price</th>
-        </tr>
-         <% @store.active_items.each do |item| %>
-         <tr>
-           <td><strong><%= link_to item.title, item_path(item) %></strong></td>
-             <td>Description: <%= item.description %></td>
-             <td>Price: <%= number_to_currency(item.price) %></td>
-             <% end %>
-          </tr>
-       </table>
+<table class="table table-hover">
+  <tr>
+    <th>Items</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+
+  <% @store.active_items.each do |item| %>
+    <tr>
+      <td><strong><%= link_to item.title, item_path(item) %></strong></td>
+      <td>Description: <%= item.description %></td>
+      <td>Price: <%= number_to_currency(item.price) %></td>
+      <td> <%= link_to "Edit Item", edit_store_item_path(@store, item) %></td>
+    </tr>
+   <% end %>
+
+</table>
