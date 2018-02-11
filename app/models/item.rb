@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :category, optional: true
+  belongs_to :category
   has_many :order_items
   belongs_to :store, optional: true
   has_many :orders, through: :order_items

@@ -14,8 +14,9 @@ class ItemsController < ApplicationController
 	end
 
 	def create
+		@category = Category.find_or_create_by(title: params[:item][:category])
 		@store = Store.find(params[:store])
-		@item = @store.items.new(item_params)
+		@item = @store.items.new(item_params.merge(category: @category))
 		if @item.save
 			redirect_to store_path(@store.slug)
 		else

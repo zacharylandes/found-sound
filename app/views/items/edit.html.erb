@@ -14,6 +14,10 @@
       <th class="table-light">  <%= f.number_field :price, placeholder: @item.price %></th>
     </tr>
     <tr>
+      <th class="table-light"><%= f.label :category %></th>
+      <th class="table-light">  <%= f.text_field :category, placeholder: @item.category %></th>
+    </tr>
+    <tr>
       <th class="table-light"><%= f.label "Item Status" %></th>
       <th class="table-light"><%= f.select :condition, ["active","retired"] %></th>
     </tr>
