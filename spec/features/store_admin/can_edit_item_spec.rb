@@ -21,6 +21,7 @@ describe "As a store admin" do
         fill_in "item[title]", with: "NEW ITEM"
         fill_in "item[description]", with: "NEW DESCRIPTION"
         fill_in "item[price]", with: 30.00
+        select "active", from: "item[condition]"
         click_on "Submit"
 
         expect(current_path).to eq store_path(store.slug)

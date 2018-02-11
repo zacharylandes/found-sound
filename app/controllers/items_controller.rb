@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
 	end
 
 	def update
-		# binding.pry
 		@item = Item.find(params[:id])
 		store = Store.find(params[:store_id])
 		if @item.update(item_params)
@@ -23,6 +22,6 @@ class ItemsController < ApplicationController
 	private
 
 		def item_params
-			params.require(:item).permit(:title, :description, :price)
+			params.require(:item).permit(:title, :description, :price, :condition)
 		end
 end
