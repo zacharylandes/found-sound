@@ -3,7 +3,13 @@
 <div class = "container">
   <div class="store-edit">
     <div class="col-3">
-      <h2>Edit Your Store</h2>
+      <% if @store.twitter_token.nil? && @store.twitter_secret.nil? %>
+        <%= link_to "Add Twitter Authorization", new_twitter_path(store: @store.id), class: "btn btn-success btn-md" %>
+      <% else %>
+        <%= button_to "Remove Twitter Authorization", remove_twitter_path(store: @store.id), method: :delete, class: "btn btn-success btn-md" %>
+      <% end %>
+      </br>
+      <h3>Edit Your Store</h3>
       <table class="table login-form">
         <%= form_tag(edit_store_path(@store), method: :put) do  %>
           <tr>
@@ -17,8 +23,10 @@
           </tr>
         <% end %>
       </table>
-        <table class="table login-form">
 
+
+        <table class="table login-form">
+        <h3>Employees</h3>
         <% @store.users.all_except(current_user).each do |user| %>
           <%= user.first_name %>
           <%= user.role_at_current_store(@store) %>
