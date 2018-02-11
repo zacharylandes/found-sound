@@ -101,6 +101,15 @@ ActiveRecord::Schema.define(version: 20180211201244) do
     t.integer "role", default: 0
   end
 
+  create_table "views", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_views_on_item_id"
+    t.index ["user_id"], name: "index_views_on_user_id"
+  end
+
   add_foreign_key "developers", "users"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "stores"
@@ -109,4 +118,6 @@ ActiveRecord::Schema.define(version: 20180211201244) do
   add_foreign_key "orders", "users"
   add_foreign_key "user_stores", "stores"
   add_foreign_key "user_stores", "users"
+  add_foreign_key "views", "items"
+  add_foreign_key "views", "users"
 end
