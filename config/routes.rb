@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root :to => 'main#index'
 
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   get '/login', :to => 'sessions#new', :as => 'login'
@@ -18,6 +16,11 @@ Rails.application.routes.draw do
     resources :stores, only: [:index, :update]
   end
 
+  get '/auth/twitter', as: :twitter_login
+  get '/auth/twitter/store', to: "twitter#edit", as: "new_twitter"
+  get '/auth/twitter/callback', to: "twitter#update"
+  delete '/auth/twitter/store', to: "twitter#destroy", as: "remove_twitter"
+  post "/twitter", to: "twitter#create", as: "new_tweet"
 
   resources :users , only: [:new, :create, :update]
   get '/account/edit', to: "users#edit", as: "edit_user"
