@@ -17,6 +17,10 @@
       <th class="table-light">  <%= f.text_field :category, placeholder: @item.category %></th>
     </tr>
     <tr>
+      <th class="table-light"><%= f.label :image %></th>
+      <th class="table-light"><%= f.file_field :image %></th>
+    </tr>
+    <tr>
       <th class="table-light"><%= f.label "Item Status" %></th>
       <th class="table-light"><%= f.select :condition, ["active","retired"] %></th>
     </tr>
