@@ -39,8 +39,7 @@ describe 'a store admin I do not have access to platform admin details' do
 
     it 'cannot view another stores items or orders' do
 
-      expect{     visit '/sound-hound/manage'}.to raise_error(ActionController::RoutingError)
-
+      expect{ visit '/sound-hound/manage'}.to raise_error(ActionController::RoutingError)
 
     end
 

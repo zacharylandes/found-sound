@@ -7,7 +7,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/orders">My Orders</a>
         </li>
-        <% if has_store_role? %>
+        <% if has_upper_permissions? %>
         <li class="nav-item">
           <a class="nav-link" href="/stores">My Stores</a>
         </li>
