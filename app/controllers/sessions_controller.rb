@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
       verify_user
     end
   end
-  
+
   def destroy
-    session.clear
+    session[:user_id] = nil
     redirect_to root_path
   end
 
