@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   validates :title,  presence: true, uniqueness: true
   validates :description, :price, presence: true
   enum condition: ["active", "retired"]
-  default_scope {order(:title)}
+  # default_scope {order(:title)}
 
   def self.total_sold_by_item
     group(:title).joins(:order_items).sum(:quantity)
