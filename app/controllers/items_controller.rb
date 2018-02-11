@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
 
 	def show
 		@item = Item.find(params[:id])
+		if session[:user_id]
+			View.create(user_id: session[:user_id], item_id: @item.id)
+		end
 	end
 
 	def new
