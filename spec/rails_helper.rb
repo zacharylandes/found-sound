@@ -15,6 +15,7 @@ require 'support/factory_girl'
 require 'support/simple_cov'
 require 'feature_helper'
 require 'santas_little_helper'
+require 'twitter_helper'
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -30,6 +31,7 @@ end
 RSpec.configure do |config|
   config.include SantasLittleHelper
   config.include FeatureHelper
+  config.include TwitterHelper
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
