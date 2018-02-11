@@ -39,8 +39,6 @@ Rails.application.routes.draw do
     get '/:category', to: 'categories#show', param: :slug, as: "category"
   end
 
-  get "/settings/developer", to: 'developer#show', as: 'developer'
-  post "/settings/developer", to: 'developer#create'
   namespace :api do
     namespace :v1 do
       get '/search', to: 'search#index'

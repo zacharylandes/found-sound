@@ -58,14 +58,6 @@ class Permission
       return true if controller == "users" && action.in?(%w(update edit new create index show))
       return true if controller == "dashboard" && action.in?(%w(index))
       return true if controller == "stores" && action.in?(%w(index create new show edit update))
-
-      return true if controller == "stores/employees" && action == "update"
-      return true if controller == "admin/items" && action == "index"
-      return true if controller == "store/items" && action.in?(%w(index new create edit update destroy))
-      return true if controller == "store/orders" && action.in?(%w(index new create edit update destroy))
-      return true if controller == "users" && action.in?(%w(update edit new create index show))
-      return true if controller == "dashboard" && action.in?(%w(index))
-      return true if controller == "stores" && action.in?(%w(index create new show edit))
       return true if controller == "main" && action == "index"
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "carts" && action.in?(%w(index create destroy update))
@@ -76,8 +68,6 @@ class Permission
 
     def store_manager_permissions
       return true if controller == "admin/items" && action.in?(%w(index new create edit update destroy))
-      return true if controller == "stores/employees" && action == "update"
-      return true if controller == "store/items" && action.in?(%w(index new create edit update destroy))
       return true if controller == "store/orders" && action.in?(%w(index new create edit update destroy))
       return true if controller == "main" && action == "index"
       return true if controller == "sessions" && action.in?(%w(new create destroy))
@@ -115,12 +105,6 @@ class Permission
       return true if controller == "categories/categories" && action.in?(%w(show))
       return true if controller == "stores" && action.in?(%w(index show))
       return true if controller == "items" && action.in?(%w(show))
-  end
-
-  private
-    attr_reader :user, :controller, :action
-
-    def base_permissions
     end
 
 

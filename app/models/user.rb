@@ -40,10 +40,6 @@ class User < ApplicationRecord
     !developer.nil?
   end
 
-<<<<<<< HEAD
-=======
-
->>>>>>> Add has_one developer to user
   def platform_admin?
     if role == "admin"
       true
