@@ -2,7 +2,9 @@
 <table class="table login-form">
   <%= form_for [@store, @item] do |f| %>
     <tr>
-      <td class="table-light">  <%= f.text_field :title, placeholder: @item.title %></td>
+      <td class="table-light">
+        <%= f.text_field :title, placeholder: @item.title %>
+      </td>
     </tr>
     <tr>
       <td class="table-light">  <%= f.text_area :description, placeholder: @item.description %></td>
