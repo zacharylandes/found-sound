@@ -45,5 +45,32 @@ describe "As a store admin " do
       expect(updated_store.twitter_token).to_not be_nil
       expect(updated_store.twitter_secret).to_not be_nil
     end
+
+    it "can unauthenticate with twitter" do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@store_admin)
+      stub_twitter_omniauth
+      visit dashboard_index_path
+
+      click_on "My Stores"
+      click_on "Manage Store"
+      expect(current_path).to eq ("/#{@store.slug}/manage")
+
+      expect(@store.twitter_token).to be_nil
+      expect(@store.twitter_secret).to be_nil
+
+      click_on "Add Twitter Authorization"
+
+      updated_store = Store.find(@store.id)
+
+      expect(updated_store.twitter_token).to_not be_nil
+      expect(updated_store.twitter_secret).to_not be_nil
+
+      click_on "Remove Twitter Authorization"
+
+      updated_store = Store.find(@store.id)
+
+      expect(updated_store.twitter_token).to be_nil
+      expect(updated_store.twitter_secret).to be_nil
+    end
   end
 end
