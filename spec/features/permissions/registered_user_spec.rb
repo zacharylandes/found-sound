@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'a registered user I do not have access to store permissions' do
     let(:user) { create(:user)}
-    let(:store) { create(:store, name:"found-sound")}
+    let!(:store) { create(:store, name:"found-sound")}
     let(:item) { create(:item, store_id: store)}
 
 

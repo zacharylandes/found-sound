@@ -5,7 +5,6 @@ class StoresController < ApplicationController
   end
 
   def new
-
     @store = Store.new
   end
 
@@ -23,7 +22,11 @@ class StoresController < ApplicationController
   end
 
   def edit
+    if at_this_store?
     @store = current_user.stores.find_by(slug: params[:store])
+    else
+      not_found
+    end
   end
 
   def update

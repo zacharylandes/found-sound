@@ -63,4 +63,30 @@ RSpec.feature "Admin Stores" do
     expect(page).not_to have_content("#{Store.first.name}")
 
   end
+
+  it "As an admin I can click on approve pending stores" do
+
+    visit admin_dashboard_index_path
+
+    click_on "Stores"
+
+    click_on "Pending"
+    click_on "Approve"
+
+    expect(Store.second.status).to eq("active")
+    expect(page).not_to have_content("Approve")
+  end
+  
+  it "As an admin I can click on approve suspended stores" do
+
+    visit admin_dashboard_index_path
+
+    click_on "Stores"
+
+    click_on "Suspended"
+    click_on "Approve"
+
+    expect(Store.third.status).to eq("active")
+    expect(page).not_to have_content("Approve")
+  end
 end

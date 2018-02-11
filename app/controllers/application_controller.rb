@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :visitor?, :has_store_role?
+  helper_method :current_user, :visitor?, :has_store_role?, :at_this_store?, :not_found
   before_action :set_cart, :set_categories, :authorize!
 
   def current_user
@@ -11,9 +11,15 @@ class ApplicationController < ActionController::Base
     current_user && current_user.admin?
   end
 
+  def at_this_store?
+    Store.find_by(slug: params[:store]).user_stores.include?(user_id: current_user.id)
+  end
+
+
   def has_store_role?
     return false if current_user.nil?
-    return true if current_user.store_admin? || current_user.store_manager? || current_user.role == 1
+    return true if (current_user.store_admin? && at_this_store?) || (current_user.store_manager? && at_this_store?) || current_user.role == 1
+
   end
 
   def visitor?
