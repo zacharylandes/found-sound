@@ -25,7 +25,7 @@ describe "As a store manager" do
         user_store = create(:user_store, user: store_manager, store: store, user_type: 0)
         item1, item2, item3 = create_list(:item, 3, store: store)
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(store_manager)
-
+        
         visit dashboard_index_path
         click_on "My Stores"
         click_on "#{store.name}"
