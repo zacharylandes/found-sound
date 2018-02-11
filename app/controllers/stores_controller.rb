@@ -11,7 +11,6 @@ class StoresController < ApplicationController
   def create
     store = Store.new(store_params)
     store.users << current_user
-
     if store.save
       store.user_stores.find_by(user_id: current_user.id).update(user_type:"store_admin")
       redirect_to dashboard_index_path
@@ -23,7 +22,7 @@ class StoresController < ApplicationController
 
   def edit
     if at_this_store?
-    @store = current_user.stores.find_by(slug: params[:store])
+      @store = current_user.stores.find_by(slug: params[:store])
     else
       not_found
     end
@@ -36,7 +35,12 @@ class StoresController < ApplicationController
   end
 
  def show
-    @store = Store.find_by(slug: params[:store])
+   store = Store.find_by(slug: params[:store])
+   if !store.suspended?
+    @store = store
+  else
+    not_found
+  end
  end
 
 private

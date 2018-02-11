@@ -14,6 +14,10 @@ class Store < ApplicationRecord
     self.slug = name.parameterize
   end
 
+  def suspended?
+    return true if self.status == "suspended"
+  end
+
 
   def active_items
     items.where(condition: 'active')

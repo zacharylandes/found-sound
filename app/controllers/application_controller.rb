@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :visitor?, :has_store_role?, :at_this_store?, :not_found, :has_upper_permissions?
+  helper_method :current_user, :visitor?, :has_store_role?, :at_this_store?, :not_found, :has_upper_permissions?, :suspended?
   before_action :set_cart, :set_categories, :authorize!
 
   def current_user
@@ -39,6 +39,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+
+
 
     def authorize!
       not_found unless current_permission.authorized?
