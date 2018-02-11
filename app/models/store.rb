@@ -17,8 +17,7 @@ class Store < ApplicationRecord
   def suspended?
     return true if self.status == "suspended"
   end
-
-
+  
   def active_items
     items.where(condition: 'active')
   end
@@ -27,4 +26,7 @@ class Store < ApplicationRecord
     user_stores.find_by(user_id: user).user_type
   end
 
+  def tweet(text)
+    TwitterService.new(twitter_token, twitter_secret).tweet(text)
+  end
 end
