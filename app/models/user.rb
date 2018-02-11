@@ -15,7 +15,7 @@ class User < ApplicationRecord
   scope :all_except, ->(user) { where.not(id: user) }
 
   def recent_items
-    items.distinct
+    items.distinct.limit(4)
   end
 
   def full_name
