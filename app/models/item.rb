@@ -3,9 +3,10 @@ class Item < ApplicationRecord
   has_many :order_items
   belongs_to :store, optional: true
   has_many :orders, through: :order_items
-  validates :title     ,  presence: true, uniqueness: true
+  validates :title,  presence: true, uniqueness: true
   validates :description, :price, presence: true
   enum condition: ["active", "retired"]
+  default_scope {order(:title)}
 
   def self.total_sold_by_item
     group(:title).joins(:order_items).sum(:quantity)
