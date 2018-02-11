@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :user_stores
   has_many :stores, through: :user_stores
   has_one :developer
-
+  has_many :views
+  has_many :items, through: :views
   validates :first_name, :last_name,  presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence:true, allow_nil: true
@@ -13,6 +14,9 @@ class User < ApplicationRecord
 
   scope :all_except, ->(user) { where.not(id: user) }
 
+  def recent_items
+    items.distinct
+  end
 
   def full_name
     first_name + " " + last_name
