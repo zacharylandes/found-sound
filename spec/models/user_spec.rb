@@ -59,5 +59,14 @@ describe "validations" do
       user = User.create(first_name: "McTest",last_name: "McTest", password: "testing", email: "tester@testmail", created_at: "2017-09-13 01:13:04 -0600")
       expect(user.date_joined).to eq("Sep. 13, 2017")
     end
+
+    it "returns recently viewed items" do
+      user = create(:user)
+      items = create_list(:item, 6)
+      items.each {|item| user.items << item}
+      user.items << items.first
+
+      expect(user.recent_items.count).to eq(4)
+    end
   end
 end
