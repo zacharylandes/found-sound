@@ -2,18 +2,20 @@
 <table class="table login-form">
   <%= form_for [@store, @item] do |f| %>
     <tr>
-      <td class="table-light">
-        <%= f.text_field :title, placeholder: @item.title %>
-      </td>
+      <th class="table-light"><%= f.label :title%></th>
+      <th class="table-light"><%= f.text_field :title, placeholder: @item.title %></th>
     </tr>
     <tr>
-      <td class="table-light">  <%= f.text_area :description, placeholder: @item.description %></td>
+      <th class="table-light"><%= f.label :description%></th>
+      <th class="table-light">  <%= f.text_area :description, placeholder: @item.description %></th>
     </tr>
     <tr>
-      <td class="table-light">  <%= f.number_field :price, placeholder: @item.price %></td>
+      <th class="table-light"><%= f.label :price %></th>
+      <th class="table-light">  <%= f.number_field :price, placeholder: @item.price %></th>
     </tr>
     <tr class="action">
-      <td class="table-light"><%= f.submit "Submit", class: "btn btn-success btn-md" %></td>
+      <th></th>
+      <th class="table-light"><%= f.submit "Submit", class: "btn btn-success btn-md" %></th>
     </tr>
   <% end %>
 </table>
