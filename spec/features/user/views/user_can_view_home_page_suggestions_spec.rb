@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Home page Suggestions" do
   context "When a registered user visits the homepage" do
-    it "should show a personalized lsit of suggestions based on items viewed" do
+    it "should show a personalized list of suggestions based on items viewed" do
       killacam = create(:user, first_name: "Killa", last_name: "cam")
       item1,item2,item3,item4,item5,item6 = create_list(:item, 6)
       view1 = create(:view, user: killacam, item: item3)
