@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "instance methods" do
+describe "callbacks" do
   it "returns only items under two months old" do
     young_views = create_list(:view, 4)
     old_views = create_list(:view, 2, created_at: 2.months.ago)
