@@ -16,7 +16,7 @@ describe "As a store admin" do
         click_on "Items"
         click_on "Edit Item"
 
-        expect(current_path).to eq edit_store_item_path(store, item1)
+        expect(current_path).to eq edit_store_item_path(store.slug, item1)
 
         fill_in "item[title]", with: "NEW ITEM"
         fill_in "item[description]", with: "NEW DESCRIPTION"
