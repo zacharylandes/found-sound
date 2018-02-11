@@ -14,6 +14,11 @@
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Items</a>
             <%= link_to "Orders", store_path(store: @store.slug, tab: "order"), class: "nav-item nav-link" %>
           </nav>
+
+          <% if current_user.role_at_current_store(@store) == "store_admin" %>
+            <%= link_to "Make New Item", new_store_item_path(@store.slug),  class: "btn btn-success btn-md" %>
+          <% end %>
+
           <div class="container">
             <div class="tab-content" id="nav-tabContent">
               <%= render partial: "item_list"%>
