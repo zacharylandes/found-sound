@@ -13,7 +13,6 @@ class User < ApplicationRecord
 
   scope :all_except, ->(user) { where.not(id: user) }
 
-  scope :all_except, ->(user) { where.not(id: user) }
 
   def full_name
     first_name + " " + last_name
