@@ -5,15 +5,15 @@ describe "Home page Suggestions" do
     it "should show a personalized lsit of suggestions based on items viewed" do
       killacam = create(:user, first_name: "Killa", last_name: "cam")
       item1,item2,item3,item4,item5,item6 = create_list(:item, 6)
+      view1 = create(:view, user: killacam, item: item3)
+      view2 = create(:view, user: killacam, item: item4)
+      view3 = create(:view, user: killacam, item: item1)
+      view4 = create(:view, user: killacam, item: item6)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(killacam)
       visit item_path(item3)
-      killacam.items << item3
       visit item_path(item4)
-      killacam.items << item4
       visit item_path(item1)
-      killacam.items << item1
       visit item_path(item6)
-      killacam.items << item6
       visit root_path
 
       expect(page).to have_content(item1.title)
