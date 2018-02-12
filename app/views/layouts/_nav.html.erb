@@ -25,10 +25,10 @@
           </li>
           <% end %>
           <li class="nav-item ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Departments</a>
             <div class="dropdown-menu">
-              <% @categories.each do |category| %>
-                <%= link_to category.title, categories_category_path(category.slug), class: "dropdown-item" %>
+              <% @departments.each do |department| %>
+                <%= link_to department.title, departments_department_path(department.slug), class: "dropdown-item" %>
               <% end %>
             </div>
           </li>
