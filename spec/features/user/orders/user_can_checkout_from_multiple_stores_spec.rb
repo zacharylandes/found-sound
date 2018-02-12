@@ -46,7 +46,6 @@ describe 'as a registered_user'do
 
         expect(page).to have_content(item_1.title)
         expect(page).to_not have_content(item_2.title)
-        save_and_open_page
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin_2)
 
         visit '/that_store'

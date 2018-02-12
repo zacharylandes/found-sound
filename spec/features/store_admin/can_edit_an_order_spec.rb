@@ -8,6 +8,8 @@ describe "As a store admin" do
       user_store = create(:user_store, user: store_admin, store: store, user_type: 1)
       item1 = create(:item, store: store)
       order1 = create(:order)
+      orderitem = create(:order_item, item: item1, order: order1)
+      create(:store_order, order:order1, store:store)
       order1.items << item1
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(store_admin)
 
@@ -15,7 +17,7 @@ describe "As a store admin" do
 
       click_on "Orders"
 
-      select "cancelled", from: "order[status]"
+      select "cancelled", from: "store_order[status]"
 
       click_on "Change Status"
 
