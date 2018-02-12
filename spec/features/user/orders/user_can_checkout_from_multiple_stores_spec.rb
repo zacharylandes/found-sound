@@ -23,16 +23,19 @@ describe 'as a registered_user'do
 
       visit '/categories/thrillers'
 
-
+        #add item_2 to cart
         within(:xpath, '(//div[@class="card-body"])[1]') do
                 click_on "Add to cart"
         end
+        #add item_3 to cart
         within(:xpath, '(//div[@class="card-body"])[2]') do
                 click_on "Add to cart"
         end
+        #add item_1 to cart
         within(:xpath, '(//div[@class="card-body"])[3]') do
                 click_on "Add to cart"
         end
+        #add item_4 to cart
         within(:xpath, '(//div[@class="card-body"])[4]') do
                 click_on "Add to cart"
         end
@@ -70,16 +73,19 @@ describe 'as a registered_user'do
 
       visit '/categories/thrillers'
 
-
+      #add item_2 to cart
       within(:xpath, '(//div[@class="card-body"])[1]') do
               click_on "Add to cart"
       end
+      #add item_3 to cart
       within(:xpath, '(//div[@class="card-body"])[2]') do
               click_on "Add to cart"
       end
+      #add item_1 to cart
       within(:xpath, '(//div[@class="card-body"])[3]') do
               click_on "Add to cart"
       end
+      #add item_4 to cart
       within(:xpath, '(//div[@class="card-body"])[4]') do
               click_on "Add to cart"
       end
