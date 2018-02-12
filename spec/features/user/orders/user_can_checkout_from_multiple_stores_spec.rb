@@ -100,9 +100,15 @@ describe 'as a registered_user'do
 
       visit dashboard_index_path
 
+<<<<<<< HEAD
       click_on "My Stores"
       click_on "#{store_1.name}"
       click_on "Orders"
+=======
+        expect(page).to have_content(item_1.title)
+        expect(page).to_not have_content(item_2.title)
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin_2)
+>>>>>>> refactor
 
       within ".order-id" do
         first(:link).click

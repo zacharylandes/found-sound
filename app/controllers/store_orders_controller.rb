@@ -3,11 +3,14 @@ class StoreOrdersController < ApplicationController
 
 
 
+<<<<<<< HEAD
   def show
     @order = StoreOrder.find(params[:id])
     render 'orders/show.html.erb'
 
   end
+=======
+>>>>>>> refactor
 
   def update
     @storeorder = StoreOrder.find(params[:id])
