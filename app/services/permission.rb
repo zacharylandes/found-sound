@@ -109,6 +109,7 @@ class Permission
     # end
 
     def base_permissions
+      return true if controller == "charges" && action.in?(%w(new create))
       return true if controller == "api/v1/search" && action.in?(%w(index))
       return true if controller == "developer" && action.in?(%w(show create))
       return true if controller == "main" && action == "index"

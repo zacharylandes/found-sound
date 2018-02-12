@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :stores, only: [:index, :update]
   end
 
+    resources :charges
+    
   get '/auth/twitter', as: :twitter_login
   get '/auth/twitter/store', to: "twitter#edit", as: "new_twitter"
   get '/auth/twitter/callback', to: "twitter#update"
