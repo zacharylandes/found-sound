@@ -15,7 +15,6 @@ describe 'as a registered_user'do
   let!(:item_1){create(:item, store: store_1, category_id: thrillers.id, price: 15.00 )}
   let!(:item_4){create(:item, store: store_1, category_id: thrillers.id, price: 5.00 )}
 
-
   describe 'when I click checkout' do
     it 'shouldnt matter which store I checkout from' do
     user = create(:user)
@@ -24,11 +23,11 @@ describe 'as a registered_user'do
 
         visit departments_department_path(department.slug)
 
-        #add item_2 to cart
+        # add item_2 to cart
         within(:xpath, '(//div[@class="card-body"])[1]') do
                 click_on "Add to cart"
         end
-        #add item_3 to cart
+        # add item_3 to cart
         within(:xpath, '(//div[@class="card-body"])[2]') do
                 click_on "Add to cart"
         end
@@ -74,19 +73,19 @@ describe 'as a registered_user'do
 
       visit departments_department_path(department.slug)
 
-      #add item_2 to cart
+      # add item_2 to cart
       within(:xpath, '(//div[@class="card-body"])[1]') do
               click_on "Add to cart"
       end
-      #add item_3 to cart
+      # add item_3 to cart
       within(:xpath, '(//div[@class="card-body"])[2]') do
               click_on "Add to cart"
       end
-      #add item_1 to cart
+      # add item_1 to cart
       within(:xpath, '(//div[@class="card-body"])[3]') do
               click_on "Add to cart"
       end
-      #add item_4 to cart
+      # add item_4 to cart
       within(:xpath, '(//div[@class="card-body"])[4]') do
               click_on "Add to cart"
       end
