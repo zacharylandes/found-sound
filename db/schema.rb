@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211210403) do
+ActiveRecord::Schema.define(version: 20180212211428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,16 @@ ActiveRecord::Schema.define(version: 20180211210403) do
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.string "slug"
+    t.bigint "department_id"
+    t.index ["department_id"], name: "index_categories_on_department_id"
     t.index ["slug"], name: "index_categories_on_slug", unique: true
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
   end
 
   create_table "developers", force: :cascade do |t|
@@ -129,6 +138,8 @@ ActiveRecord::Schema.define(version: 20180211210403) do
     t.index ["item_id"], name: "index_views_on_item_id"
     t.index ["user_id"], name: "index_views_on_user_id"
   end
+
+  add_foreign_key "categories", "departments"
 
   add_foreign_key "developers", "users"
   add_foreign_key "items", "categories"
