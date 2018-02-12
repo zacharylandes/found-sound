@@ -38,14 +38,12 @@ RSpec.feature "Adding items to the cart" do
       click_on "Add to cart"
       click_on "Add to cart"
       click_on "Cart"
-
+      save_and_open_page
       expect(current_path).to eq(cart_path)
 
       expect(page).to have_content(item.title)
       expect(page).to have_content("2")
-      within '.total' do
-        expect(page).to have_content "$20.00"
-      end
+        expect(page).to have_content "$20.0"
     end
   end
 end

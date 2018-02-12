@@ -38,28 +38,11 @@
       <% @cart.cart_items.each do |item| %>
         <% @cart.subtotal(item) %>
       <% end %>
-      <% @total = number_to_currency(@cart.total) %>
+      <p><b>Total: <%= number_to_currency(@cart.total) %></b></p>
     </div>
     <div class="checkout">
       <% if current_user && !@cart.empty?%>
-      <%= form_tag orders_path do %>
-        <article>
-          <% if flash[:error].present? %>
-            <div id="error_explanation">
-              <p><%= flash[:error] %></p>
-            </div>
-          <% end %>
-            <span>Total: <%= @total %></span>
-        </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="You Completed Order"
-          data-amount="<%= @total%>"
-          data-label ="Checkout"
-          data-locale="auto"></script>
-<% end %>
-
+        <%= link_to "Checkout", new_order_path(total: number_to_currency(@cart.total))%>
       <% else %>
         <%= link_to "Login", login_path %> <br />
         <%= link_to "Create new account", new_user_path %>

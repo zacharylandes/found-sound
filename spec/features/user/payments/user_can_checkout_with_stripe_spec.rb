@@ -25,14 +25,10 @@ RSpec.feature "User can checkout with stripe" do
     end
 
     click_on "Cart"
+    #
+    click_on 'Checkout'
 
-    within '.active' do
-      click_button.first
-    end
-
-  # expect(page).to have_css('iframe[name="checkout"]')
-    # # click_button "Checkout"
-    # expect(current_path).to eq('/orders')
-    # expect(page).to have_content("Order was successfully placed")
+    expect(current_path).to eq(new_order_path)
+    expect(page).to have_content("$10.00")
   end
 end
