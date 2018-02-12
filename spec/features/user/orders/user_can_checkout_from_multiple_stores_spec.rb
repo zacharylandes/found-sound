@@ -51,7 +51,10 @@ describe 'as a registered_user'do
       click_on "#{store_2.name}"
       click_on "Orders"
 
-      click_on '1'
+      within ".order-id" do
+        first(:link).click
+      end
+
 
       expect(StoreOrder.first.total_price).to eq(15)
       expect(page).to have_content(15)
@@ -94,8 +97,10 @@ describe 'as a registered_user'do
       click_on "My Stores"
       click_on "#{store_1.name}"
       click_on "Orders"
-      save_and_open_page
-      click_on '4'
+
+      within ".order-id" do
+        first(:link).click
+      end
 
       expect(page).to have_content(20)
       expect(StoreOrder.last.total_price).to eq(20)
