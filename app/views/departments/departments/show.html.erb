@@ -1,0 +1,25 @@
+<h2><%= @presenter.department.title.capitalize %></h2>
+<h3><%= @presenter.category.title.capitalize if !@presenter.category.nil? %></h3>
+<div class="">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Category</a>
+  <div class="dropdown-menu">
+    <%= link_to "All", departments_department_path(@presenter.department.slug), class: "dropdown-item"  %>
+    <% @presenter.categories.each do |category| %>
+      <%= link_to category.title, departments_department_path(category.department.slug, category: category.slug), class: "dropdown-item" %>
+    <% end %>
+  </div>
+</div>
+<div class="row items text-center">
+  <% @presenter.items.each do |item| %>
+    <div class="center-block">
+      <div class="card border-white" style="width: 15rem;">
+        <%= cl_image_tag item.image, class: "card-img-top" %>
+        <div class="card-body">
+          <p><strong><%= link_to item.title, item_path(item) %></strong></p>
+          <p>Price:$ <%= item.price %></p>
+          <%= link_to "Add to cart", cart_path(item_id: item.id), method: :post, class: "badge badge-primary" %></center>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
