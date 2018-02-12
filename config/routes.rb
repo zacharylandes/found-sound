@@ -41,8 +41,8 @@ Rails.application.routes.draw do
   put '/cart', to: 'cart#update'
   delete '/cart', to: 'cart#destroy'
 
-  namespace :categories do
-    get '/:category', to: 'categories#show', param: :slug, as: "category"
+  namespace :departments do
+    get '/:department', to: 'departments#show', as: 'department'
   end
 
   namespace :api do
