@@ -15,7 +15,7 @@ class TwitterController < ApplicationController
   def create
     @store = Store.find(params[:store])
     response = @store.tweet(params[:tweet])
-    flash.notice = "Your Tweet was Posted <a href=#{response.uri}>Tweet</a>"
+    flash.notice = "Your Tweet was Posted <a href=#{response.uri}>See it Here</a>"
     redirect_to "/#{@store.slug}"
   end
 
