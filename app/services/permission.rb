@@ -26,7 +26,7 @@ class Permission
       return true if controller == "items" && action.in?(%w(show))
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "users" && action.in?(%w(update new create destroy))
-      return true if controller == "orders" && action.in?(%w(index show create))
+      return true if controller == "orders" && action.in?(%w(index show new create))
       return true if controller == "dashboard" && action.in?(%w(index))
       return true if controller == "departments/departments" && action.in?(%w(show))
     end
@@ -90,7 +90,7 @@ class Permission
       return true if controller == "dashboard" && action.in?(%w(index))
       return true if controller == "stores" && action.in?(%w(index new create show ))
       return true if controller == "items" && action.in?(%w(show))
-      return true if controller == "orders" && action.in?(%w(index create show update))
+      return true if controller == "orders" && action.in?(%w(index create new show update))
       return true if controller == "auth" && action.in?(%w(twitter))
       return true if controller == "twitter" && action.in?(%w(create))
       return true if controller == "departments/departments" && action.in?(%w(show))
