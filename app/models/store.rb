@@ -1,6 +1,7 @@
 class Store < ApplicationRecord
   has_many :items
   has_many :user_stores
+  has_many :store_orders
   has_many :users, through: :user_stores
   validates :name, uniqueness: true
   validates_presence_of :status, :name, :address
@@ -17,7 +18,7 @@ class Store < ApplicationRecord
   def suspended?
     return true if self.status == "suspended"
   end
-  
+
   def active_items
     items.where(condition: 'active')
   end
