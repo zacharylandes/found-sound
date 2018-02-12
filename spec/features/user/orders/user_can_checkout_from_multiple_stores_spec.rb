@@ -6,7 +6,7 @@ describe 'as a registered_user'do
   let!(:admin){create(:user)}
   let!(:admin_2){create(:user)}
   let(:department) {create(:department, title: "books")}
-  let!(:thrillers) {create(:category, title: "thrillers")}
+  let!(:thrillers) {create(:category, title: "thrillers", department: department)}
   let!(:store_1){create(:store, name: "this_store", status:"active", slug: "this_store")}
   let!(:store_2){create(:store, name: "that_store", status:"active", slug: "that_store")}
   let!(:user_store) {create(:user_store, user: admin_2, store: store_2, user_type: 0)}
