@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :visitor?, :has_store_role?, :at_this_store?, :not_found, :has_upper_permissions?, :suspended?
   before_action :set_cart, :set_categories, :authorize!
+  before_action :store_history
 
   def current_user
     @user = User.find(session[:user_id]) if session[:user_id]
@@ -39,7 +40,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-
     def authorize!
       not_found unless current_permission.authorized?
     end
@@ -54,5 +54,11 @@ class ApplicationController < ActionController::Base
 
     def not_found
       raise ActionController::RoutingError.new('Not Found')
+    end
+
+    def store_history
+      session[:history] ||= []
+      session[:history].delete_at(0) if session[:history].size >= 5
+      session[:history] << request.url if request.url.include?("items") && !request.url.include?("admin") unless session[:history].include?(request.url)
     end
 end
