@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20180211210403) do
     t.datetime "updated_at", null: false
     t.integer "condition", default: 0
     t.string "image_file_name"
-    t.string "image_content_type"
+    t.string "image_c ontent_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.bigint "store_id"

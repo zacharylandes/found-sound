@@ -6,12 +6,12 @@
           <th>Update Order</th>
 
         </tr>
-         <% @store.store_orders.each do |order| %>
+         <% @store.store_orders.each do |store_order| %>
            <tr>
-            <td> <%= order.id %></td>
-            <td> <%= order.total_price %></td>
-              <%= form_for order, url: store_order_path(order), method: :put do |f| %>
-                <td><%= f.select :status, ["paid", "cancelled", "completed", "ordered"], placeholder: order.status %></td>
+            <td> <%= link_to store_order.id, store_order_path(store_order) %></td>
+            <td> <%= store_order.total_price %></td>
+              <%= form_for store_order, url: store_order_path(store_order), method: :put do |f| %>
+                <td><%= f.select :status, ["paid", "cancelled", "completed", "ordered"], placeholder: store_order.status %></td>
                 <td><%= f.submit "Change Status" %></td>
             <% end %>
             <% end %>
