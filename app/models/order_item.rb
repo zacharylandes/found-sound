@@ -2,6 +2,9 @@ class OrderItem < ApplicationRecord
   belongs_to :order
   belongs_to :item
 
+  has_many :store_order_order_items
+  has_many :store_orders, through: :store_order_order_items
+
   def self.sum_quantity
     group(:item_id)
   end

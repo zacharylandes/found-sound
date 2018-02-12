@@ -1,17 +1,14 @@
  	     <table class="table table-hover">
         <tr>
           <th>Orders</th>
-          <th>User</th>
           <th>Price</th>
           <th>Status</th>
           <th>Update Order</th>
 
         </tr>
-         <% @store.items.each do |item| %>
-           <% item.orders.each do |order| %>
+         <% @store.store_orders.each do |order| %>
            <tr>
             <td> <%= order.id %></td>
-            <td>  <%= User.find(order.user_id).first_name %></td>
             <td> <%= order.total_price %></td>
               <%= form_for order, url: order_path(order), method: :put do |f| %>
                 <td><%= f.select :status, ["paid", "cancelled", "completed", "ordered"], placeholder: order.status %></td>

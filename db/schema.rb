@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211201244) do
+ActiveRecord::Schema.define(version: 20180211210403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,26 @@ ActiveRecord::Schema.define(version: 20180211201244) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "store_order_order_items", force: :cascade do |t|
+    t.bigint "store_order_id"
+    t.bigint "order_item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_item_id"], name: "index_store_order_order_items_on_order_item_id"
+    t.index ["store_order_id"], name: "index_store_order_order_items_on_store_order_id"
+  end
+
+  create_table "store_orders", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "store_id"
+    t.string "status"
+    t.integer "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_store_orders_on_order_id"
+    t.index ["store_id"], name: "index_store_orders_on_store_id"
+  end
+
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -116,6 +136,10 @@ ActiveRecord::Schema.define(version: 20180211201244) do
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
+  add_foreign_key "store_order_order_items", "order_items"
+  add_foreign_key "store_order_order_items", "store_orders"
+  add_foreign_key "store_orders", "orders"
+  add_foreign_key "store_orders", "stores"
   add_foreign_key "user_stores", "stores"
   add_foreign_key "user_stores", "users"
   add_foreign_key "views", "items"

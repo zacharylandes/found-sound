@@ -22,11 +22,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Order.create(status: "ordered", user_id: current_user.id)
-    order.add(@cart)
+    order =  Order.create(status: "ordered", user_id: current_user.id)
+     order.add(@cart)
+     OrderCreator.new(order, current_user).create_store_order
     @cart.destroy
     flash[:success] = "Order was successfully placed"
     redirect_to orders_path
+
   end
 
   private
