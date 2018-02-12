@@ -1,8 +1,7 @@
 class OrderCreator
 
-  def initialize(order, user)
+  def initialize(order)
     @order = order
-    @user = user
     @stores =  @order.items.map {|item| Store.find(item.store_id)}
   end
 
@@ -12,6 +11,7 @@ class OrderCreator
         items=  @order.items.where(store_id:store.id)
         ois = OrderItem.where(item_id: items).where(order_id:@order.id)
         so.order_items << ois
+
         so.update_attributes(total_price: price(ois))
         store.store_orders << so
       end
