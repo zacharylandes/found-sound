@@ -10,7 +10,8 @@ describe Category do
     end
     describe 'valid attributes' do
       it 'can be created with a title' do
-        category = Category.new(title: "Animals")
+        department = create(:department)
+        category = Category.new(title: "Animals", department: department)
         expect(category).to be_valid
       end
     end

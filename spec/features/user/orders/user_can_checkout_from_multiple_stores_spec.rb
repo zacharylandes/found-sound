@@ -5,6 +5,7 @@ describe 'as a registered_user'do
   let!(:user){create(:user)}
   let!(:admin){create(:user)}
   let!(:admin_2){create(:user)}
+  let(:department) {create(:department, title: "books")}
   let!(:thrillers) {create(:category, title: "thrillers")}
   let!(:store_1){create(:store, name: "this_store", status:"active", slug: "this_store")}
   let!(:store_2){create(:store, name: "that_store", status:"active", slug: "that_store")}
@@ -21,7 +22,7 @@ describe 'as a registered_user'do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit '/categories/thrillers'
+        visit departments_department_path(department.slug)
 
         #add item_2 to cart
         within(:xpath, '(//div[@class="card-body"])[1]') do
@@ -71,7 +72,7 @@ describe 'as a registered_user'do
 
       create(:user_store, user: admin, store: store_1, user_type: 0)
 
-      visit '/categories/thrillers'
+      visit departments_department_path(department.slug)
 
       #add item_2 to cart
       within(:xpath, '(//div[@class="card-body"])[1]') do
