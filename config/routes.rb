@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index]
 
   resources :items, only: [:show]
+  resources :store_orders, only: [:update]
 
   resources :views, only: [:create, :destroy]
 

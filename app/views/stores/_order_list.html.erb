@@ -10,12 +10,12 @@
            <tr>
             <td> <%= order.id %></td>
             <td> <%= order.total_price %></td>
-              <%= form_for order, url: order_path(order), method: :put do |f| %>
+              <%= form_for order, url: store_order_path(order), method: :put do |f| %>
                 <td><%= f.select :status, ["paid", "cancelled", "completed", "ordered"], placeholder: order.status %></td>
                 <td><%= f.submit "Change Status" %></td>
             <% end %>
-          </tr>
             <% end %>
-          <% end %>
+
+          </tr>
           </tr>
        </table>

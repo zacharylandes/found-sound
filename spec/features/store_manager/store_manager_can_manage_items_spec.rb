@@ -52,7 +52,6 @@ describe "As a store manager" do
         visit dashboard_index_path
         click_on "My Stores"
         click_on "#{store.name}"
-
         fill_in :tweet, with: "Come Shop"
         click_on "Tweet"
 
