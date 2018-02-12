@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :visitor?, :has_store_role?, :at_this_store?, :not_found, :has_upper_permissions?, :suspended?
-  before_action :set_cart, :set_categories, :authorize!
+  before_action :set_cart, :set_departments, :authorize!
 
   def current_user
     @user = User.find(session[:user_id]) if session[:user_id]
@@ -33,8 +33,8 @@ class ApplicationController < ActionController::Base
     @cart ||= CartDecorator.new(Cart.new(session[:cart]))
   end
 
-  def set_categories
-    @categories = Category.all
+  def set_departments
+    @departments = Department.all
   end
 
   private
