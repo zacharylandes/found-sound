@@ -140,7 +140,6 @@ ActiveRecord::Schema.define(version: 20180212211428) do
   end
 
   add_foreign_key "categories", "departments"
-
   add_foreign_key "developers", "users"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "stores"
