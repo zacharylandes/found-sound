@@ -1,5 +1,10 @@
 <header class="header">
   <div class="container-fluid">
+
+    <%= form_tag do %>
+      <%= text_field_tag :search, "", placeholder: "Search for items", class: "search-bar" %>
+    <% end  %>
+
     <div id="logo" class="pull-left">
       <h1><%= link_to "Found Sound", root_path, class: "title" %></h1>
     </div>
@@ -43,4 +48,7 @@
         </ul>
     </nav>
   </div>
+
+  <div class="search-suggestions"> </div>
+
 </header>
