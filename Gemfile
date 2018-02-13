@@ -4,7 +4,6 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem 'stripe-ruby-mock', '~> 2.5.2', :require => 'stripe_mock'
 
 gem 'stripe'
 gem 'rails', '~> 5.1.3'
@@ -33,6 +32,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-pride', '~> 3.2', '>= 3.2.1'
   gem 'pry-rails'
+ gem 'poltergeist'
+
   gem 'capybara'
   gem "factory_bot_rails"
   gem 'database_cleaner'
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'coveralls', require: false
   gem 'travis'
+  gem 'selenium-webdriver'
 end
 
 group :development do

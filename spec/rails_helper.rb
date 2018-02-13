@@ -16,6 +16,8 @@ require 'support/simple_cov'
 require 'feature_helper'
 require 'santas_little_helper'
 require 'twitter_helper'
+require "capybara/poltergeist" # Add this line to require poltergeist
+
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -32,6 +34,7 @@ RSpec.configure do |config|
   config.include SantasLittleHelper
   config.include FeatureHelper
   config.include TwitterHelper
+  config.use_transactional_fixtures = false
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
