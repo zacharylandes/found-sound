@@ -21,11 +21,9 @@
 // TRY FETCH??
 $(document).ready(function() {
   $('.search-bar').keyup(function(event){   // would be nice to not act on special keys
-    
     var domain = window.location.origin;
     var query = $('.search-bar').val();
     var endpoint = domain + "/api/v1/search?type=items&q="+query+"&api_key=JqlcBKktH7g2JS-GCOTTkg";
-
       if (query === "") {
         $(".search-suggestions").html("");
       } else {
