@@ -55,4 +55,45 @@ namespace :migrate_data do
     microphones = Category.create(title: "Microphones")
     equipment.categories << [amps, speakers, turntables, microphones]
   end
+
+  desc "create items for the departments"
+  task add_department_items: :environment do
+    strings = Category.find_by(title: "String")
+    percussion = Category.find_by(title: "Percussion")
+    brass = Category.find_by(title: "Brass")
+    woodwind = Category.find_by(title: "Woodwind")
+
+    jazz = Category.find_by(title: "Jazz")
+    classic_rock = Category.find_by(title: "Classic Rock")
+    punk_rock = Category.find_by(title: "Punk Rock")
+    hiphop = Category.find_by(title: "Hip Hop")
+    funk = Category.find_by(title: "Funk")
+
+    amps = Category.find_by(title: "Amplifiers")
+    speakers = Category.find_by(title: "Speakers")
+    turntables = Category.find_by(title: "Turn Tables")
+    microphones = Category.find_by(title: "Microphones")
+
+    5.times do
+      Item.create(title: "#{Faker::Color.color_name} Flute", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518479957/wzcbhniq6wh9rhiqbyzn.jpg", store: Store.all.sample, category: woodwind)
+      Item.create(title: "#{Faker::Color.color_name} Guitar", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480006/ozhnmaccv60na3rnb4o9.jpg", store: Store.all.sample, category: strings)
+      Item.create(title: "#{Faker::Color.color_name} Drum Set", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480040/etjbimnu52cxeejnx7oz.jpg", store: Store.all.sample, category: percussion)
+      Item.create(title: "#{Faker::Color.color_name} Trumpet", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image:  "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518481789/yq8xfl3qpzboi0ntcwi4.jpg", store: Store.all.sample, category: brass)
+    end
+
+    5.times do |time|
+      Item.create(title: "Now That's What I Call Jazz #{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480069/kssxvp0dgo5c1gqecm5o.jpg", store: Store.all.sample, category: jazz)
+      Item.create(title: "Now That's What I Call Classic Rock #{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480069/kssxvp0dgo5c1gqecm5o.jpg", store: Store.all.sample, category: classic_rock)
+      Item.create(title: "Now That's What I Call Punk Rock #{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480069/kssxvp0dgo5c1gqecm5o.jpg", store: Store.all.sample, category: punk_rock)
+      Item.create(title: "Now That's What I Call Hip Hop #{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480069/kssxvp0dgo5c1gqecm5o.jpg", store: Store.all.sample, category: hiphop)
+      Item.create(title: "Now That's What I Call Funk #{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480069/kssxvp0dgo5c1gqecm5o.jpg", store: Store.all.sample, category: funk)
+    end
+
+    5.times do |time|
+      Item.create(title: "Big Ass Amp V#{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480098/pp7rlicexfxovpbl7m0c.jpg", store: Store.all.sample, category: amps)
+      Item.create(title: "Loud F-ing Speakers V#{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480123/awel0ebqhuj1civcdzcr.jpg", store: Store.all.sample, category: speakers)
+      Item.create(title: "Premium DJ Turntable V#{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480148/exhahnivcutz48gpcldp.jpg", store: Store.all.sample, category: turntables)
+      Item.create(title: "Justin Beiber Mic #{time}", description: "#{Faker::Hipster.sentences(2)}", price: rand(0..100000)/100.00, image: "http://res.cloudinary.com/dhzyzerqn/image/upload/v1518480170/hymq3fyjg9vhggxbmrcs.jpg", store: Store.all.sample, category: microphones)
+    end
+  end
 end
