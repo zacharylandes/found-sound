@@ -10,11 +10,11 @@ class Order < ApplicationRecord
     self.total_price = order_items.map do |oi|
       oi.item.price * oi.quantity
     end.sum
-    self.save
+    self.save!
   end
 
   def add(cart)
-    cart.cart_items.each do |item|
+     cart.cart_items.each do |item|
       items << item
       order_item = OrderItem.find_by(order: self, item_id: item.id)
       order_item.update(quantity: cart.quantity_of(item.id))

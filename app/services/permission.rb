@@ -50,7 +50,7 @@ class Permission
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "cart" && action.in?(%w(index create destroy update))
       return true if controller == "categories/categories" && action.in?(%w(show))
-      return true if controller == "orders" && action.in?(%w(index show create update))
+      return true if controller == "orders" && action.in?(%w(index show new create update))
       return true if controller == "items" && action.in?(%w(index show edit update new create))
       return true if controller == "auth" && action.in?(%w(twitter))
       return true if controller == "twitter" && action.in?(%w(edit update create destroy))
@@ -69,7 +69,7 @@ class Permission
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "cart" && action.in?(%w(index create destroy update))
       return true if controller == "categories/categories" && action.in?(%w(show))
-      return true if controller == "orders" && action.in?(%w(index show create update))
+      return true if controller == "orders" && action.in?(%w(index new  show create update))
       return true if controller == "items" && action.in?(%w(index show edit update new create))
       return true if controller == "auth" && action.in?(%w(twitter))
       return true if controller == "twitter" && action.in?(%w(edit update create destroy))
@@ -112,7 +112,6 @@ class Permission
 
     def base_permissions
       return true if controller == "store_orders" && action == "update"
-      return true if controller == "charges" && action.in?(%w(new create))
       return true if controller == "api/v1/search" && action.in?(%w(index))
       return true if controller == "developer" && action.in?(%w(show create))
       return true if controller == "main" && action == "index"

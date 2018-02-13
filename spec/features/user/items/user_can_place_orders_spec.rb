@@ -31,7 +31,6 @@ RSpec.feature "User can place an order" do
     expect(page).to have_link("Checkout")
 
     click_on "Checkout"
-
     expect(current_path).to eq('/orders/new')
   end
   end
