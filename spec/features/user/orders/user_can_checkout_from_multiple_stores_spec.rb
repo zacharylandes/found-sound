@@ -22,10 +22,10 @@ describe 'as a registered_user'do
 
       cart = CartDecorator.new( Cart.new({"1"=>1, "2"=>1, "3"=>1, "4"=>1}))
       order.add(cart)
+
       OrderCreator.new(order).create_store_order
       expect(StoreOrder.first.total_price).to eq(15)
       expect(StoreOrder.last.total_price).to eq(20)
-      expect(page).to have_content(15)
     end
   end
 end
