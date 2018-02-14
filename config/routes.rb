@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount ActionCable.server => '/cable'
   root :to => 'main#index'
 
   get 'signout', to: 'sessions#destroy', as: 'signout'
