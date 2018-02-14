@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    cookies[:user_id] = nil
     redirect_to root_path
   end
 
@@ -30,6 +31,7 @@ class SessionsController < ApplicationController
 
   def login_successful
     session[:user_id] = @user.id
+    cookies[:user_id] = @user.id
     flash[:notice] = "Logged in as #{@user.first_name} #{@user.last_name}"
     if @user.role == "admin"
       redirect_to admin_dashboard_index_path
