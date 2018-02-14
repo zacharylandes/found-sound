@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name,  presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence:true, allow_nil: true
+  has_one :chatroom
+  has_many :chat_messages
 
   enum role: ["default", "admin"]
 
