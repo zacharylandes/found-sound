@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.easypost.com/addresses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - 1uwKz8JPf6DCiVH8ZQaiVg
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ep-Request-Uuid:
+      - 4362f5d2-db39-42e3-9c95-67deb4367728
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, private
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Runtime:
+      - '0.015003'
+      Transfer-Encoding:
+      - chunked
+      X-Node:
+      - be10dd5b19
+      - bigweb2sj
+      - easypost
+      X-Backend:
+      - easypost
+      X-Proxied:
+      - intlb1sj a892cfa518
+      - lb4sj a892cfa518
+      Strict-Transport-Security:
+      - max-age=15768000; includeSubDomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":{"code":"NOT_FOUND","message":"The requested resource could
+        not be found.","errors":[]}}'
+    http_version: 
+  recorded_at: Wed, 14 Feb 2018 01:00:21 GMT
+- request:
+    method: get
+    uri: https://api.easypost.com/addresses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - 1uwKz8JPf6DCiVH8ZQaiVg
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ep-Request-Uuid:
+      - eb084d14-307e-4ef6-b516-0992ff3b4f82
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, private
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Runtime:
+      - '0.009471'
+      Transfer-Encoding:
+      - chunked
+      X-Node:
+      - be10dd5b19
+      - bigweb5sj
+      - easypost
+      X-Backend:
+      - easypost
+      X-Proxied:
+      - intlb2sj a892cfa518
+      - lb4sj a892cfa518
+      Strict-Transport-Security:
+      - max-age=15768000; includeSubDomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":{"code":"NOT_FOUND","message":"The requested resource could
+        not be found.","errors":[]}}'
+    http_version: 
+  recorded_at: Wed, 14 Feb 2018 01:01:28 GMT
+recorded_with: VCR 4.0.0
