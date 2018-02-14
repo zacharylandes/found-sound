@@ -1,7 +1,8 @@
-    <%= image_tag 'login.png' %>
+    <!-- <%= image_tag 'login.png' %> -->
   <div class="row">
     <div class="col-3">
-    <table class="table login-form">
+    <table class="table">
+      <h2>Login Here</h2>
       <%= form_for(:session, url: login_path) do |f| %>
         <tr>
           <td class="table-light"><%= f.text_field :email, placeholder: "Email" %></td>
@@ -10,10 +11,10 @@
           <td class="table-light"><%= f.password_field :password, placeholder: "Password"  %></td>
         </tr>
         <tr class="action">
-          <td class="table-light"><%= f.submit name="Login", class: "btn btn-success btn-md" %></td>
+          <td class="table-light"><%= f.submit name="Login", class: "btn " %></td>
         </tr>
         <tr>
-          <td class="table-light"><small>Don't have an account with us? <%= link_to "Create an account", new_user_path, class: "btn btn-success btn-md" %></small></td>
+          <td class="table-light"><small>Don't have an account with us? <%= link_to "Create an account", new_user_path, class: "btn " %></small></td>
         </tr>
       <% end %>
     </table>

@@ -1,8 +1,10 @@
 footer {
-  border-top: 2px solid white;
-  background: #000;
-  color: $barely-blue;
+  // border-top: 2px solid white;
+  color: white;
   .footer {
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

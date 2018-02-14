@@ -5,11 +5,13 @@
 </head>
 <body>
 	<h4><%= link_to "Continue shopping", root_path %></h4>
-		<div class="row text-center">
-			<div class='col-6'>
+		<div class="row text-center item">
+			<div class='col-4'>
 				<%= cl_image_tag(@item.image) %>
+				<div class = "border-line">
 				</div>
-			<div class='col-6 card bg-info'>
+				</div>
+			<div class='col-4 card '>
 				<div class='card-body '>
 				<h2><strong><%= @item.title %></strong></h2> <br />
 				<%= @item.description %> <br /> <br />

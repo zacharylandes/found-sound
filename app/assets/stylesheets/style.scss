@@ -1,14 +1,21 @@
 $barely-blue: #CAE1F1;
 $light-blue: #3AD2EA;
 $sans:  "Open Sans", sans-serif;
+$cutive: 'Cutive Mono', monospace;
 
 
 body {
-  font-family: $sans;
+  height: 100%;
+  font-family: 'Overpass Mono', monospace;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.alert{
+  background-color: black;
+  color: white;
+  font-size: 18px;
+}
 
 a {
   transition: 0.5s;
@@ -50,6 +57,7 @@ p {
 .pay-button{
   margin-top:30px;
 }
+
 
 .card-img-top img {
   max-height: 200px;
