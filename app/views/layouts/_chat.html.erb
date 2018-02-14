@@ -1,0 +1,16 @@
+<div class="chat-tab">
+  <div class="chat-window">
+    <% if current_user && current_user.chatroom %>
+    <div class="chat-messages" id="messages" data-chatroom=<%=current_user.chatroom.id%>>
+      <% current_user.messages.each do |message| %>
+      <span><%= message.user.first_name %>: <%= message.body %></span><br>
+      <% end %>
+    </div>
+    <%= render partial: 'messages/message_form', locals: {chat_message: @chat_message, chatroom: current_user.chatroom}%>
+    <%else%>
+    <div class="panel-body hidden" id="messages">
+    </div>
+    <%end%>
+  </div>
+  <button>Chat</button>
+</div>
