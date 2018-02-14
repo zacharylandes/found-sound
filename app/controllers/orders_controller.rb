@@ -29,17 +29,7 @@ class OrdersController < ApplicationController
   def create
       order =  Order.create(status: "ordered", user_id: current_user.id)
       order.add(@cart)
-      customer = Stripe::Customer.create(
-        :email => params[:stripeEmail],
-        :source  => params[:stripeToken]
-      )
-      charge = Stripe::Charge.create(
-        :customer    => customer.id,
-        :amount      => (order.total_price * 100).to_i,
-        :description => 'Rails Stripe customer',
-        :currency    => 'usd'
-      )
-      binding.pry
+      StripeService.new.create_customer(params[:stripeEmail], params[:stripeToken], order)
       OrderCreator.new(order).create_store_order
       @cart.destroy
       flash[:success] = "Order was successfully placed"
