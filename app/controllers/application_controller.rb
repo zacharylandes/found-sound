@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :visitor?, :has_store_role?, :at_this_store?, :not_found, :has_upper_permissions?, :suspended?
+  helper_method :current_user,
+                :current_admin?,
+                :visitor?,
+                :has_store_role?,
+                :at_this_store?,
+                :not_found,
+                :has_upper_permissions?,
+                :suspended?
+                
   before_action :set_cart,
                 :set_departments,
                 :set_categories,
