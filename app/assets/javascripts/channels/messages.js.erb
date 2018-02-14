@@ -6,25 +6,34 @@
 // });
 
 // this might not work due to turbolinks
-$(document).ready( function() {
+$(document).ready(function() {
   submitNewMessage();
 });
 
 <% Chatroom.all.each do |chatroom| %>
-App["room" + <%= chatroom.id %>] = App.cable.subscriptions.create({channel: 'MessagesChannel', room: <%= chatroom.id %>}, {
-  received: function(data) {
-    $("[data-chatroom='" + this.chatroomId + "']").append(data.message);
-  },
+App['room' + <%= chatroom.id %>] = App.cable.subscriptions.create({
+  channel: 'MessagesChannel',
+  room: <%= chatroom.id %>},
+  {
+    received: function(data) {
+      var payload = JSON.parse(data.message)
+      return $("#messages").append(payload["user"] + ": " + payload["message"] + "<br>");
+    },
+
+    setChatroomId: function(chatroomId){
+      this.chatroomId = chatroomId
+    }
 });
 <% end %>
 
 function submitNewMessage() {
-  $('textarea#message_content').keydown(function(event) {
+  $('textarea#chat_message_body').keydown(function(event) {
     if (event.keyCode === 13) {
         var msg = event.target.value
-        var chatroomId = $("[data-chatroom]").data().chatroom
-        App.messages.send({message: msg, chatroom_id: chatroomId})
-        $('[data-textarea="message"]').val(" ")
+        var chatroomId = $("#chat_message_chatroom_id").val()
+        App['room' + chatroomId].setChatroomId(chatroomId)
+        App['room' + chatroomId].send({message: msg})
+        $('[data-textarea="message"]').val("")
         return false;
      }
   });
