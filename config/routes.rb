@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   root :to => 'main#index'
 
+  get '/chat', to: 'chat#show'
+  post '/chat', to: 'chat#create', as: 'chat_messages'
+
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   get '/login', :to => 'sessions#new', :as => 'login'
