@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :edit, :new, :create, :update]
     resources :analytics, only: [:index]
     resources :stores, only: [:index, :update]
+    resources :chat, only: [:index, :show, :create]
   end
 
     resources :charges
