@@ -20,6 +20,7 @@
 
 // TRY FETCH??
 $(document).ready(function() {
+  // Item search
   $('.search-bar').keyup(function(event){   // would be nice to not act on special keys
     var domain = window.location.origin;
     var query = $('.search-bar').val();
@@ -37,4 +38,10 @@ $(document).ready(function() {
       }
     event.preventDefault();
   })
+  // Chat Toggle
+  $('.chat-tab').on('click', 'button', function() {
+    $('.chat-window').slideToggle()
+    $("#messages").scrollTop($('#messages')[0].scrollHeight);
+  });
+
 })
