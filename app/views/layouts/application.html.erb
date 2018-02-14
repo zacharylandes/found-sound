@@ -22,8 +22,16 @@
     </script>
     <%= render "layouts/nav" %>
     <%= render "layouts/messages" %>
-    <div class="container">
-      <%= yield %>
+    <div class="clearfix main">
+      <div class="col col-3">
+        <%= render "layouts/chat" %>
+      </div>
+      <div class="col col-6">
+        <%= yield %>
+      </div>
+      <div class="col col-3">
+
+      </div>
     </div>
     <%= render "layouts/footer" %>
     <%= javascript_include_tag "application" %>
