@@ -1,0 +1,10 @@
+<table class="table table-hover">
+  <th>Chatroom</th>
+  <th>Latest Post</th>
+  <% @chatrooms.each do |chatroom| %>
+  <tr>
+    <td><%= link_to "Chatroom #{chatroom.id}",admin_chat_path(chatroom) %></td>
+    <td><%= time_ago_in_words(chatroom.chat_messages.last.created_at) %></td>
+  </tr>
+  <% end %>
+</table>
