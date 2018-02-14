@@ -1,3 +1,6 @@
+html{
+  height: 100%;
+}
 .search-bar{
   margin-top: 20px;
 }
@@ -13,14 +16,16 @@ footer{
   float: bottom;
 }
 .successfully_removed {
-  color: green;
+  color: white;
 }
 .alert{
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  height: auto;
+  margin-bottom: 0;
+  background-color: black;
   text-align: center;
+}
+.alert-primary{
+  border-color:black;
+  border-radius:0px;
 }
 .logo {
   font-family: 'Pacifico', cursive;
@@ -31,13 +36,25 @@ footer{
   text-decoration: none;
   color: #333;
 }
-
+.row{
+  width: 1500px;
+}
 div.container {
-  width:800px;
-  height: 700px;
+  width:1500px;
+  height: 100%;
   overflow-y: scroll;
+  overflow-x:hidden;
   padding: 5px;
   color:black;
+}
+.container h4{
+margin: 40px 0px;
+border-left: 2px solid black;
+transition: all 2s;
+}
+.container h4:hover {
+  text-decoration: none;
+  padding-left: 40px;
 }
 
 a {
@@ -48,7 +65,36 @@ a {
   margin-right: auto;
   margin-left: auto;
 }
+.item{
+border-top:2px solid black;
+border-bottom:2px solid black;
+height: 500px;
+  // padding-top: 20px;
+}
+.card h2{
+  text-decoration: underline;
+}
+.card{
+  border:none;
+  border-radius: 0px;
+  border-left: 2px solid black;
+}
+.card-body p {
+  font-size: 14px;
+}
 
+.col-4 img{
+  margin-top:30px;
+}
+.border-line{
+  width: 100px;
+  border-bottom: 2 px solid black;
+
+}
+.col-6 img{
+  padding-bottom: 20px;
+border-bottom: 2px solid black;
+}
 #left {
   text-align: left;
   float: left;
@@ -57,10 +103,43 @@ a {
   text-align: right;
   /* Change this to whatever the width of your left column is*/
 }
+.center-block{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+box-shadow: 1px 1px 0px black;
+
+  text-align:center;
+  font-size: 13px;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  // height: 450px;
+  border:2px solid black;
+  margin: 40px;
+  overflow: auto;
+}
+
+
+@media (min-width: 1200px){
+  max-width: 2000px;
+}
+.center-block img{
+  margin-top:10px;
+  width: 180px;
+  // margin:;
+}
+.border-white{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
 .clear {
   clear: both;
 }
 
 .hero {
   width: 800px;
+  margin-bottom: 50px;
 }

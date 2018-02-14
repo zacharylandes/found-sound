@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
   end
 
   def update
+
     @order = Order.find(params[:id])
     @order.update(order_params)
     @order.save
@@ -29,7 +30,7 @@ class OrdersController < ApplicationController
   def create
       order =  Order.create(status: "ordered", user_id: current_user.id)
       order.add(@cart)
-      StripeService.new.create_customer(params[:stripeEmail], params[:stripeToken], order)
+      StripeService.new.stripe_customer(params[:stripeEmail], params[:stripeToken], order)
       OrderCreator.new(order).create_store_order
       @cart.destroy
       flash[:success] = "Order was successfully placed"

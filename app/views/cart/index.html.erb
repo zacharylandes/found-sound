@@ -22,7 +22,7 @@
             <div class="item-#{item.id}">
               <tr>
                 <th scope="row"><strong><%= link_to item.title, item_path(item) %></strong></th>
-                <td><%= cl_image_tag item.image, :class => "cart_image"%></td>
+                <td><%= cl_image_tag item.image%></td>
                 <td>$<%= item.price %></td>
                 <td><%= @cart.quantity_of(item.id) %></td>
                 <td><%= link_to "-", cart_path(id: item.id, condition: "decrease"), action: :update, method: :patch, class: "badge badge-warning" %>
