@@ -81,4 +81,8 @@ class User < ApplicationRecord
     user_stores.find_by(store_id: store).user_type
   end
 
+  def messages
+    chatroom.chat_messages.order(:created_at)
+  end
+
 end
