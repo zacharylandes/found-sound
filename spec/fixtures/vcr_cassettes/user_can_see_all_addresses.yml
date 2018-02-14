@@ -1,24 +1,24 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.easypost.com/addresses
+    method: post
+    uri: https://api.easypost.com/v2/shipments?api_key=1uwKz8JPf6DCiVH8ZQaiVg&shipment%5Bfrom_address%5D%5Bcity%5D=San%20Francisco&shipment%5Bfrom_address%5D%5Bcountry%5D=US&shipment%5Bfrom_address%5D%5Bemail%5D=support@easypost.com&shipment%5Bfrom_address%5D%5Bname%5D=EasyPost&shipment%5Bfrom_address%5D%5Bphone%5D=4153334445&shipment%5Bfrom_address%5D%5Bstate%5D=CA&shipment%5Bfrom_address%5D%5Bstreet1%5D=417%20Montgomery%20st&shipment%5Bfrom_address%5D%5Bstreet2%5D=5th%20Floor&shipment%5Bfrom_address%5D%5Bzip%5D=94104&shipment%5Bparcel%5D%5Bheight%5D=5&shipment%5Bparcel%5D%5Blength%5D=20.2&shipment%5Bparcel%5D%5Bweight%5D=65.9&shipment%5Bparcel%5D%5Bwidth%5D=10.9&shipment%5Bto_address%5D%5Bcity%5D=Redondo%20Beach&shipment%5Bto_address%5D%5Bcountry%5D=US&shipment%5Bto_address%5D%5Bemail%5D=dr_steve_brule@gmail.com&shipment%5Bto_address%5D%5Bname%5D=Dr.%20Steve%20Brule&shipment%5Bto_address%5D%5Bphone%5D=8573875756&shipment%5Bto_address%5D%5Bstate%5D=CA&shipment%5Bto_address%5D%5Bstreet1%5D=179%20N%20Harbor%20Dr&shipment%5Bto_address%5D%5Bzip%5D=90277
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers:
-      Api-Key:
-      - 1uwKz8JPf6DCiVH8ZQaiVg
       User-Agent:
       - Faraday v0.14.0
+      Content-Length:
+      - '0'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 201
+      message: Created
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -27,91 +27,42 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Ep-Request-Uuid:
-      - 4362f5d2-db39-42e3-9c95-67deb4367728
+      - 626b0d88-4e2d-4bd2-91db-2d1df0de6139
       Cache-Control:
       - no-cache, no-store, must-revalidate, private
       Pragma:
       - no-cache
       Expires:
       - '0'
+      Location:
+      - "/api/v2/shipments/shp_28eb36dc87b54306a7fd905deae0043b"
       Content-Type:
       - application/json; charset=utf-8
       X-Runtime:
-      - '0.015003'
+      - '0.220910'
       Transfer-Encoding:
       - chunked
       X-Node:
       - be10dd5b19
-      - bigweb2sj
+      - bigweb4sj
       - easypost
       X-Backend:
       - easypost
       X-Proxied:
-      - intlb1sj a892cfa518
-      - lb4sj a892cfa518
-      Strict-Transport-Security:
-      - max-age=15768000; includeSubDomains; preload
-    body:
-      encoding: ASCII-8BIT
-      string: '{"error":{"code":"NOT_FOUND","message":"The requested resource could
-        not be found.","errors":[]}}'
-    http_version: 
-  recorded_at: Wed, 14 Feb 2018 01:00:21 GMT
-- request:
-    method: get
-    uri: https://api.easypost.com/addresses
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Api-Key:
-      - 1uwKz8JPf6DCiVH8ZQaiVg
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Ep-Request-Uuid:
-      - eb084d14-307e-4ef6-b516-0992ff3b4f82
-      Cache-Control:
-      - no-cache, no-store, must-revalidate, private
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Runtime:
-      - '0.009471'
-      Transfer-Encoding:
-      - chunked
-      X-Node:
-      - be10dd5b19
-      - bigweb5sj
-      - easypost
-      X-Backend:
-      - easypost
-      X-Proxied:
+      - extlb1wdc a892cfa518
+      - intlb1wdc a892cfa518
       - intlb2sj a892cfa518
-      - lb4sj a892cfa518
       Strict-Transport-Security:
       - max-age=15768000; includeSubDomains; preload
     body:
       encoding: ASCII-8BIT
-      string: '{"error":{"code":"NOT_FOUND","message":"The requested resource could
-        not be found.","errors":[]}}'
+      string: '{"created_at":"2018-02-14T20:42:46Z","is_return":false,"messages":[],"mode":"test","options":{"currency":"USD","payment":{"type":"SENDER"},"label_date":null,"date_advance":0},"reference":null,"status":"unknown","tracking_code":null,"updated_at":"2018-02-14T20:42:46Z","batch_id":null,"batch_status":null,"batch_message":null,"customs_info":null,"from_address":{"id":"adr_ae9bd7cec4d74eb59cbed2ac5a2afd8f","object":"Address","created_at":"2018-02-14T20:42:46Z","updated_at":"2018-02-14T20:42:46Z","name":"EasyPost","company":null,"street1":"417
+        Montgomery st","street2":"5th Floor","city":"San Francisco","state":"CA","zip":"94104","country":"US","phone":"4153334445","email":"support@easypost.com","mode":"test","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"insurance":null,"order_id":null,"parcel":{"id":"prcl_9a814a4c7c824dc6bc4efc606d56bbd7","object":"Parcel","created_at":"2018-02-14T20:42:46Z","updated_at":"2018-02-14T20:42:46Z","length":20.2,"width":10.9,"height":5.0,"predefined_package":null,"weight":65.9,"mode":"test"},"postage_label":null,"rates":[{"id":"rate_a62322abb7a8440a8797207aa6a1113c","object":"Rate","created_at":"2018-02-14T20:42:46Z","updated_at":"2018-02-14T20:42:46Z","mode":"test","service":"Priority","carrier":"USPS","rate":"9.09","currency":"USD","retail_rate":"11.95","retail_currency":"USD","list_rate":"9.37","list_currency":"USD","delivery_days":2,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":2,"shipment_id":"shp_28eb36dc87b54306a7fd905deae0043b","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"},{"id":"rate_87b7deb216bd46608f454e8f66a9a791","object":"Rate","created_at":"2018-02-14T20:42:46Z","updated_at":"2018-02-14T20:42:46Z","mode":"test","service":"ParcelSelect","carrier":"USPS","rate":"9.37","currency":"USD","retail_rate":"9.37","retail_currency":"USD","list_rate":"9.37","list_currency":"USD","delivery_days":5,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":5,"shipment_id":"shp_28eb36dc87b54306a7fd905deae0043b","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"},{"id":"rate_e55eb63c0a9d42b1aac5fccd76dbb190","object":"Rate","created_at":"2018-02-14T20:42:46Z","updated_at":"2018-02-14T20:42:46Z","mode":"test","service":"Express","carrier":"USPS","rate":"38.49","currency":"USD","retail_rate":"43.25","retail_currency":"USD","list_rate":"38.49","list_currency":"USD","delivery_days":null,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":null,"shipment_id":"shp_28eb36dc87b54306a7fd905deae0043b","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"}],"refund_status":null,"scan_form":null,"selected_rate":null,"tracker":null,"to_address":{"id":"adr_9c44b73bb9da4edebc5412985423853f","object":"Address","created_at":"2018-02-14T20:42:46Z","updated_at":"2018-02-14T20:42:46Z","name":"Dr.
+        Steve Brule","company":null,"street1":"179 N Harbor Dr","street2":null,"city":"Redondo
+        Beach","state":"CA","zip":"90277","country":"US","phone":"8573875756","email":"dr_steve_brule@gmail.com","mode":"test","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"usps_zone":4,"return_address":{"id":"adr_ae9bd7cec4d74eb59cbed2ac5a2afd8f","object":"Address","created_at":"2018-02-14T20:42:46Z","updated_at":"2018-02-14T20:42:46Z","name":"EasyPost","company":null,"street1":"417
+        Montgomery st","street2":"5th Floor","city":"San Francisco","state":"CA","zip":"94104","country":"US","phone":"4153334445","email":"support@easypost.com","mode":"test","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"buyer_address":{"id":"adr_9c44b73bb9da4edebc5412985423853f","object":"Address","created_at":"2018-02-14T20:42:46Z","updated_at":"2018-02-14T20:42:46Z","name":"Dr.
+        Steve Brule","company":null,"street1":"179 N Harbor Dr","street2":null,"city":"Redondo
+        Beach","state":"CA","zip":"90277","country":"US","phone":"8573875756","email":"dr_steve_brule@gmail.com","mode":"test","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"forms":[],"fees":[],"id":"shp_28eb36dc87b54306a7fd905deae0043b","object":"Shipment"}'
     http_version: 
-  recorded_at: Wed, 14 Feb 2018 01:01:28 GMT
+  recorded_at: Wed, 14 Feb 2018 20:42:46 GMT
 recorded_with: VCR 4.0.0
