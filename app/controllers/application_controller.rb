@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :visitor?, :has_store_role?, :at_this_store?, :not_found, :has_upper_permissions?, :suspended?
-  before_action :set_cart, :set_departments, :set_categories, :authorize!
+  before_action :set_cart,
+                :set_departments,
+                :set_categories,
+                :set_chat_message,
+                :authorize!,
+                :setup_chat
 
   def current_user
     @user = User.find(session[:user_id]) if session[:user_id]
@@ -39,6 +44,16 @@ class ApplicationController < ActionController::Base
 
   def set_categories
     @categories = Category.all
+  end
+
+  def set_chat_message
+    @chat_message = ChatMessage.new()
+  end
+
+  def setup_chat
+    if current_user && current_user.chatroom.nil?
+      Chatroom.create(user: current_user)
+    end
   end
 
   private
