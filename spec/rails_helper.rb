@@ -30,6 +30,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<CLOUDINARY_URL>') {ENV['CLOUDINARY_URL']}
 end
 
+
 RSpec.configure do |config|
   config.include SantasLittleHelper
   config.include FeatureHelper

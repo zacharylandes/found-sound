@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212211428) do
+ActiveRecord::Schema.define(version: 20180214003433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,13 @@ ActiveRecord::Schema.define(version: 20180212211428) do
     t.string "slug"
     t.string "twitter_token"
     t.string "twitter_secret"
+  end
+
+  create_table "stripe_customers", force: :cascade do |t|
+    t.string "email"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_stores", force: :cascade do |t|
