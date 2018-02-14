@@ -94,6 +94,12 @@ ActiveRecord::Schema.define(version: 20180214214239) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.float "total_price"
+    t.string "street"
+    t.string "zip"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "phone"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
