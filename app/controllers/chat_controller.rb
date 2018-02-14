@@ -1,8 +1,4 @@
 class ChatController < ApplicationController
-  def show
-    @chat_message = ChatMessage.new()
-  end
-
   def create
     @chat_message = current_user.chat_messages.new(chat_message_params)
   end
