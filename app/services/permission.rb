@@ -29,6 +29,7 @@ class Permission
       return true if controller == "orders" && action.in?(%w(index show new create))
       return true if controller == "dashboard" && action.in?(%w(index))
       return true if controller == "departments/departments" && action.in?(%w(show))
+      return true if controller == "chat" && action.in?(%w(create))
     end
     return base_permissions
   end
@@ -76,7 +77,6 @@ class Permission
       return true if controller == "auth" && action.in?(%w(twitter))
       return true if controller == "twitter" && action.in?(%w(edit update create destroy))
       return true if controller == "departments/departments" && action.in?(%w(show))
-
     end
 
     def store_manager_permissions
