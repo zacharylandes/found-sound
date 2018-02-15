@@ -17,12 +17,12 @@ feature "Admin can view individual order pages" do
     expect(page).to have_content("Gob Bluth")
     expect(page).to have_content(user.address)
     within("#item-#{item_1.id}") do
-      within(".title") { expect(page).to have_link(item_1.title) }
+   expect(page).to have_link(item_1.title)
       within(".quantity") { expect(page).to have_content(item_1.order_items.first.quantity) }
       within(".price") { expect(page).to have_content("$11.00") }
     end
     within("#item-#{item_2.id}") do
-      within(".title") { expect(page).to have_link(item_2.title) }
+      expect(page).to have_link(item_2.title) 
       within(".quantity") { expect(page).to have_content(item_2.order_items.last.quantity) }
       within(".price") { expect(page).to have_content("$10.00") }
     end
@@ -31,4 +31,3 @@ feature "Admin can view individual order pages" do
     end
   end
 end
-
