@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
   def new
     # binding.pry
-    @total = @cart.total * 100
+    @total = @cart.total
     @order = Order.new
   end
 
