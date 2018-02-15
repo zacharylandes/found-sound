@@ -57,6 +57,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/shipping', to: 'shipping#new', as: 'shipping'
+  post '/shipping/show', to: 'shipping#show'
+
   resources :stores, only:[:index, :new, :create]
   get '/:store/items/new', to: "items#new", as: "new_store_item"
   post '/:store/items', to: "items#create", as: "store_items"
@@ -72,5 +75,6 @@ Rails.application.routes.draw do
 
   get "/settings/developer", to: 'developer#show', as: 'developer'
   post "/settings/developer", to: 'developer#create'
+
 
 end
