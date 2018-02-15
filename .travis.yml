@@ -4,10 +4,10 @@ rvm:
 before_script:
 - bundle exec rake db:create --all
 - bundle exec rake db:migrate
-- redis-server
 script:
 - bundle exec rspec
 services:
 - postgresql
+- redis-server
 notifications:
   email: false
