@@ -4,7 +4,7 @@ class Admin::ChatController < Admin::BaseController
   end
 
   def show
-    @chatroom = Chatroom.find(params[:id])
+    @presenter = AdminChatPresenter.new(params[:id])
   end
 
   def create
