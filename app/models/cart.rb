@@ -42,4 +42,10 @@ class Cart
     contents.empty?
   end
 
+  def total
+    order_items.map do |oi|
+      oi.item.price * oi.quantity
+    end.sum    
+  end
+
 end

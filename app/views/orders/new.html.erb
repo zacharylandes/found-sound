@@ -9,14 +9,14 @@
             <p><%= flash[:error] %></p>
           </div>
         <% end %>
-          <span>Total: <%= @total %></span>
+          <span>Total: <%= number_to_currency(@cart.total) %></span>
       </article>
 
       <div class = "pay-button">
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-description="You Completed Order"
-              data-amount="<%= @total%>"
+              data-amount="<%= @cart.total %>"
               data-label ="Checkout"
               data-locale="auto"></script>
       </div>
