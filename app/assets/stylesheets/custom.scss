@@ -5,6 +5,7 @@ html{
 
 .search-bar{
   margin-top: 20px;
+  width:95%;
 }
 .search-suggestions{
   margin-left: 10px;
@@ -39,28 +40,31 @@ html{
   width: 100px;
   border-bottom: 2 px solid black;
 }
-
-div.container {
-  width:1500px;
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x:hidden;
-  padding: 5px;
-  color:black;
+.card-header{
+  margin-top:40px;
 }
+// div.container {
+//   width:1500px;
+//   height: 100%;
+//   overflow-y: scroll;
+//   overflow-x:hidden;
+//   padding: 5px;
+//   color:black;
+// }
 .container h4{
 margin: 40px 0px;
 border-left: 2px solid black;
 transition: all 2s;
 }
-.container h4:hover {
+.container h4:hover, container h4:visited {
   text-decoration: none;
+  margin-top:30px;
+  margin-bottom:30px;
   padding-left: 40px;
 }
 
 .col-6 img{
   padding-bottom: 20px;
-border-bottom: 2px solid black;
 }
 .item{
 border-top:2px solid black;
@@ -68,17 +72,17 @@ border-bottom:2px solid black;
 height: 500px;
   // padding-top: 20px;
 }
-.card h2{
-  text-decoration: underline;
-}
-.card{
-  border:none;
-  border-radius: 0px;
-  border-left: 2px solid black;
-}
-.card-body p {
-  font-size: 14px;
-}
+// .card h2{
+//   text-decoration: underline;
+// }
+// .card{
+//   border:none;
+//   border-radius: 0px;
+//   border-left: 2px solid black;
+// }
+// .card-body p {
+//   font-size: 14px;
+// }
 
 .col-4 img{
   margin-top:30px;
@@ -90,7 +94,7 @@ height: 500px;
 }
 .col-6 img{
   padding-bottom: 20px;
-border-bottom: 2px solid black;
+// border-bottom: 2px solid black;
 }
 #left {
   text-align: left;

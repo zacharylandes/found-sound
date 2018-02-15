@@ -1,13 +1,18 @@
 .chat-tab {
   background-color: $barely-blue;
   border: 1px solid;
-  border-radius: 10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+  // border-radius: 10px;
   button {
     background-color: black;
     color: $barely-blue;
     text-decoration: none;
     font-size: x-large;
-    border-radius: 10px;
+    // border-radius: 10px;
   }
   button:hover {
     cursor: pointer;
