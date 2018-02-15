@@ -10,7 +10,7 @@ namespace :migrate_data do
 
   desc "add_store_id_to_items"
   task add_store_id_to_items: :environment do
-    Item.all.each{|item| item.update_attributes(store_id: Store.first.id)}
+    Item.where(store: nil).each{|item| item.update_attributes(store_id: Store.first.id)}
   end
 
   desc "change item image from local storage to cloud storage"
