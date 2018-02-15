@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.easypost.com/v2/shipments?api_key=6q0cwlHMP52Lqa2tGW0mbQ&shipment%5Bfrom_address%5D%5Bcity%5D=Denver&shipment%5Bfrom_address%5D%5Bcountry%5D=US&shipment%5Bfrom_address%5D%5Bemail%5D=support@foundsound.com&shipment%5Bfrom_address%5D%5Bname%5D=Found%20Sound&shipment%5Bfrom_address%5D%5Bphone%5D=4153334445&shipment%5Bfrom_address%5D%5Bstate%5D=CO&shipment%5Bfrom_address%5D%5Bstreet1%5D=1331%2017th%20st&shipment%5Bfrom_address%5D%5Bzip%5D=80219&shipment%5Bparcel%5D%5Bheight%5D=5&shipment%5Bparcel%5D%5Blength%5D=20.2&shipment%5Bparcel%5D%5Bweight%5D=65.9&shipment%5Bparcel%5D%5Bwidth%5D=10.9&shipment%5Bto_address%5D%5Bcity%5D=Denver&shipment%5Bto_address%5D%5Bcountry%5D=US&shipment%5Bto_address%5D%5Bemail%5D=testerson@testmail.com&shipment%5Bto_address%5D%5Bname%5D=Tester%20McTesty&shipment%5Bto_address%5D%5Bphone%5D=5555555555&shipment%5Bto_address%5D%5Bstate%5D=CO&shipment%5Bto_address%5D%5Bstreet1%5D=944%20s%20quitman%20st&shipment%5Bto_address%5D%5Bzip%5D=80219
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ep-Request-Uuid:
+      - cca3b863-8349-4662-a6b9-9fa4e344c1c9
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, private
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Location:
+      - "/api/v2/shipments/shp_36a5451496774d9997378e3c9ce1b1fd"
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Runtime:
+      - '0.169055'
+      Transfer-Encoding:
+      - chunked
+      X-Node:
+      - 29c3b9a5d1
+      - bigweb6sj
+      - easypost
+      X-Backend:
+      - easypost
+      X-Proxied:
+      - extlb2wdc a892cfa518
+      - intlb2sj a892cfa518
+      - intlb2wdc a892cfa518
+      Strict-Transport-Security:
+      - max-age=15768000; includeSubDomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: '{"created_at":"2018-02-15T21:35:49Z","is_return":false,"messages":[],"mode":"production","options":{"currency":"USD","payment":{"type":"SENDER"},"label_date":null,"date_advance":0},"reference":null,"status":"unknown","tracking_code":null,"updated_at":"2018-02-15T21:35:49Z","batch_id":null,"batch_status":null,"batch_message":null,"customs_info":null,"from_address":{"id":"adr_dac9c96ac62b4bb9b431eacffba792e1","object":"Address","created_at":"2018-02-15T21:35:48Z","updated_at":"2018-02-15T21:35:48Z","name":"Found
+        Sound","company":null,"street1":"1331 17th st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"4153334445","email":"support@foundsound.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"insurance":null,"order_id":null,"parcel":{"id":"prcl_8eb4d5a8438641a2a1087bf8ef59dc29","object":"Parcel","created_at":"2018-02-15T21:35:49Z","updated_at":"2018-02-15T21:35:49Z","length":20.2,"width":10.9,"height":5.0,"predefined_package":null,"weight":65.9,"mode":"production"},"postage_label":null,"rates":[{"id":"rate_6702d69c494a4b5590721ee67e64cbfd","object":"Rate","created_at":"2018-02-15T21:35:49Z","updated_at":"2018-02-15T21:35:49Z","mode":"production","service":"Express","carrier":"USPS","rate":"22.98","currency":"USD","retail_rate":"25.80","retail_currency":"USD","list_rate":"22.98","list_currency":"USD","delivery_days":null,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":null,"shipment_id":"shp_36a5451496774d9997378e3c9ce1b1fd","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"},{"id":"rate_b3338c04093d41b49666d43282fda1ea","object":"Rate","created_at":"2018-02-15T21:35:49Z","updated_at":"2018-02-15T21:35:49Z","mode":"production","service":"Priority","carrier":"USPS","rate":"7.19","currency":"USD","retail_rate":"9.85","retail_currency":"USD","list_rate":"7.41","list_currency":"USD","delivery_days":1,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":1,"shipment_id":"shp_36a5451496774d9997378e3c9ce1b1fd","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"},{"id":"rate_7b31a9e7f5f14111a5675b456dec581e","object":"Rate","created_at":"2018-02-15T21:35:49Z","updated_at":"2018-02-15T21:35:49Z","mode":"production","service":"ParcelSelect","carrier":"USPS","rate":"7.41","currency":"USD","retail_rate":"7.41","retail_currency":"USD","list_rate":"7.41","list_currency":"USD","delivery_days":2,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":2,"shipment_id":"shp_36a5451496774d9997378e3c9ce1b1fd","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"}],"refund_status":null,"scan_form":null,"selected_rate":null,"tracker":null,"to_address":{"id":"adr_43dc3ee17cc74b4296f9808664ac85f0","object":"Address","created_at":"2018-02-15T21:35:48Z","updated_at":"2018-02-15T21:35:48Z","name":"Tester
+        McTesty","company":null,"street1":"944 s quitman st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"5555555555","email":"testerson@testmail.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"usps_zone":1,"return_address":{"id":"adr_dac9c96ac62b4bb9b431eacffba792e1","object":"Address","created_at":"2018-02-15T21:35:48Z","updated_at":"2018-02-15T21:35:48Z","name":"Found
+        Sound","company":null,"street1":"1331 17th st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"4153334445","email":"support@foundsound.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"buyer_address":{"id":"adr_43dc3ee17cc74b4296f9808664ac85f0","object":"Address","created_at":"2018-02-15T21:35:48Z","updated_at":"2018-02-15T21:35:48Z","name":"Tester
+        McTesty","company":null,"street1":"944 s quitman st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"5555555555","email":"testerson@testmail.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"forms":[],"fees":[],"id":"shp_36a5451496774d9997378e3c9ce1b1fd","object":"Shipment"}'
+    http_version: 
+  recorded_at: Thu, 15 Feb 2018 21:35:49 GMT
+recorded_with: VCR 4.0.0
