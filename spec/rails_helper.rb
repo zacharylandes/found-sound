@@ -27,6 +27,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<cloudinary_api_key>') {ENV['cloudinary_api_key']}
   config.filter_sensitive_data('<cloudinary_secret>') {ENV['cloudinary_secret']}
   config.filter_sensitive_data('<CLOUDINARY_URL>') {ENV['CLOUDINARY_URL']}
+  config.filter_sensitive_data('easypost_key') {ENV['easypost_key']}
 end
 
 
