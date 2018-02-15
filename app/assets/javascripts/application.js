@@ -45,3 +45,9 @@ $(document).ready(function() {
   });
 
 })
+
+$('document').ready(function() {
+  setTimeout(function() {
+    $('.alert').slideDown();
+  }, 3000);
+});

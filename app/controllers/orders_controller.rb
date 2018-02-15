@@ -7,7 +7,8 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @total = (params[:total].to_f + @cart.total.to_f)
+    # binding.pry
+    @total = @cart.total * 100
     @order = Order.new
   end
 
