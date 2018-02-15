@@ -40,7 +40,7 @@
     font-size: x-large;
     border-radius: 10px;
   }
-  button:hover {
+  button:hover, input:hover {
     cursor: pointer;
   }
   .chat-window{
@@ -67,7 +67,7 @@
   .admin-chat-window{
     .admin-chat-messages {
       background-color: white;
-      height: 500px;
+      height: 200px;
       margin: 10px;
       border-radius: 10px;
       overflow-y: scroll;
