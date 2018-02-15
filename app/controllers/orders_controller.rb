@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
   end
 
   def new
+<<<<<<< HEAD
+=======
+    @total = (params[:total].to_f + @cart.total.to_f)
+>>>>>>> rearranged some functionality in orders controller
     @order = Order.new
   end
 
@@ -26,13 +30,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order =  Order.create(status: "ordered", user_id: current_user.id)
-    order.add(@cart)
-    StripeService.new.stripe_customer(params[:stripeEmail], params[:stripeToken], order)
-    OrderCreator.new(order).create_store_order
-    session[:cart].clear
-    flash[:success] = "Order was successfully placed"
-    redirect_to order_path(order)
+      order =  Order.create(status: "ordered", user_id: current_user.id)
+      order.add(@cart, params[:total].to_f)
+      StripeService.new.stripe_customer(params[:stripeEmail], params[:stripeToken], order)
+      OrderCreator.new(order).create_store_order
+      @cart.destroy
+      flash[:success] = "Order was successfully placed"
+      redirect_to order_path(order)
   end
 
   private
