@@ -42,7 +42,7 @@
     </div>
     <div class="checkout">
       <% if current_user && !@cart.empty?%>
-        <%= link_to "Checkout", new_order_path(total: number_to_currency(@cart.total))%>
+        <%= link_to "Checkout", new_order_path%>
       <% else %>
         <%= link_to "Login", login_path %> <br />
         <%= link_to "Create new account", new_user_path %>
