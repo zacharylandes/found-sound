@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.easypost.com/v2/shipments?api_key=easypost_key&shipment%5Bfrom_address%5D%5Bcity%5D=Denver&shipment%5Bfrom_address%5D%5Bcountry%5D=US&shipment%5Bfrom_address%5D%5Bemail%5D=support@foundsound.com&shipment%5Bfrom_address%5D%5Bname%5D=Found%20Sound&shipment%5Bfrom_address%5D%5Bphone%5D=4153334445&shipment%5Bfrom_address%5D%5Bstate%5D=CO&shipment%5Bfrom_address%5D%5Bstreet1%5D=1331%2017th%20st&shipment%5Bfrom_address%5D%5Bzip%5D=80219&shipment%5Bparcel%5D%5Bheight%5D=5&shipment%5Bparcel%5D%5Blength%5D=20.2&shipment%5Bparcel%5D%5Bweight%5D=65.9&shipment%5Bparcel%5D%5Bwidth%5D=10.9&shipment%5Bto_address%5D%5Bcity%5D=Denver&shipment%5Bto_address%5D%5Bcountry%5D=US&shipment%5Bto_address%5D%5Bemail%5D=gob58@example.com&shipment%5Bto_address%5D%5Bname%5D=Gob%20Bluth&shipment%5Bto_address%5D%5Bphone%5D=3031234567&shipment%5Bto_address%5D%5Bstate%5D=CO&shipment%5Bto_address%5D%5Bstreet1%5D=944%20s%20quitman%20st&shipment%5Bto_address%5D%5Bzip%5D=80219
+    uri: https://api.easypost.com/v2/shipments?api_key=easypost_key&shipment%5Bfrom_address%5D%5Bcity%5D=Denver&shipment%5Bfrom_address%5D%5Bcountry%5D=US&shipment%5Bfrom_address%5D%5Bemail%5D=support@foundsound.com&shipment%5Bfrom_address%5D%5Bname%5D=Found%20Sound&shipment%5Bfrom_address%5D%5Bphone%5D=4153334445&shipment%5Bfrom_address%5D%5Bstate%5D=CO&shipment%5Bfrom_address%5D%5Bstreet1%5D=1331%2017th%20st&shipment%5Bfrom_address%5D%5Bzip%5D=80219&shipment%5Bparcel%5D%5Bheight%5D=5&shipment%5Bparcel%5D%5Blength%5D=20.2&shipment%5Bparcel%5D%5Bweight%5D=65.9&shipment%5Bparcel%5D%5Bwidth%5D=10.9&shipment%5Bto_address%5D%5Bcity%5D=Denver&shipment%5Bto_address%5D%5Bcountry%5D=US&shipment%5Bto_address%5D%5Bemail%5D=gob64@example.com&shipment%5Bto_address%5D%5Bname%5D=Gob%20Bluth&shipment%5Bto_address%5D%5Bphone%5D=3031234567&shipment%5Bto_address%5D%5Bstate%5D=CO&shipment%5Bto_address%5D%5Bstreet1%5D=944%20s%20quitman%20st&shipment%5Bto_address%5D%5Bzip%5D=80219
     body:
       encoding: UTF-8
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Ep-Request-Uuid:
-      - e37265b7-2fdb-4cdf-b3b7-d95ef785455e
+      - e5d688bd-8803-4bec-953e-4ba753da15c5
       Cache-Control:
       - no-cache, no-store, must-revalidate, private
       Pragma:
@@ -35,31 +35,31 @@ http_interactions:
       Expires:
       - '0'
       Location:
-      - "/api/v2/shipments/shp_a49dc1d66fb84c9c9bbf5a6840e12712"
+      - "/api/v2/shipments/shp_96370f5a89e841beb891a3d34b69bc2b"
       Content-Type:
       - application/json; charset=utf-8
       X-Runtime:
-      - '0.185134'
+      - '0.173618'
       Transfer-Encoding:
       - chunked
       X-Node:
       - 29c3b9a5d1
-      - bigweb2sj
+      - bigweb5sj
       - easypost
       X-Backend:
       - easypost
       X-Proxied:
-      - intlb1sj a892cfa518
-      - lb4sj a892cfa518
+      - intlb2sj a892cfa518
+      - lb5sj a892cfa518
       Strict-Transport-Security:
       - max-age=15768000; includeSubDomains; preload
     body:
       encoding: ASCII-8BIT
-      string: '{"created_at":"2018-02-15T21:56:09Z","is_return":false,"messages":[],"mode":"production","options":{"currency":"USD","payment":{"type":"SENDER"},"label_date":null,"date_advance":0},"reference":null,"status":"unknown","tracking_code":null,"updated_at":"2018-02-15T21:56:09Z","batch_id":null,"batch_status":null,"batch_message":null,"customs_info":null,"from_address":{"id":"adr_468709006132498ea62f06be3566f755","object":"Address","created_at":"2018-02-15T21:56:09Z","updated_at":"2018-02-15T21:56:09Z","name":"Found
-        Sound","company":null,"street1":"1331 17th st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"4153334445","email":"support@foundsound.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"insurance":null,"order_id":null,"parcel":{"id":"prcl_784ae34573a24180bcca81280e34771b","object":"Parcel","created_at":"2018-02-15T21:56:09Z","updated_at":"2018-02-15T21:56:09Z","length":20.2,"width":10.9,"height":5.0,"predefined_package":null,"weight":65.9,"mode":"production"},"postage_label":null,"rates":[{"id":"rate_c7ac52b91a994f21ab249f67a00b130a","object":"Rate","created_at":"2018-02-15T21:56:09Z","updated_at":"2018-02-15T21:56:09Z","mode":"production","service":"ParcelSelect","carrier":"USPS","rate":"7.41","currency":"USD","retail_rate":"7.41","retail_currency":"USD","list_rate":"7.41","list_currency":"USD","delivery_days":2,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":2,"shipment_id":"shp_a49dc1d66fb84c9c9bbf5a6840e12712","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"},{"id":"rate_9bee7e852f9a4ad0a5103a54f841593c","object":"Rate","created_at":"2018-02-15T21:56:09Z","updated_at":"2018-02-15T21:56:09Z","mode":"production","service":"Express","carrier":"USPS","rate":"22.98","currency":"USD","retail_rate":"25.80","retail_currency":"USD","list_rate":"22.98","list_currency":"USD","delivery_days":null,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":null,"shipment_id":"shp_a49dc1d66fb84c9c9bbf5a6840e12712","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"},{"id":"rate_e64a275738394e38939101463f3de40c","object":"Rate","created_at":"2018-02-15T21:56:09Z","updated_at":"2018-02-15T21:56:09Z","mode":"production","service":"Priority","carrier":"USPS","rate":"7.19","currency":"USD","retail_rate":"9.85","retail_currency":"USD","list_rate":"7.41","list_currency":"USD","delivery_days":1,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":1,"shipment_id":"shp_a49dc1d66fb84c9c9bbf5a6840e12712","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"}],"refund_status":null,"scan_form":null,"selected_rate":null,"tracker":null,"to_address":{"id":"adr_1990880955554dfa89365c64bf98014e","object":"Address","created_at":"2018-02-15T21:56:09Z","updated_at":"2018-02-15T21:56:09Z","name":"Gob
-        Bluth","company":null,"street1":"944 s quitman st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"3031234567","email":"gob58@example.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"usps_zone":1,"return_address":{"id":"adr_468709006132498ea62f06be3566f755","object":"Address","created_at":"2018-02-15T21:56:09Z","updated_at":"2018-02-15T21:56:09Z","name":"Found
-        Sound","company":null,"street1":"1331 17th st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"4153334445","email":"support@foundsound.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"buyer_address":{"id":"adr_1990880955554dfa89365c64bf98014e","object":"Address","created_at":"2018-02-15T21:56:09Z","updated_at":"2018-02-15T21:56:09Z","name":"Gob
-        Bluth","company":null,"street1":"944 s quitman st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"3031234567","email":"gob58@example.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"forms":[],"fees":[],"id":"shp_a49dc1d66fb84c9c9bbf5a6840e12712","object":"Shipment"}'
+      string: '{"created_at":"2018-02-15T23:21:34Z","is_return":false,"messages":[],"mode":"production","options":{"currency":"USD","payment":{"type":"SENDER"},"label_date":null,"date_advance":0},"reference":null,"status":"unknown","tracking_code":null,"updated_at":"2018-02-15T23:21:34Z","batch_id":null,"batch_status":null,"batch_message":null,"customs_info":null,"from_address":{"id":"adr_64f706c86cc84c858cfd945810764f5f","object":"Address","created_at":"2018-02-15T23:21:34Z","updated_at":"2018-02-15T23:21:34Z","name":"Found
+        Sound","company":null,"street1":"1331 17th st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"4153334445","email":"support@foundsound.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"insurance":null,"order_id":null,"parcel":{"id":"prcl_c424c731704046398aa6ad2b49eddb1b","object":"Parcel","created_at":"2018-02-15T23:21:34Z","updated_at":"2018-02-15T23:21:34Z","length":20.2,"width":10.9,"height":5.0,"predefined_package":null,"weight":65.9,"mode":"production"},"postage_label":null,"rates":[{"id":"rate_6a5a21695f2b4245a787ef1f8c985c39","object":"Rate","created_at":"2018-02-15T23:21:34Z","updated_at":"2018-02-15T23:21:34Z","mode":"production","service":"Express","carrier":"USPS","rate":"22.98","currency":"USD","retail_rate":"25.80","retail_currency":"USD","list_rate":"22.98","list_currency":"USD","delivery_days":null,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":null,"shipment_id":"shp_96370f5a89e841beb891a3d34b69bc2b","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"},{"id":"rate_87ae4bae9aa5429f829223135fc085e6","object":"Rate","created_at":"2018-02-15T23:21:34Z","updated_at":"2018-02-15T23:21:34Z","mode":"production","service":"Priority","carrier":"USPS","rate":"7.19","currency":"USD","retail_rate":"9.85","retail_currency":"USD","list_rate":"7.41","list_currency":"USD","delivery_days":1,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":1,"shipment_id":"shp_96370f5a89e841beb891a3d34b69bc2b","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"},{"id":"rate_ea319054fbc447a9a2a0e4c8227ce1be","object":"Rate","created_at":"2018-02-15T23:21:34Z","updated_at":"2018-02-15T23:21:34Z","mode":"production","service":"ParcelSelect","carrier":"USPS","rate":"7.41","currency":"USD","retail_rate":"7.41","retail_currency":"USD","list_rate":"7.41","list_currency":"USD","delivery_days":2,"delivery_date":null,"delivery_date_guaranteed":false,"est_delivery_days":2,"shipment_id":"shp_96370f5a89e841beb891a3d34b69bc2b","carrier_account_id":"ca_b1d07d3c3966482b914cc8fd62f68fa1"}],"refund_status":null,"scan_form":null,"selected_rate":null,"tracker":null,"to_address":{"id":"adr_9f3d42fe1dda4add97ba3ee0e0c34c68","object":"Address","created_at":"2018-02-15T23:21:34Z","updated_at":"2018-02-15T23:21:34Z","name":"Gob
+        Bluth","company":null,"street1":"944 s quitman st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"3031234567","email":"gob64@example.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"usps_zone":1,"return_address":{"id":"adr_64f706c86cc84c858cfd945810764f5f","object":"Address","created_at":"2018-02-15T23:21:34Z","updated_at":"2018-02-15T23:21:34Z","name":"Found
+        Sound","company":null,"street1":"1331 17th st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"4153334445","email":"support@foundsound.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"buyer_address":{"id":"adr_9f3d42fe1dda4add97ba3ee0e0c34c68","object":"Address","created_at":"2018-02-15T23:21:34Z","updated_at":"2018-02-15T23:21:34Z","name":"Gob
+        Bluth","company":null,"street1":"944 s quitman st","street2":null,"city":"Denver","state":"CO","zip":"80219","country":"US","phone":"3031234567","email":"gob64@example.com","mode":"production","carrier_facility":null,"residential":null,"federal_tax_id":null,"state_tax_id":null,"verifications":{}},"forms":[],"fees":[],"id":"shp_96370f5a89e841beb891a3d34b69bc2b","object":"Shipment"}'
     http_version: 
-  recorded_at: Thu, 15 Feb 2018 21:56:09 GMT
+  recorded_at: Thu, 15 Feb 2018 23:21:34 GMT
 recorded_with: VCR 4.0.0

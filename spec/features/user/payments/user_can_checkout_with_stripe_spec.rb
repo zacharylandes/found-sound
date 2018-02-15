@@ -40,7 +40,7 @@ RSpec.feature "User can checkout with stripe" do
       end
 
       expect(current_path).to eq(new_order_path)
-      expect(page).to have_content("32.98")
+      expect(page).to have_content("17.41")
     end
   end
 end
