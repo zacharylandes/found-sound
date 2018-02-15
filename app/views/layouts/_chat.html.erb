@@ -1,4 +1,5 @@
 <div class="chat-tab">
+  <button>Chat</button>
   <div class="chat-window">
     <% if current_user && current_user.chatroom %>
     <div class="chat-messages" id="messages" data-chatroom=<%=current_user.chatroom.id%>>
@@ -12,5 +13,4 @@
     </div>
     <%end%>
   </div>
-  <button>Chat</button>
 </div>
