@@ -1,6 +1,5 @@
 .chat-tab {
   background-color: $barely-blue;
-  width: 300px;
   border: 1px solid;
   border-radius: 10px;
   button {
@@ -11,36 +10,6 @@
     border-radius: 10px;
   }
   button:hover {
-    cursor: pointer;
-  }
-  .chat-window{
-    display: none;
-    .chat-messages {
-      background-color: white;
-      height: 250px;
-      margin: 10px;
-      border-radius: 10px;
-      overflow-y: scroll;
-      padding: 5px;
-    }
-    form {
-      padding: 5px;
-    }
-  }
-}
-.chat-tab {
-  background-color: $barely-blue;
-  width: 300px;
-  border: 1px solid;
-  border-radius: 10px;
-  button {
-    background-color: black;
-    color: $barely-blue;
-    text-decoration: none;
-    font-size: x-large;
-    border-radius: 10px;
-  }
-  button:hover, input:hover {
     cursor: pointer;
   }
   .chat-window{

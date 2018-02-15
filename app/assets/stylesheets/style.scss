@@ -37,8 +37,11 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 800px;
   color:black;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 800px;
+  margin-bottom: 100px;
 }
 
 p {

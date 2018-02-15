@@ -1,5 +1,8 @@
 <div class="chat-tab">
   <button>Chat</button>
+  <% if current_user.nil? %>
+  <span>Login to Chat!</span>
+  <% end %>
   <div class="chat-window">
     <% if current_user && current_user.chatroom %>
     <div class="chat-messages" id="messages" data-chatroom=<%=current_user.chatroom.id%>>

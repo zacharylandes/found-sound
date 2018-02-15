@@ -26,11 +26,7 @@ transition: all 2s;
 a {
   color: black;
 }
-.center-block {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
+
 .item{
 border-top:2px solid black;
 border-bottom:2px solid black;
@@ -53,21 +49,6 @@ height: 500px;
   margin-top:30px;
 }
 
-
-.center-block{
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 0px;
-  box-shadow: 1px 1px 0px black;
-  text-align:center;
-  font-size: 13px;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  border:2px solid black;
-  margin: 40px;
-  overflow: auto;
-}
 
 .checkout{
   margin-bottom: 100px;
