@@ -20,7 +20,6 @@ class OrdersController < ApplicationController
   end
 
   def update
-
     @order = Order.find(params[:id])
     @order.update(order_params)
     @order.save
@@ -32,7 +31,7 @@ class OrdersController < ApplicationController
       order.add(@cart)
       StripeService.new.stripe_customer(params[:stripeEmail], params[:stripeToken], order)
       OrderCreator.new(order).create_store_order
-      @cart.destroy
+      session[:cart].clear
       flash[:success] = "Order was successfully placed"
       redirect_to order_path(order)
   end
