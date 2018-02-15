@@ -19,10 +19,6 @@ App['room' + <%= chatroom.id %>] = App.cable.subscriptions.create({
       var payload = JSON.parse(data.message)
       $("#messages").append(payload["user"] + ": " + payload["message"] + "<br>");
       $("#messages").scrollTop($('#messages')[0].scrollHeight);
-    },
-
-    setChatroomId: function(chatroomId){
-      this.chatroomId = chatroomId
     }
 });
 <% end %>
@@ -32,7 +28,6 @@ function submitNewMessage() {
     if (event.keyCode === 13) {
         var msg = event.target.value
         var chatroomId = $("#chat_message_chatroom_id").val();
-        App['room' + chatroomId].setChatroomId(chatroomId)
         App['room' + chatroomId].send({message: msg})
         $('[data-textarea="message"]').val("")
         return false;

@@ -80,12 +80,11 @@ class Permission
       return true if controller == "twitter" && action.in?(%w(edit update create destroy))
       return true if controller == "departments/departments" && action.in?(%w(show))
       return true if controller == "shipping" && action.in?(%w(new index show))
-
+      return true if controller == "chat" && action.in?(%w(create))
     end
 
     def store_manager_permissions
       return true if controller == "store_orders"&& action.in?(%w(show create edit update destroy))
-
       return true if controller == "store_orders" && action == "update"
       return true if controller == "admin/items" && action.in?(%w(index new create edit update destroy))
       return true if controller == "store/orders" && action.in?(%w(index new create edit update destroy))
@@ -102,6 +101,7 @@ class Permission
       return true if controller == "twitter" && action.in?(%w(create))
       return true if controller == "departments/departments" && action.in?(%w(show))
       return true if controller == "shipping" && action.in?(%w(new index show))
+      return true if controller == "chat" && action.in?(%w(create))
     end
 
     # def registered_user_permissions
