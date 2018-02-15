@@ -1,8 +1,10 @@
-  <div class="title">
+<div class= 'tagline '><h2>Used Gear For Used Gear Heads...</h2></div>
+  <div class="main-top">
     <center>
       <%= link_to (image_tag('guitar-crop.jpg', class: "hero")), new_user_path %>
     </center>
   </div>
+
   <% if current_user.nil? %>
     <h3>Popular Items:</h3>
     <% items = @popular_items %>

@@ -8,7 +8,7 @@
       <% end  %>
       <h1><%= link_to "Found Sound", root_path, class: "title" %></h1>
     </div>
-    <div class = "record"><%=image_tag "record.png" %></div>
+    <div class = "record"><%=link_to (image_tag "record.png"), root_path %></div>
       <nav class="nav-menu-container">
         <ul class="nav-menu">
           <% if current_user.nil? %>

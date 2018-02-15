@@ -60,14 +60,14 @@
         padding: 0;
         li {
           float: left;
-          color: $barely-blue;
+          color: white;
         }
         .nav-link:hover, .nav-link:focus {
           color: #fff;
           border-bottom: 4px solid $light-blue;
         }
         a:visited, a {
-        	color: $barely-blue;
+        	color: white;
         	text-decoration: none;
         }
       }
