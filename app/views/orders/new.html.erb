@@ -9,7 +9,8 @@
             <p><%= flash[:error] %></p>
           </div>
         <% end %>
-          <span>Total: <%= number_to_currency(@cart.total) %></span>
+        <%= hidden_field_tag :total , params[:total] %>
+          <span>Total: <%= @total %></span>
       </article>
 
       <div class = "pay-button">

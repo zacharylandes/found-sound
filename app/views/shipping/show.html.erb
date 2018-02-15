@@ -5,7 +5,7 @@
       <p>Carrier: <%= rate.carrier %></p>
       <p>Price: <%= rate.rate %></p>
       <p>Estimated Delivery Time: <%= rate.delivery_time if rate.delivery_time %></p>
-      <strong><%= link_to "Select", new_order_path(total: @cart.total.to_f + rate.rate.to_f) %></strong>
+      <strong><%= link_to "Select", new_order_path(total: rate.rate.to_f) %></strong>
     </div>
     <% end %>
   </div>

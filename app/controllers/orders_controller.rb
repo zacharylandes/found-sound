@@ -7,10 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-<<<<<<< HEAD
-=======
     @total = (params[:total].to_f + @cart.total.to_f)
->>>>>>> rearranged some functionality in orders controller
     @order = Order.new
   end
 
