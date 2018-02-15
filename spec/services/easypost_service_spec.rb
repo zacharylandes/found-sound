@@ -6,10 +6,4 @@ describe EasypostService do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
   end
-
-  it "should return all addresses" do
-    VCR.use_cassette("user can see all addresses") do
-      easypostservice.addresses
-    end
-  end
 end
