@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
                 :not_found,
                 :has_upper_permissions?,
                 :suspended?
-                
+
   before_action :set_cart,
                 :set_departments,
                 :set_categories,
@@ -59,7 +59,7 @@ class ApplicationController < ActionController::Base
   end
 
   def setup_chat
-    if current_user && current_user.chatroom.nil?
+    if current_user && current_user.chatroom.nil? && !current_admin?
       Chatroom.create(user: current_user)
     end
   end
