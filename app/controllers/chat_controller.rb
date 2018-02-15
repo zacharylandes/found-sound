@@ -5,6 +5,6 @@ class ChatController < ApplicationController
 
   private
     def chat_message_params
-      params.require(:message).permit(:chatroom_id, :body)
+      params.require(:chat_message).permit(:chatroom_id, :body)
     end
 end
