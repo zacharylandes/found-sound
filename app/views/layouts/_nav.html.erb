@@ -1,13 +1,14 @@
 <header class="header">
   <div class="container-fluid">
 
-    <%= form_tag do %>
-      <%= text_field_tag :search, "", placeholder: "Search for items", class: "search-bar" %>
-    <% end  %>
 
     <div id="logo" class="pull-left">
+      <%= form_tag do %>
+      <%= text_field_tag :search, "", placeholder: "Search for items", class: "search-bar" %>
+      <% end  %>
       <h1><%= link_to "Found Sound", root_path, class: "title" %></h1>
     </div>
+    <div class = "record"><%=image_tag "record.png" %></div>
       <nav class="nav-menu-container">
         <ul class="nav-menu">
           <% if current_user.nil? %>

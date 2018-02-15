@@ -1,13 +1,13 @@
+<div class = "containe">
 <h2><%= @store.name %></h2>
-<h2><%= @store.address %></h2>
-<div class = "container">
+<h3><%= @store.address %></h3>
+<% if @store.twitter_token.nil? && @store.twitter_secret.nil? %>
+<%= link_to "Add Twitter Authorization", new_twitter_path(store: @store.id), class: "btn btn-success btn-md" %>
+<% else %>
+<%= button_to "Remove Twitter Authorization", remove_twitter_path(store: @store.id), method: :delete, class: "btn btn-success btn-md" %>
+<% end %>
   <div class="store-edit">
     <div class="col-3">
-      <% if @store.twitter_token.nil? && @store.twitter_secret.nil? %>
-        <%= link_to "Add Twitter Authorization", new_twitter_path(store: @store.id), class: "btn btn-success btn-md" %>
-      <% else %>
-        <%= button_to "Remove Twitter Authorization", remove_twitter_path(store: @store.id), method: :delete, class: "btn btn-success btn-md" %>
-      <% end %>
       </br>
       <h3>Edit Your Store</h3>
       <table class="table login-form">
