@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
     @order.update(order_params)
     @order.save
     redirect_back(fallback_location: root_path)
+
   end
 
   def create
