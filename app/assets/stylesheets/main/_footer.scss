@@ -9,7 +9,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    // height: 100px;
+    height: 100px;
     font-size: 14px;
     width: 100%;
     .developer-card {
@@ -28,7 +28,7 @@ footer {
   }
   a, a:visited {
     margin:10px;
-    color:$barely-blue;
+    color: white;
   }
   a:hover, a:focus {
     color:$light-blue;
