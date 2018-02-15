@@ -7,7 +7,7 @@ class StripeService
       )
       charge = Stripe::Charge.create(
         :customer    => customer.id,
-        :amount      => order.total_price.to_i,
+        :amount      => (order.total_price * 100).to_i,
         :description => 'Rails Stripe customer',
         :currency    => 'usd'
       )
