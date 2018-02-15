@@ -3,12 +3,10 @@
 
 
     <div id="logo" class="pull-left">
-      <%= form_tag do %>
-      <%= text_field_tag :search, "", placeholder: "Search for items", class: "search-bar" %>
-      <% end  %>
+
       <h1><%= link_to "Found Sound", root_path, class: "title" %></h1>
     </div>
-    <div class = "record"><%=link_to (image_tag "record.png"), root_path %></div>
+    <div class="record"><%=link_to (image_tag "record.png"), root_path %></div>
       <nav class="nav-menu-container">
         <ul class="nav-menu">
           <% if current_user.nil? %>
@@ -53,6 +51,5 @@
     </nav>
   </div>
 
-  <div class="search-suggestions"> </div>
 
 </header>

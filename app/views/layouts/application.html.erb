@@ -24,6 +24,11 @@
     <div class="clearfix main">
       <div class="col col-2">
         <%= render "layouts/messages" %>
+        <%= form_tag do %>
+        <%= text_field_tag :search, "", placeholder: "Search for items", class: "search-bar" %>
+        <% end  %>
+        <div class="search-suggestions"> </div>
+        
       </div>
       <div class="col col-8 main-content">
         <%= yield %>
