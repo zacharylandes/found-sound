@@ -6,20 +6,21 @@ class Order < ApplicationRecord
 
   enum status: ["ordered", "paid", "cancelled", "completed"]
 
-  def calculate_total
+  def calculate_total(rate)
     self.total_price = order_items.map do |oi|
       oi.item.price * oi.quantity
     end.sum
+    self.total_price += rate
     self.save!
   end
 
-  def add(cart)
+  def add(cart, rate)
      cart.cart_items.each do |item|
       items << item
       order_item = OrderItem.find_by(order: self, item_id: item.id)
       order_item.update(quantity: cart.quantity_of(item.id))
     end
-    calculate_total
+    calculate_total(rate)
   end
 
   def date
