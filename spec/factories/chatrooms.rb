@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :chatroom do
-    user nil
+    user
   end
 end
