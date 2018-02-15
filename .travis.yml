@@ -8,5 +8,6 @@ script:
 - bundle exec rspec
 services:
 - postgresql
+- redis-server
 notifications:
   email: false
