@@ -3,9 +3,9 @@
   <th>Latest Post</th>
   <th>Unread Messages</th>
   <% @chatrooms.each do |chatroom| %>
-  <tr>
+  <tr class="chatroom-<%= chatroom.id %>">
     <td><%= link_to "Chatroom #{chatroom.id}",admin_chat_path(chatroom) %></td>
-    <td><%= time_ago_in_words(chatroom.chat_messages.last.created_at) %></td>
+    <td><%= time_ago_in_words(chatroom.chat_messages.last.created_at) %> ago</td>
     <td><%= chatroom.unread_messages %></td>
   </tr>
   <% end %>

@@ -1,15 +1,28 @@
-<h3>Chatroom <%= @chatroom.id %></h3>
-<h4>User: <%=  @chatroom.user.first_name %> <%= @chatroom.user.last_name %></h4>
+<h3>Chatroom <%= @presenter.chatroom.id %></h3>
 
-<div class="admin-chat-tab">
-  <div class="admin-chat-window">
-    <% if @chatroom.chat_messages.any? %>
-      <div class="admin-chat-messages" id="messages" data-chatroom=<%=@chatroom.id%>>
-        <% @chatroom.chat_messages.each do |message| %>
-          <span><%= message.user.first_name %>: <%= message.body %></span><br>
+<div class="col col-6">
+  <div class="admin-chat-tab">
+    <div class="admin-chat-window">
+      <% if @presenter.chatroom.chat_messages.any? %>
+      <div class="admin-chat-messages" id="messages" data-chatroom=<%=@presenter.chatroom.id%>>
+        <% @presenter.chatroom.chat_messages.each do |message| %>
+        <span><%= message.user.first_name %>: <%= message.body %></span><br>
         <% end %>
       </div>
-    <%end%>
+      <%end%>
+    </div>
+    <%= render partial: 'messages/message_form', locals: {chat_message: @chat_message, chatroom: @presenter.chatroom}%>
   </div>
-  <%= render partial: 'messages/message_form', locals: {chat_message: @chat_message, chatroom: @chatroom}%>
+</div>
+<div class="col col-6">
+  <div class="user-profile-card">
+    <h3>User Details</h5>
+    <h4><%=  @presenter.user.first_name %> <%= @presenter.user.last_name %></h4>
+    <h5>Order Count: <%= @presenter.user_order_count %></h5>
+    <ul>
+      <% @presenter.recent_orders.each do |order| %>
+      <li><%= link_to "Order #{order.id}", order_path(order) %> Updated: <%= time_ago_in_words(order.updated_at) %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
