@@ -22,6 +22,7 @@ After the import you should see a return value of 1011 when running `Item.count`
 
 All users have a password of `password` if you want to login and explore.
 
+
 ## API Endpoints
 Item title and description can be searched using this endpoint:
 get `/api/v1/search?type=items&q=[query]&api_key=[your_api_key]`
