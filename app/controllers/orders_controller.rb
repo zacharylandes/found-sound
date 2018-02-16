@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
   def new
     # binding.pry
-    @total = @cart.total
+    @total =( @cart.total + params[:total].to_f)
     @order = Order.new
   end
 
