@@ -37,11 +37,17 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 800px;
   color:black;
+  // justify-content: center;
+  // flex-direction: column;
+  // color:black;
   // overflow-y: scroll;
-  overflow-x: hidden;
-  max-height: 800px;
-  margin-bottom: 100px;
+  // // max-width: 100%;
+  // // overflow-x:scroll;
+  // max-height: 800px;
+  // margin-bottom: 100px;
+  // margin-top: 200px;
 }
 
 p {
