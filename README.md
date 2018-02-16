@@ -43,7 +43,7 @@ Run rake tasks:
 
 Setup redis server (for Live Chat messaging queue). Keep redis server running during both testing and when running local server.
 `$ brew install redis`
-`$ redis server`
+`$ redis-server`
 
 After the import you should see a return value of 1011 when running `Item.count` in the console.
 
@@ -51,7 +51,7 @@ All users have a password of `password` if you want to login and explore.
 
 ## Testing Suite (Rspec with Capybara)
 `$ brew install redis`
-`$ redis server`
+`$ redis-server`
 `$ rspec`
 
 ## API Endpoints
