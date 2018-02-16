@@ -31,6 +31,8 @@ class Permission
       return true if controller == "departments/departments" && action.in?(%w(show))
       return true if controller == "chat" && action.in?(%w(create))
       return true if controller == "shipping" && action.in?(%w(new index show))
+      return true if controller == "api/v1/search" && action.in?(%w(index))
+
     end
     return base_permissions
   end
@@ -59,6 +61,7 @@ class Permission
       return true if controller == "departments/departments" && action.in?(%w(show))
       return true if controller == "admin/chat" && action.in?(%w(index show create))
       return true if controller == "shipping" && action.in?(%w(new index show))
+      return true if controller == "api/v1/search" && action.in?(%w(index))
 
     end
 
@@ -81,6 +84,8 @@ class Permission
       return true if controller == "departments/departments" && action.in?(%w(show))
       return true if controller == "shipping" && action.in?(%w(new index show))
       return true if controller == "chat" && action.in?(%w(create))
+      return true if controller == "api/v1/search" && action.in?(%w(index))
+
     end
 
     def store_manager_permissions
@@ -102,6 +107,9 @@ class Permission
       return true if controller == "departments/departments" && action.in?(%w(show))
       return true if controller == "shipping" && action.in?(%w(new index show))
       return true if controller == "chat" && action.in?(%w(create))
+      return true if controller == "api/v1/search" && action.in?(%w(index))
+
+
     end
 
     # def registered_user_permissions
