@@ -1,5 +1,15 @@
 namespace :migrate_data do
 
+  desc "perform all tasks"
+  task run_all: :environment do
+    Rake::Task['migrate_data:create_stores'].invoke
+    Rake::Task['migrate_data:add_store_id_to_items'].invoke
+    Rake::Task['migrate_data:set_default_image'].invoke
+    Rake::Task['migrate_data:calculate_order_total'].invoke
+    Rake::Task['migrate_data:create_departments'].invoke
+    Rake::Task['migrate_data:add_department_items'].invoke
+  end
+
   desc "create store"
   task create_stores: :environment do
     Store.create(name: "Found Sound", address:"1773 17th st Denver,CO 80202", status:"active")
