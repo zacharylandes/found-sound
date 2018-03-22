@@ -12,7 +12,7 @@ This brownfield project is a multitenant e-commerce web application, entitled Fo
 ## Deployment
 
 Project is deployed at:
-https://le-pivot-1710.herokuapp.com/
+http://found-sound.herokuapp.com/
 
 ## Developers
 
